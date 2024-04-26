@@ -554,6 +554,40 @@ video {
   --tw-contain-style:  ;
 }
 
+.flex {
+  display: flex;
+}
+
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
+}
+
+.w-max {
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
