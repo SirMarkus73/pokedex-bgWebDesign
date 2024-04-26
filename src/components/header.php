@@ -5,7 +5,7 @@
         <a href="./wiki.php">Wiki</a>
         <a href="/login">Login</a>
 
-        <a href="#" id="toggle-dark-mode">toggle dark mode</a>
+        <a href="#" id="toggle-dark-mode"></a>
     </nav>
 </header>
 
