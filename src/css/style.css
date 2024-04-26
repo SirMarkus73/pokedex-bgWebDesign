@@ -654,11 +654,6 @@ video {
   }
 }
 
-.dark\:bg-blue-950:where(.dark, .dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(23 37 84 / var(--tw-bg-opacity));
-}
-
 .dark\:bg-neutral-800:where(.dark, .dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
