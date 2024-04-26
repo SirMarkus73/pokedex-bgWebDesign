@@ -8,19 +8,19 @@
     <?php require("../services/imports.php") ?>
 </head>
 
-<body>
+<body class="dark:bg-neutral-800 dark:text-white">
     <?php require("../components/header.php") ?>
-    <h1 class="title" >Wiki de pokemon</h1>
+    <h1 class="title">Wiki de pokemon</h1>
     <p class="text"> Bienvenidos a nuestra PokeWiki, donde podras encontrar la informacion de tus pokemones favoritos y saber informacion sobre que es pokemon . Esperamos con ansias que os guste </p>
-        <?php
-        // Array con los nombres de algunos Pokémon (solo para ejemplo)
-        $pokemons = array("Pikachu", "Charmander", "Bulbasaur", "Squirtle");
+    <?php
+    // Array con los nombres de algunos Pokémon (solo para ejemplo)
+    $pokemons = array("Pikachu", "Charmander", "Bulbasaur", "Squirtle");
 
-        // Recorrer el array e imprimir enlaces a las páginas de cada Pokémon
-        foreach ($pokemons as $pokemon) {
-            echo "<li><a href='pokemon.php?name=" . urlencode($pokemon) . "'>$pokemon</a></li>";
-        }
-        ?>
+    // Recorrer el array e imprimir enlaces a las páginas de cada Pokémon
+    foreach ($pokemons as $pokemon) {
+        echo "<li><a href='pokemon.php?name=" . urlencode($pokemon) . "'>$pokemon</a></li>";
+    }
+    ?>
     </ul>
 
 

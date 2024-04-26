@@ -8,7 +8,7 @@
     <?php require("../services/imports.php") ?>
 </head>
 
-<body>
+<body class="dark:bg-neutral-800 dark:text-white">
     <?php require("../components/header.php") ?>
     <?php
     // Obtener el nombre del Pokémon desde la URL
