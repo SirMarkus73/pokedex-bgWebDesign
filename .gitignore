@@ -1,0 +1,7 @@
+.vscode
+pnpm-lock.yaml
+node_modules/
+
+.env
+composer.lock
+vendor
