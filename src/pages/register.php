@@ -23,11 +23,11 @@
                 <legend class="text-2xl">Formulario de registro</legend>
 
                 <label for="username">Usuario:
-                    <input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
+                    <input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900" maxlength="20">
                 </label>
 
                 <label for="password">Contraseña:
-                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900" minlength="12">
                 </label>
 
                 <label for="email">Email:
