@@ -3,7 +3,7 @@
     <nav class="flex gap-9 items-center">
         <a href="../pages/index.php">Home</a>
         <a href="../pages/wiki.php">Wiki</a>
-        <a href="../pages/login.php">Login</a>
+        <a href="../pages/login.php">Login/SignUp</a>
 
         <a href="#" id="toggle-dark-mode" class="hidden"><img src="" alt="Selector de dark mode" class="w-10"></a>
         <audio src="../assets/music/pokemon_capture2.mp3" hidden></audio>
