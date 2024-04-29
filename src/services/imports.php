@@ -4,7 +4,5 @@
 require_once("../services/loader.php");
 
 // .env
-require_once("../../vendor/autoload.php");
-$dotenv = Dotenv\Dotenv::createImmutable("../../");
-$dotenv->load();
+require_once("../services/env.php");
 ?>

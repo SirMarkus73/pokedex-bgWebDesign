@@ -19,20 +19,22 @@
         </section>
         <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10">
 
-            <form action="registro.php" method="post" class="w-max flex flex-col gap-4">
+            <form action="../services/register.php" method="post" class="w-max flex flex-col gap-4">
                 <legend class="text-2xl">Formulario de registro</legend>
 
                 <label for="username">Usuario:
-                    <input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900" maxlength="20">
+                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900" maxlength="20">
                 </label>
 
                 <label for="password">Contraseña:
-                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900" minlength="12">
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900" minlength="12">
                 </label>
 
                 <label for="email">Email:
-                    <input type="email" id="email" placeholder="Ingresa tu email" required class="dark:bg-neutral-900">
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu email" required class="dark:bg-neutral-900">
                 </label>
+
+                <input type="hidden" name="successful" value="true">
                 <button type="submit">Registrarse</button>
 
             </form>
