@@ -12,26 +12,26 @@
 
     <body class="dark:bg-neutral-800 dark:text-white">
         <?php require("../components/header.php") ?>
-        <main class="grid grid-cols-1 place-items-center md:grid-cols-3">
+        <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center">
             <section>
                 <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
             </section>
 
             <section class="md:col-span-2">
-                <form action="login.php" method="post" class="border: shadow-fuchsia-100">
+                <form action="login.php" method="post" class="w-max flex flex-col gap-4 border border-red-600 dark:border-fuchsia-700 p-10">
 
 
                     <legend class="text-2xl">Formulario de inicio de sesión</legend>
-                    <!-- Campo de Usuario -->
-                    <br> <label for="username">Usuario:</label>
-                    <br><input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
 
-                    <!-- Campo de Contraseña -->
-                    <br><label for="password">Contraseña:</label>
-                    <br> <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
+                    <label for="username">Usuario:
+                        <input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
+                    </label>
 
-                    <!-- Botón de Inicio de Sesión -->
-                    <br><br><button type="submit">Inicio de sesión </button>
+                    <label for="password">Contraseña:
+                        <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
+                    </label>
+
+                    <button type="submit">Inicio de sesión </button>
 
 
 
@@ -39,7 +39,7 @@
 
                 </form>
 
-                <hr class="border-stone-50 border w-1/2 my-5">
+                <hr class="border border-black dark:border-stone-50  w-1/2 my-5">
 
                 <a href="register.php">Crear Cuenta</a>
             </section>

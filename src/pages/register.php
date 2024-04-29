@@ -13,33 +13,27 @@
     <?php require("../components/header.php") ?>
 
 
-    <main class="grid grid-cols-1 md:grid-cols-3 place-items-center">
+    <main class="grid grid-cols-1 md:grid-cols-3 place-items-center content-center">
         <section>
             <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
         </section>
         <section class="md:col-span-2">
 
-            <form action="registro.php" method="post" class="border: shadow-fuchsia-100">
-
-
+            <form action="registro.php" method="post" class="w-max flex flex-col gap-4 border border-red-600 dark:border-fuchsia-700 p-10">
                 <legend class="text-2xl">Formulario de registro</legend>
 
+                <label for="username">Usuario:
+                    <input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
+                </label>
 
-                <!-- Campo de Usuario -->
-                <br> <label for="username">Usuario:</label>
-                <br><input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
+                <label for="password">Contraseña:
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
+                </label>
 
-                <!-- Campo de Contraseña -->
-                <br><label for="password">Contraseña:</label>
-                <br> <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
-
-
-
-                <!-- Otros campos como correo electrónico, nombre completo, etc. -->
-                <br> <label for="email">Email:</label>
-                <br> <input type="email" id="email" placeholder="Ingresa tu email" required class="dark:bg-neutral-900">
-
-                <br> <br> <button type="submit">Registrarse</button>
+                <label for="email">Email:
+                    <input type="email" id="email" placeholder="Ingresa tu email" required class="dark:bg-neutral-900">
+                </label>
+                <button type="submit">Registrarse</button>
 
             </form>
 
