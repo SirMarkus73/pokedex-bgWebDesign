@@ -558,6 +558,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-\[100vh\] {
   height: 100vh;
 }
@@ -574,6 +578,10 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .flex-col {
