@@ -10,20 +10,35 @@
 
 <body class="dark:bg-neutral-800 dark:text-white">
     <?php require("../components/header.php") ?>
-    <h1 class="title">Wiki de pokemon</h1>
-    <p class="text"> Bienvenidos a nuestra PokeWiki, donde podrás encontrar la información de tus pokemons favoritos y saber información sobre que es pokemon . Esperamos con ansias que os guste </p>
-    <?php
-    // Array con los nombres de algunos Pokémon (solo para ejemplo)
-    $pokemons = array("Pikachu", "Charmander", "Bulbasaur", "Squirtle");
 
-    // Recorrer el array e imprimir enlaces a las páginas de cada Pokémon
-    foreach ($pokemons as $pokemon) {
-        echo "<li><a href='pokemon.php?name=" . urlencode($pokemon) . "'>$pokemon</a></li>";
-    }
-    ?>
-    </ul>
+    <main class="grid grid-cols-4 justify-center w-max mx-auto gap-20">
+        <?php
+        const API_URL = "https://pokeapi.co/api/v2/pokemon?limit=8&offset=0";
+        $result = file_get_contents(API_URL);
+        $response = json_decode($result, true);
+
+        foreach ($response['results'] as $pokemons) : ?>
+            <?php
+            $pokemon_url = file_get_contents($pokemons['url']);
+            $pokemon = json_decode($pokemon_url, true);
+
+            $pokemon_name = $pokemon['name'];
+
+            $pokemon_image = $pokemon['sprites']['front_default'];
+
+            ?>
+
+            <article>
+
+                <img src="<?= $pokemon_image ?>" alt="pokemon <?= $pokemon_name ?>">
+                <p> <?= $pokemon_name ?></p>
+            </article>
+        <?php
+        endforeach
+        ?>
 
 
+    </main>
 </body>
 
 </html>
