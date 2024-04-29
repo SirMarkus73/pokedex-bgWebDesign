@@ -571,6 +571,10 @@ video {
   height: max-content;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .w-24 {
   width: 6rem;
 }
@@ -578,10 +582,6 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .flex-col {
