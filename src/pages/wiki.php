@@ -11,7 +11,7 @@
 <body class="dark:bg-neutral-800 dark:text-white">
     <?php require("../components/header.php") ?>
     <h1 class="title">Wiki de pokemon</h1>
-    <p class="text"> Bienvenidos a nuestra PokeWiki, donde podrás encontrar la informacion de tus pokemones favoritos y saber informacion sobre que es pokemon . Esperamos con ansias que os guste </p>
+    <p class="text"> Bienvenidos a nuestra PokeWiki, donde podrás encontrar la información de tus pokemons favoritos y saber información sobre que es pokemon . Esperamos con ansias que os guste </p>
     <?php
     // Array con los nombres de algunos Pokémon (solo para ejemplo)
     $pokemons = array("Pikachu", "Charmander", "Bulbasaur", "Squirtle");
