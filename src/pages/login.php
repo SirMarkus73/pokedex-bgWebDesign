@@ -6,46 +6,47 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Page Title</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' href="../css/style.css">  
-        <?php require("../services/imports.php") ?>  
+        <link rel='stylesheet' href="../css/style.css">
+        <?php require("../services/imports.php") ?>
     </head>
+
     <body class="dark:bg-neutral-800 dark:text-white">
-    <?php require("../components/header.php") ?>
-    <main class="grid grid-cols-2 place-items-center">
-        <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
+        <?php require("../components/header.php") ?>
+        <main class="grid grid-cols-1 place-items-center md:grid-cols-3">
+            <section>
+                <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
+            </section>
 
-            <form action="login.php" method="post" class="border: shadow-fuchsia-100">
-                <fieldset>
-
-            <legend class="text-2xl">Formulario de inicio de sesión</legend>
-                <!-- Campo de Usuario -->   
-                <br> <label  for="username">Usuario:</label>
-                <br><input  type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
-
-                <!-- Campo de Contraseña -->
-                <br><label for="password">Contraseña:</label>
-                <br> <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
-
-                </fieldset>
+            <section class="md:col-span-2">
+                <form action="login.php" method="post" class="border: shadow-fuchsia-100">
 
 
-                <fieldset>
-                <!-- Opción para mantener la sesión iniciada -->
-                <br><input type="checkbox" id="remember">
-                <label for="remember">Mantener sesión iniciada</label>
+                    <legend class="text-2xl">Formulario de inicio de sesión</legend>
+                    <!-- Campo de Usuario -->
+                    <br> <label for="username">Usuario:</label>
+                    <br><input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
 
-                <!-- Botón de Inicio de Sesión -->
-                <br><br><button type="submit">Inicio de sesión </button>
+                    <!-- Campo de Contraseña -->
+                    <br><label for="password">Contraseña:</label>
+                    <br> <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
 
-                <br><br><a href="registrar.php">Crear Cuenta</a>
+                    <!-- Botón de Inicio de Sesión -->
+                    <br><br><button type="submit">Inicio de sesión </button>
 
-                </fieldset>
-            </form>
 
-    <p>Inicia sesión en PokeFull Crack. Acuérdate de no perder la contraseña</p> ________________
+
+
+
+                </form>
+
+                <hr class="border-stone-50 border w-1/2 my-5">
+
+                <a href="register.php">Crear Cuenta</a>
+            </section>
         </main>
 
-        
 
-    </body> 
-    </html> 
+
+    </body>
+
+    </html>
