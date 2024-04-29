@@ -1,5 +1,10 @@
 <link rel="stylesheet" href="../css/style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <?php
-require("../services/loader.php")
+require_once("../services/loader.php");
+
+// .env
+require_once("../../vendor/autoload.php");
+$dotenv = Dotenv\Dotenv::createImmutable("../../");
+$dotenv->load();
 ?>
