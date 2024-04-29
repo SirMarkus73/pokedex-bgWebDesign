@@ -17,8 +17,8 @@
                 <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
             </section>
 
-            <section class="md:col-span-2">
-                <form action="login.php" method="post" class="w-max flex flex-col gap-4 border border-red-600 dark:border-fuchsia-700 p-10">
+            <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
+                <form action="login.php" method="post" class="w-max flex flex-col gap-4 ">
 
 
                     <legend class="text-2xl">Formulario de inicio de sesión</legend>
