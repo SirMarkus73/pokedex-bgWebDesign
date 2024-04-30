@@ -6,6 +6,7 @@
   "scripts": {
     "init": "pnpm install && composer install",
     "css": "npx tailwindcss -i ./src/css/tailwind-base.css -o ./src/css/style.css --watch",
+    "compile-css": "npx tailwindcss -i ./src/css/tailwind-base.css -o ./src/css/style.css",
     "php-server": "php -S localhost:4321 -t ./src",
     "dev": "conc \"pnpm run php-server\" \"pnpm run css\""
   },
