@@ -2,10 +2,9 @@
 session_start();
 
 
+if (isset($_SESSION["usuario"])) : ?>
+    <p><?= $_SESSION["usuario"] ?></p>
 
-function saludar()
-{
-    if (isset($_SESSION["usuario"])) {
-        echo "Bienvenido $_SESSION[usuario]";
-    }
-}
+<?php else : ?>
+    <a href="../pages/login.php" id="login">Login/Signup</a>
+<?php endif;
