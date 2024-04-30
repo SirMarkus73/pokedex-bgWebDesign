@@ -15,6 +15,7 @@ if ($successful == "true") {
     $sql = "INSERT INTO usuarios (usuario, contraseña) VALUES ('$username', '$hash_password');";
 
     $result = mysqli_query($conn, $sql);
-
-    header("Location: ../pages/login.php");
 }
+
+header("Location: ../pages/login.php");
+exit();

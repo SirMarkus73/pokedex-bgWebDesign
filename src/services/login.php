@@ -33,3 +33,5 @@ if ($contrasenya_correcta) {
 } else {
     // header("Location: ../pages/login_fallido.php");
 }
+
+exit();
