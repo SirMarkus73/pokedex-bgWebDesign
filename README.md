@@ -8,13 +8,13 @@
 
 Si tienes todo esto una vez descargado el repositorio ejecuta: "pnpm run init"
 
-para iniciar el proyecto en modo desarrollo necesitas ejecutar:
+## Iniciar y parar el proyecto
 
-pnpm run dev
+para iniciar el proyecto en modo desarrollo : `pnpm run dev`
 
-para pararlo:
+para parar el modo desarrollo: `pnpm run stop_dev`
 
-pnpm run stop_dev
+## Ubicaciones del modo desarrollo
 
-Open phpmyadmin at http://localhost:8000
-Open web browser to look at a simple php example at http://localhost:80
+PHPMyAdmin: [http://localhost:8000](docs/CONTRIBUTING.md)
+Web: [http://localhost:80](http://localhost:80)
