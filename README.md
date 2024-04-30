@@ -15,3 +15,6 @@ pnpm run dev
 para pararlo:
 
 pnpm run stop_dev
+
+Open phpmyadmin at http://localhost:8000
+Open web browser to look at a simple php example at http://localhost:80
