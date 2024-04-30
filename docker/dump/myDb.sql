@@ -18,7 +18,7 @@ CREATE TABLE `usuarios` (
   `user` VARCHAR(50) NOT NULL UNIQUE, 
   `password` VARCHAR(100) NOT NULL, 
   `creation_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `Person` (`id`, `name`) VALUES
 (1, 'William'),
