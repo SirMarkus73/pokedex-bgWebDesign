@@ -12,7 +12,7 @@ $successful = post("successful", "false");
 if ($successful == "true") {
     $contrasenya_correcta = false;
     $conn = mysqli_connect($_ENV["DB"], $_ENV["USER"], $_ENV["PASSWORD"], $_ENV["DBNAME"]);
-    $sql = "SELECT contraseña FROM usuarios WHERE usuario='$username'";
+    $sql = "SELECT password FROM usuarios WHERE user='$username'";
 
     // Resultados de la consulta
     $result = mysqli_query($conn, $sql);
@@ -20,7 +20,7 @@ if ($successful == "true") {
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
 
-        if (password_verify($password, $row["contraseña"])) {
+        if (password_verify($password, $row["password"])) {
 
             $_SESSION['usuario'] = $username;
             $contrasenya_correcta = true;
@@ -31,6 +31,7 @@ if ($successful == "true") {
 if ($contrasenya_correcta) {
     header("Location: ../pages/index.php");
 } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     // header("Location: ../pages/login_fallido.php");
 }
 
