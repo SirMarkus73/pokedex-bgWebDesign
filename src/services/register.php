@@ -12,11 +12,9 @@ $successful = post("successful", "false");
 
 if ($successful == "true") {
     $conn = mysqli_connect($_ENV["DB"], $_ENV["USER"], $_ENV["PASSWORD"], $_ENV["DBNAME"]);
-    $sql = "INSERT INTO usuarios (usuario, contraseña, email) VALUES ($username, $hash_password, $email);";
+    $sql = "INSERT INTO usuarios (usuario, contraseña, email) VALUES ('$username', '$hash_password');";
 
     $result = mysqli_query($conn, $sql);
 
-    /* header("Location: ../pages/login.php"); */
-
-    echo "Funciona";
+    header("Location: ../pages/login.php");
 }

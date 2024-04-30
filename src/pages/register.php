@@ -30,10 +30,6 @@
                     <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900" minlength="12">
                 </label>
 
-                <label for="email">Email:
-                    <input type="email" id="email" name="email" placeholder="Ingresa tu email" required class="dark:bg-neutral-900">
-                </label>
-
                 <input type="hidden" name="successful" value="true">
                 <button type="submit">Registrarse</button>
 
