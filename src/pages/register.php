@@ -27,7 +27,7 @@
                 </label>
 
                 <label for="password">Contraseña:
-                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900" minlength="12">
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
                 </label>
 
                 <input type="hidden" name="successful" value="true">
