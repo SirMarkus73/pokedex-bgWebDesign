@@ -21,7 +21,7 @@
                 <form action="login.php" method="post" class="w-max flex flex-col gap-4 ">
 
 
-                    <legend class="text-2xl">Formulario de inicio de sesión</legend>
+                    <legend class="text-2xl">Iniciar sesión</legend>
 
                     <label for="username">Usuario:
                         <input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">

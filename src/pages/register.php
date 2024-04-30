@@ -20,7 +20,7 @@
         <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10">
 
             <form action="../services/register.php" method="post" class="w-max flex flex-col gap-4">
-                <legend class="text-2xl">Formulario de registro</legend>
+                <legend class="text-2xl">Registrarse</legend>
 
                 <label for="username">Usuario:
                     <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900" maxlength="20">
