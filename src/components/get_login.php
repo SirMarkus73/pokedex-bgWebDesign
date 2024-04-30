@@ -5,6 +5,7 @@ session_start();
 if (isset($_SESSION["usuario"])) : ?>
     <div class="flex gap-1 bg-red-800 dark:bg-purple-800">
         <p><?= $_SESSION["usuario"] ?></p>
+        <hr class="h-6 w-px bg-red-800 dark:bg-purple-800">
         <a href="../services/logout.php" id="logout">Cerrar sesión</a>
     </div>
 
