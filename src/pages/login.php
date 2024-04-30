@@ -18,19 +18,20 @@
             </section>
 
             <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-                <form action="login.php" method="post" class="w-max flex flex-col gap-4 ">
+                <form action="../services/login.php" method="post" class="w-max flex flex-col gap-4 ">
 
 
                     <legend class="text-2xl">Iniciar sesión</legend>
 
                     <label for="username">Usuario:
-                        <input type="text" id="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
+                        <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
                     </label>
 
                     <label for="password">Contraseña:
-                        <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
+                        <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
                     </label>
 
+                    <input type="hidden" name="successful" value="true">
                     <button type="submit">Inicio de sesión </button>
 
 
