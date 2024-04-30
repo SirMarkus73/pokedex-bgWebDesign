@@ -3,6 +3,4 @@
 <?php
 require_once("../services/loader.php");
 
-// .env
-require_once("../services/env.php");
 ?>
