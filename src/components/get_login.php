@@ -10,5 +10,9 @@ if (isset($_SESSION["usuario"])) : ?>
     </div>
 
 <?php else : ?>
-    <a href="../pages/login.php" id="login">Login/Signup</a>
+    <div class="flex justify-between gap-3 flex-row bg-red-800 dark:bg-purple-800 p-2">
+        <a href="../pages/login.php" id="login">Login</a>
+        <p class="text-red-500 dark:text-purple-500">|</p>
+        <a href="../pages/register.php" id="signup">Signup</a>
+    </div>
 <?php endif;
