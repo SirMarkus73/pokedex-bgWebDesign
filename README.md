@@ -6,7 +6,7 @@
 - pnpm
 - Docker
 
-Si tienes todo esto una vez descargado el repositorio ejecuta: "pnpm run init"
+Si tienes todo esto una vez descargado el repositorio ejecuta: `pnpm run init`
 
 ## Iniciar y parar el proyecto
 
@@ -17,4 +17,5 @@ para parar el modo desarrollo: `pnpm run stop_dev`
 ## Ubicaciones del modo desarrollo
 
 PHPMyAdmin: [http://localhost:8000](docs/CONTRIBUTING.md)
+
 Web: [http://localhost:80](http://localhost:80)
