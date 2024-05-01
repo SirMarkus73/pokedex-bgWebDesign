@@ -14,7 +14,6 @@ if ($successful == "true") {
     $sql = "INSERT INTO usuarios (user, password) VALUES ('$username', '$hash_password');";
 
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
         header("Location: ../pages/login.php");
         exit();
     } else {

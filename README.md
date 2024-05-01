@@ -16,6 +16,6 @@ para parar el modo desarrollo: `pnpm run stop_dev`
 
 ## Ubicaciones del modo desarrollo
 
-PHPMyAdmin: [http://localhost:8000](docs/CONTRIBUTING.md)
+PHPMyAdmin: [http://localhost:8000](http://localhost:8000)
 
 Web: [http://localhost:80](http://localhost:80)
