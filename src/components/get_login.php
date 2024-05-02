@@ -1,6 +1,6 @@
 <?php if (isset($_SESSION["usuario"])) : ?>
 
-    <div class="dropdown">
+    <div class="dropdown animate-ping">
         <button tabindex="0"><?= $_SESSION["usuario"] ?></button>
 
         <ul class="p-2 shadow menu dropdown-content bg-slate-700 rounded-box w-fit z-[1]" tabindex="0">
