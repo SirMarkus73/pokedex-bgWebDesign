@@ -15,8 +15,8 @@
     <?php require("../components/header.php") ?>
 
 
-    <main class="grid grid-cols-1 md:grid-cols-3 place-items-center content-center">
-        <section>
+    <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center my-5 justify-center">
+        <section class="max-md:hidden">
             <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
         </section>
         <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10">

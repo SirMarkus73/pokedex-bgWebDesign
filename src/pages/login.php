@@ -14,9 +14,9 @@
 
 <body class="dark:bg-neutral-800 dark:text-white">
     <?php require("../components/header.php") ?>
-    <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center">
-        <section>
-            <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
+    <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center my-5 justify-center">
+        <section class="max-md:hidden">
+            <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-64 xl:w-96"></a>
         </section>
 
         <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
@@ -35,11 +35,6 @@
 
                 <input type="hidden" name="successful" value="true">
                 <button type="submit">Inicio de sesión </button>
-
-
-
-
-
             </form>
 
             <hr class="border border-black dark:border-stone-50  w-1/2 my-5">
