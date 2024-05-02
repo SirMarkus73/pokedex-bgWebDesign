@@ -1,6 +1,6 @@
 <?php if (isset($_SESSION["usuario"])) : ?>
 
-    <div class="dropdown w-max h-max">
+    <div class="dropdown w-max h-max bg-red-800 dark:bg-purple-800">
 
         <button>
             <span class="relative flex h-3 w-3">
