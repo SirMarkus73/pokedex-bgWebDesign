@@ -1,9 +1,9 @@
 <?php
-function post($param, $valor_per_defecte)
+function post($param, $default)
 {
     if (isset($_POST[$param])) {
         return $_POST[$param];
     } else {
-        return $valor_per_defecte;
+        return $default;
     }
 }
