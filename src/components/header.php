@@ -1,3 +1,6 @@
+<?= __DIR__ ?>
+<?= $_SERVER['DOCUMENT_ROOT'] ?>
+
 <header class="flex items-center p-4 flex-col md:flex-row md:justify-between bg-red-600 text-white dark:bg-purple-950">
     <a href="./index.php"><img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-24"></a>
     <nav class="flex gap-3 flex-row p-2">
