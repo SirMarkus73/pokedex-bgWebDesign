@@ -13,7 +13,7 @@
     })
 </script>
 
-<div id="loader" class="hidden w-screen h-screen top-0 left-0 z-10">
+<div id="loader" class="absolute w-screen h-screen top-0 left-0 z-10">
     <div class="w-full flex h-screen justify-center items-center bg-neutral-800">
 
         <div role="status">
