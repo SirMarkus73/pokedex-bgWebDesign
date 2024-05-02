@@ -1,7 +1,10 @@
 <?php if (isset($_SESSION["usuario"])) : ?>
 
     <div class="dropdown animate-ping">
-        <button tabindex="0"><?= $_SESSION["usuario"] ?></button>
+        <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-700 dark:bg-fuchsia-700 opacity-75"></span>
+            <button class="relative inline-flex rounded-full h-3 w-3" tabindex="0"><?= $_SESSION["usuario"] ?></button>
+        </span>
 
         <ul class="p-2 shadow menu dropdown-content bg-slate-700 rounded-box w-fit z-[1]" tabindex="0">
             <li><a href="../pages/user.php" id="setting">Settings</a></li>
