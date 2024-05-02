@@ -20,21 +20,21 @@
         </section>
 
         <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-            <form action="../services/login.php" method="post" class="w-max flex flex-col gap-4 ">
+            <form action="../services/login.php" method="post" class="w-max flex flex-col gap-4 form-control">
 
 
                 <legend class="text-2xl">Iniciar sesión</legend>
 
                 <label for="username">Usuario:
-                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900">
+                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900 input input-bordered">
                 </label>
 
                 <label for="password">Contraseña:
-                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900">
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900 input input-bordered">
                 </label>
 
                 <input type="hidden" name="successful" value="true">
-                <button type="submit">Inicio de sesión </button>
+                <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Inicio de sesión </button>
             </form>
 
             <hr class="border border-black dark:border-stone-50  w-1/2 my-5">
