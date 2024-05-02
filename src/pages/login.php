@@ -12,7 +12,7 @@
     <?php require_once("../services/imports/html.php") ?>
 </head>
 
-<body class="dark:bg-neutral-800 dark:text-white">
+<body class="dark:bg-neutral-800 dark:text-white h-screen">
     <?php require("../components/header.php") ?>
     <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center my-5 justify-center">
         <section class="max-md:hidden">

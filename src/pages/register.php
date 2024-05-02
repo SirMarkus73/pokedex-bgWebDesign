@@ -11,7 +11,7 @@
     <?php require_once("../services/imports/html.php") ?>
 </head>
 
-<body class="dark:bg-neutral-800 dark:text-white">
+<body class="dark:bg-neutral-800 dark:text-white h-screen">
     <?php require("../components/header.php") ?>
 
 
