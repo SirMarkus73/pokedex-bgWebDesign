@@ -1619,6 +1619,10 @@ html {
   width: 25%;
 }
 
+.w-1\/5 {
+  width: 20%;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
