@@ -11,6 +11,12 @@
 </head>
 <body class="dark:bg-neutral-800 dark:text-white">
 <?php require("../components/header.php") ?>
+<div class="form-control">
+  
+    <input type="checkbox" class="toggle [--tglbg:fuchsia] bg-neutral-800 hover:bg-fuchsia-600 border-neutral-800" checked />
+     
+</div>
 
+</form>
 </body>
 </html> 
