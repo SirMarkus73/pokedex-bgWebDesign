@@ -1,4 +1,4 @@
-<?php require_once("../services/php.php") ?>
+<?php require_once("../services/imports/php.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php require_once("../services/html.php") ?>
+    <?php require_once("../services/imports/html.php") ?>
 
 </head>
 <body class="dark:bg-neutral-800 dark:text-white">
