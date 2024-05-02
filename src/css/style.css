@@ -1376,6 +1376,11 @@ html {
   width: 13rem;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
