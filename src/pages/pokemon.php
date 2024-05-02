@@ -12,7 +12,7 @@
 
 </head>
 
-<body class="dark:bg-neutral-800 dark:text-white">
+<body class="text-black bg-slate-200 dark:bg-neutral-800 dark:text-white">
     <?php require("../components/header.php") ?>
     <?php
     // Obtener el nombre del Pokémon desde la URL

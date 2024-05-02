@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="dark:bg-neutral-800 dark:text-white h-screen">
+<body class="text-black bg-slate-200 dark:bg-neutral-800 dark:text-white h-screen">
     <?php require("../components/header.php") ?>
 
 

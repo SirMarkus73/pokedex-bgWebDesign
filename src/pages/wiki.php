@@ -15,7 +15,7 @@ require_once("../components/pokemons.php");
 
 </head>
 
-<body class="dark:bg-neutral-800 dark:text-white">
+<body class="text-black bg-slate-200 dark:bg-neutral-800 dark:text-white">
     <?php require("../components/header.php") ?>
 
     <main class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 justify-center w-max mx-auto gap-20 items-center">
