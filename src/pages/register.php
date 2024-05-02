@@ -1,4 +1,4 @@
-<?php require_once("../services/imports/php.php") ?>
+<?php require_once("../services/imports.php") ?>
 
 <html lang="es">
 
@@ -8,7 +8,8 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href="../css/style.css">
-    <?php require_once("../services/imports/html.php") ?>
+
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="dark:bg-neutral-800 dark:text-white h-screen">

@@ -1,22 +1,25 @@
-<?php require_once("../services/imports/php.php") ?>
+<?php require_once("../services/imports.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php require_once("../services/imports/html.php") ?>
 
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="dark:bg-neutral-800 dark:text-white">
-<?php require("../components/header.php") ?>
-<div class="form-control">
-  
-    <input type="checkbox" class="toggle [--tglbg:fuchsia] bg-neutral-800 hover:bg-fuchsia-600 border-neutral-800" checked />
-     
-</div>
 
-</form>
+<body class="dark:bg-neutral-800 dark:text-white">
+    <?php require("../components/header.php") ?>
+    <div class="form-control">
+
+        <input type="checkbox" class="toggle [--tglbg:fuchsia] bg-neutral-800 hover:bg-fuchsia-600 border-neutral-800" checked />
+
+    </div>
+
+    </form>
 </body>
-</html> 
+
+</html>
