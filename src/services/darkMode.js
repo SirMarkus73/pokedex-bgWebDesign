@@ -25,16 +25,16 @@ window.addEventListener("load", () => {
   if (document.querySelector("body").id == "settings") {
     const darkModeSelector = document.getElementById("toggle-dark-mode");
     darkModeSelector.addEventListener("change", toggleDarkMode);
-  }
 
-  function toggleDarkMode() {
-    /** Funcion que activa/desactiva el modo oscuro */
-    if (mode === "dark") {
-      darkModeSelector.checked = true;
-      setMode("light");
-    } else {
-      darkModeSelector.checked = false;
-      setMode("dark");
+    function toggleDarkMode() {
+      /** Funcion que activa/desactiva el modo oscuro */
+      if (mode === "dark") {
+        darkModeSelector.checked = true;
+        setMode("light");
+      } else {
+        darkModeSelector.checked = false;
+        setMode("dark");
+      }
     }
   }
 });
