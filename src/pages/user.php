@@ -49,16 +49,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-    <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
+    <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
     <p>Nueva contraseña</p>
-    <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
-    <p>Repetir la contraseña</p>
-    <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
+    <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <p>Repetir la contraseña Nueva</p>
+    <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
     <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
 
-   
     </div>
+    
+    <div>
 
+    <title >Cambiar nombre user</title>
+    <p>Cambiar nombre de usuario</p>
+
+    <?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nuevo_nombre = $_POST['nuevo_nombre'];
+    $usuario_id = $_SESSION['usuario_id']; 
+
+    $sql = "UPDATE usuarios SET nombre = ? WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("si", $nuevo_nombre, $usuario_id);
+
+    if ($stmt->execute()) {
+        echo "Nombre actualizado con éxito.";
+    } else {
+        echo "Error al actualizar el nombre.";
+    }
+}
+?>
+
+    <input type="text" id="nuevo_nombre" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <p>Nuevo Usuario</p>
+    <input type="text" id="nuevo_nombre" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario </button>
+
+
+    </div>
 
     </form>
 </body>
