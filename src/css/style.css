@@ -2032,11 +2032,6 @@ html {
   background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2076,11 +2071,6 @@ html {
   line-height: 2.5rem;
 }
 
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -2104,6 +2094,20 @@ html {
 
 .\[--tglbg\:fuchsia\] {
   --tglbg: fuchsia;
+}
+
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+body:where(.dark, .dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 @media (hover: hover) {
@@ -2250,9 +2254,4 @@ html {
 .dark\:text-purple-500:where(.dark, .dark *) {
   --tw-text-opacity: 1;
   color: rgb(168 85 247 / var(--tw-text-opacity));
-}
-
-.dark\:text-white:where(.dark, .dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }

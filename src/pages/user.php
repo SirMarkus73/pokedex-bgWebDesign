@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="text-black bg-slate-200 dark:bg-neutral-800 dark:text-white">
+<body>
     <?php require("../components/header.php") ?>
     <div class="form-control" class="row-span-7">
 
