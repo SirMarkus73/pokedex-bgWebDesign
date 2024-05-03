@@ -123,9 +123,9 @@ function show_pokemons(int $limit, int $offset)
 
 <section class="flex justify-center mx-auto">
     <form method="get">
-        <button name="offset" value="<?= $offset - $limit ?>" class="btn btn-outline">Anterior</button>
-        <input type="number" name="limit" id="limit" max="20" min="1" value="<?= $limit ?>" id="limit">
-        <button name="offset" value="<?= $offset + $limit ?>" class="btn btn-outline">Siguiente</button></button>
+        <button name="offset" value="<?= $offset - $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Anterior</button>
+        <input type="number" name="limit" id="limit" max="20" min="1" value="<?= $limit ?>" id="limit" class="input input-bordered text-black">
+        <button name="offset" value="<?= $offset + $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Siguiente</button>
         <button type="submit" class="hidden" id="submit"></button>
     </form>
 </section>
