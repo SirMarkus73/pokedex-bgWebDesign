@@ -1,11 +1,3 @@
-window.addEventListener("load", () => {
-  const darkModeSelector = document.getElementById("toggle-dark-mode");
-
-  if (document.querySelector("body").id == "settings") {
-    darkModeSelector.addEventListener("change", toggleDarkMode);
-  }
-});
-
 // Comprobamos si ya hay un modo guardado
 if (localStorage.getItem("mode") === null) {
   localStorage.setItem("mode", "light");
@@ -22,20 +14,27 @@ function setMode(type) {
     document.body.classList.add("dark");
     mode = "dark";
     localStorage.setItem("mode", "dark");
-    darkModeSelector.checked = true;
   } else {
     document.body.classList.remove("dark");
     mode = "light";
     localStorage.setItem("mode", "light");
-    darkModeSelector.checked = false;
   }
 }
 
-function toggleDarkMode() {
-  /** Funcion que activa/desactiva el modo oscuro */
-  if (mode === "dark") {
-    setMode("light");
-  } else {
-    setMode("dark");
+window.addEventListener("load", () => {
+  if (document.querySelector("body").id == "settings") {
+    const darkModeSelector = document.getElementById("toggle-dark-mode");
+    darkModeSelector.addEventListener("change", toggleDarkMode);
   }
-}
+
+  function toggleDarkMode() {
+    /** Funcion que activa/desactiva el modo oscuro */
+    if (mode === "dark") {
+      darkModeSelector.checked = true;
+      setMode("light");
+    } else {
+      darkModeSelector.checked = false;
+      setMode("dark");
+    }
+  }
+});
