@@ -1,6 +1,6 @@
 <?php
-require_once("../services/post.php");
-require_once("../services/env.php");
+require_once(__DIR__ . "/methods.php");
+require_once(__DIR__ . "/env.php");
 
 $username = post("username", "");
 $email = post("email", "");
