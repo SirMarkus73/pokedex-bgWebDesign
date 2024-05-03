@@ -30,35 +30,34 @@
 
     <div>
 
-        <p>Cambiar contraseña </p>
+    
 
-        <?php
+<p>Cambiar contraseña </p>
+    <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <p>Nueva contraseña</p>
+    <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <p>Repetir la contraseña Nueva</p>
+    <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $nueva_contrasena = $_POST['nueva_contrasena'];
-            $usuario_id = $_SESSION['usuario_id'];
+    </div>
+    
+    <div>
 
-            $sql = "UPDATE user SET 'password' = ? WHERE id = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("si", password_hash($nueva_contrasena, PASSWORD_DEFAULT), $usuario_id);
+    <title >Cambiar nombre user</title>
+    <p>Cambiar nombre de usuario</p>
 
-            if ($stmt->execute()) {
-                echo "Contraseña actualizada con éxito.";
-            } else {
-                echo "Error al actualizar la contraseña.";
-            }
-        }
-        ?>
-        <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
-        <p>Nueva contraseña</p>
-        <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
-        <p>Repetir la contraseña</p>
-        <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
-        <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
+    
+
+
+
+    <input type="text" id="nuevo_nombre" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <p>Nuevo Usuario</p>
+    <input type="text" id="nuevo_nombre" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario </button>
 
 
     </div>
-
 
     </form>
 </body>
