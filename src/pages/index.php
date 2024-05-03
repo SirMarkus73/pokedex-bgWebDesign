@@ -8,6 +8,7 @@
     <title>Index</title>
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo.webp">
 </head>
 
 <body>

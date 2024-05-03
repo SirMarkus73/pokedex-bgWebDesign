@@ -8,7 +8,7 @@ let mode = localStorage.getItem("mode");
 
 setMode(mode);
 
-function setMode(type) {
+async function setMode(type) {
   /** Funcion que cambia al modo oscuro */
   if (type === "dark") {
     document.body.classList.add("dark");
