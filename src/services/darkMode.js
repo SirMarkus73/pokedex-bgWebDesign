@@ -7,8 +7,6 @@ window.addEventListener("load", () => {
   // Tomamos el modo guardado en el localStorage
   let mode = localStorage.getItem("mode");
 
-  setMode(mode);
-
   function setMode(type) {
     /** Funcion que cambia al modo oscuro */
     if (type === "dark") {
@@ -29,12 +27,22 @@ window.addEventListener("load", () => {
     function toggleDarkMode() {
       /** Funcion que activa/desactiva el modo oscuro */
       if (mode === "dark") {
-        darkModeSelector.checked = true;
+        darkModeSelector.checked = false;
         setMode("light");
       } else {
-        darkModeSelector.checked = false;
+        darkModeSelector.checked = true;
         setMode("dark");
       }
     }
+
+    if (mode == "dark") {
+      darkModeSelector.checked = true;
+    } else {
+      darkModeSelector.checked = false;
+    }
+
+    setMode(mode);
+  } else {
+    setMode(mode);
   }
 });
