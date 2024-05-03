@@ -30,31 +30,31 @@
 
     <div>
 
-    
 
-<p>Cambiar contraseña </p>
-    <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-    <p>Nueva contraseña</p>
-    <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-    <p>Repetir la contraseña Nueva</p>
-    <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
+
+        <p>Cambiar contraseña </p>
+        <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+        <p>Nueva contraseña</p>
+        <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+        <p>Repetir la contraseña Nueva</p>
+        <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+        <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
 
     </div>
-    
+
     <div>
 
-    <title >Cambiar nombre user</title>
-    <p>Cambiar nombre de usuario</p>
-
-    
+        <title>Cambiar nombre user</title>
+        <p>Cambiar nombre de usuario</p>
 
 
 
-    <input type="text" id="nuevo_nombre" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-    <p>Nuevo Usuario</p>
-    <input type="text" id="nuevo_nombre" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario </button>
+
+
+        <input type="text" id="nuevo_nombre" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+        <p>Nuevo Usuario</p>
+        <input type="text" id="nuevo_nombre" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+        <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario </button>
 
 
     </div>
