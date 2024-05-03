@@ -1,4 +1,4 @@
-<?php require_once(__DIR__ . "/../services/imports.php") ?>
+<?php require_once (__DIR__ . "/../services/imports.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -15,77 +15,81 @@
 <body id="settings">
 
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php")
-    ?>
+    require_once (__DIR__ . "/../services/loader.php");
+    require_once (__DIR__ . "/../components/header.php")
+        ?>
 
-    <?php if (isset($_SESSION["usuario"])) : ?>
+    <?php if (isset($_SESSION["usuario"])): ?>
 
 
-    <div>
+        <div>
 
-        <p>Cambiar foto de perfil
-            <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
-        </p>
+            <p>Cambiar foto de perfil
+                <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
+            </p>
 
-    </div>
+        </div>
 
-    <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-        <h11>Configuración de contraseñas:</h11>
-        <button class="btn" onclick="my_modal_1.showModal()">Cambiar contraseña</button>
-        <dialog id="my_modal_1" class="modal">
-            <div class="modal-box">
-                <h3 class="font-bold text-lg">Cambiar contraseña</h3>
-                <p class="py-4"><input type="password" name="new"
-                        style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-                <p>Nueva contraseña</p>
-                <input type="password" name="nueva_passwd"
-                    style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-                <p>Repetir la contraseña Nueva</p>
-                <input type="password" name="nueva_contraseña"
-                    style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-                <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
-                </p>
-                <div class="modal-action">
-                    <form method="dialog">
+        <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
+            <h11>Configuración de contraseñas:</h11>
+            <button class="btn" onclick="my_modal_1.showModal()">Cambiar contraseña</button>
+            <dialog id="my_modal_1" class="modal">
+                <div class="modal-box flex flex-col">
+                    <h3 class="font-bold text-lg">Cambiar contraseña</h3>
+                    <label class="py-4">contraseña actual:
+                        <input type="password" name="new"
+                            style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+                    </label>
+                    <label>Nueva contraseña:
+                        <input type="password" name="nueva_passwd"
+                            style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+                    </label>
+                    <label>Repetir la contraseña nueva:
+                        <input type="password" name="nueva_contraseña"
+                            style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+                    </label>
+                    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
+                    </>
+                    <div class="modal-action">
+                        <form method="dialog">
 
-                        <button class="btn">Close</button>
-                    </form>
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </dialog>
-    </section>
+            </dialog>
+        </section>
 
 
 
-    <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-        <h11>Configuración de Usuario:</h11>
-        <button class="btn md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max"
-            onclick="my_modal_2.showModal()">Cambiar Nombre</button>
-        <dialog id="my_modal_2" class="modal">
-            <div class="modal-box">
-                <h3 class="font-bold text-lg">Cambiar nombre</h3>
-                <p class="py-4">
+        <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
+            <h11>Configuración de Usuario:</h11>
+            <button class="btn md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max"
+                onclick="my_modal_2.showModal()">Cambiar Nombre</button>
+            <dialog id="my_modal_2" class="modal">
+                <div class="modal-box">
+                    <h3 class="font-bold text-lg">Cambiar nombre</h3>
+                    <p class="py-4">
+                        <input type="text" name="nuevo_nombre"
+                            style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+                    <p>Nuevo Usuario</p>
                     <input type="text" name="nuevo_nombre"
                         style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-                <p>Nuevo Usuario</p>
-                <input type="text" name="nuevo_nombre"
-                    style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-                <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario </button>
-                </p>
-            </div>
-            <form method="dialog" class="modal-backdrop">
-                <button>close</button>
-            </form>
-        </dialog>
-    </section>
+                    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario </button>
+                    </p>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
+        </section>
 
 
 
 
-    <section>
-        <a href="/src/services/logout.php" class="btn"> Logout</a>
-    </section>
+        <section>
+            <a href="/src/services/logout.php" class="btn"> Logout</a>
+        </section>
 
     <?php endif; ?>
 
