@@ -9,11 +9,15 @@
     <title>Pokémon</title>
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo.webp">
 
 </head>
 
 <body>
-    <?php require_once(__DIR__ . "/../components/header.php") ?>
+    <?php
+    require_once(__DIR__ . "/../services/loader.php");
+    require_once(__DIR__ . "/../components/header.php");
+    ?>
     <?php
     // Obtener el nombre del Pokémon desde la URL
     $pokemon_name = $_GET['name'];

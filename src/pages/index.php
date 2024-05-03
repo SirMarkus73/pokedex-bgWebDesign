@@ -8,10 +8,14 @@
     <title>Index</title>
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo.webp">
 </head>
 
 <body>
-    <?php require(__DIR__ . "/../components/header.php") ?>
+    <?php
+    require_once(__DIR__ . "/../services/loader.php");
+    require(__DIR__ . "/../components/header.php")
+    ?>
 
     <main class="pt-5 flex flex-col m-8 gap-5">
         <h1 class="text-2xl text-center py-2"> 🔥 ¡Bienvenido a PokeFull! 🔥 </h1>

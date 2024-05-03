@@ -9,11 +9,14 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href="../css/style.css">
-
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo.webp">
 </head>
 
 <body>
-    <?php require_once(__DIR__ . "/../components/header.php") ?>
+    <?php
+    require_once(__DIR__ . "/../services/loader.php");
+    require_once(__DIR__ . "/../components/header.php")
+    ?>
     <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center my-5 justify-center">
         <section class="max-md:hidden">
             <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-64 xl:w-96"></a>

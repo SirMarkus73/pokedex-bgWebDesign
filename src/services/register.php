@@ -1,22 +1,26 @@
 <?php
-require_once("../services/post.php");
-require_once("../services/env.php");
+require_once(__DIR__ . "/methods.php");
+require_once(__DIR__ . "/env.php");
 
 $username = post("username", "");
-$email = post("email", "");
 $password = post("password", "");
 $hash_password = password_hash($password, PASSWORD_DEFAULT);
-
 
 $successful = post("successful", "false");
 
 if ($successful == "true") {
     $conn = mysqli_connect($_ENV["DB"], $_ENV["USER"], $_ENV["PASSWORD"], $_ENV["DBNAME"]);
-    $sql = "INSERT INTO usuarios (usuario, contraseña, email) VALUES ($username, $hash_password, $email);";
+    if (!$conn) {
+        die("Error de conexión: " . mysqli_connect_error());
+    }
 
-    $result = mysqli_query($conn, $sql);
+    $sql = "INSERT INTO usuarios (user, password) VALUES ('$username', '$hash_password')";
 
-    /* header("Location: ../pages/login.php"); */
+    if (mysqli_query($conn, $sql)) {
+        header("Location: ../pages/login.php");
+    } else {
+        echo "Error al insertar datos: " . mysqli_error($conn);
+    }
 
-    echo "Funciona";
+    mysqli_close($conn);
 }
