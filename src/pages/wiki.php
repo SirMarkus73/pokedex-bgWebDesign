@@ -1,5 +1,5 @@
 <?php
-require_once("../services/imports.php");
+require_once(__DIR__ . "/../services/imports.php");
 ?>
 
 <!DOCTYPE html>
@@ -15,10 +15,10 @@ require_once("../services/imports.php");
 </head>
 
 <body>
-    <?php require(__DIR__ . "/../components/header.php") ?>
+    <?php require_once(__DIR__ . "/../components/header.php") ?>
 
     <main class="flex flex-col gap-3">
-        <?php require(__DIR__ . "/../components/pokedex/searchbar.php") ?>
+        <?php require_once(__DIR__ . "/../components/pokedex/searchbar.php") ?>
         <?php require_once(__DIR__ . "/../components/pokedex/pokemons_searcher.php") ?>
     </main>
 </body>
