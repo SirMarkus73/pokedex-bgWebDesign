@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+html {
   @apply text-black dark:text-white bg-slate-200 dark:bg-neutral-800;
 }
 
