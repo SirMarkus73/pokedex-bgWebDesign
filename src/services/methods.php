@@ -7,3 +7,12 @@ function post($param, $default)
         return $default;
     }
 }
+
+function get($param, $default)
+{
+    if (isset($_GET[$param])) {
+        return $_GET[$param];
+    } else {
+        return $default;
+    }
+}

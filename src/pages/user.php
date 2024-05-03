@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body id="settings">
     <?php require("../components/header.php") ?>
     <div class="form-control" class="row-span-7">
 
@@ -30,7 +30,7 @@
 
     <div>
 
-    <p>Cambiar contraseña
+    <p>Cambiar contraseña </p>
 
     <?php
 
@@ -50,9 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
     <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
+    <p>Nueva contraseña</p>
+    <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
+    <p>Repetir la contraseña</p>
+    <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
     <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
 
-    </p>
+   
     </div>
 
 
@@ -60,5 +64,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
-
-<script src="../services/darkMode.js"></script>

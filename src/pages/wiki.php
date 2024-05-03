@@ -1,6 +1,5 @@
 <?php
 require_once("../services/imports.php");
-require_once("../components/pokemons.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +15,11 @@ require_once("../components/pokemons.php");
 </head>
 
 <body>
-    <?php require("../components/header.php") ?>
+    <?php require(__DIR__ . "/../components/header.php") ?>
 
-    <main class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 justify-center w-max mx-auto gap-20 items-center">
-        <?php show_pokemons(10, 0) ?>
+    <main class="flex flex-col gap-3">
+        <?php require(__DIR__ . "/../components/pokedex/searchbar.php") ?>
+        <?php require_once(__DIR__ . "/../components/pokedex/pokemons_searcher.php") ?>
     </main>
 </body>
 

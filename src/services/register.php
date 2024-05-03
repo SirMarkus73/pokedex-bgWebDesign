@@ -1,5 +1,5 @@
 <?php
-require_once("../services/post.php");
+require_once("../services/methods.php");
 require_once("../services/env.php");
 
 $username = post("username", "prueba");
