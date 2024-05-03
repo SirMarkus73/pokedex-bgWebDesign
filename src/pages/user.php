@@ -30,7 +30,6 @@
 
     <div>
 
-    
 
 <p>Cambiar contraseña </p>
     <input type="password"  name="new" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
@@ -41,13 +40,11 @@
     <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
 
     </div>
-    
+
     <div>
 
-    <title >Cambiar nombre user</title>
-    <p>Cambiar nombre de usuario</p>
-
-    
+        <title>Cambiar nombre user</title>
+        <p>Cambiar nombre de usuario</p>
 
 
 
@@ -59,6 +56,7 @@
 
     </div>
 
+    <p>En caso de que hayas perdido la contraseña contacta con nosotros para que podamos devolvértela</p>
     </form>
 </body>
 
