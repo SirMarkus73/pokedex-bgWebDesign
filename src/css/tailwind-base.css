@@ -7,5 +7,5 @@ html {
 }
 
 body {
-  @apply text-black dark:text-white bg-slate-200 dark:bg-neutral-800 h-screen w-screen;
+  @apply text-black dark:text-white bg-slate-200 dark:bg-neutral-800;
 }
