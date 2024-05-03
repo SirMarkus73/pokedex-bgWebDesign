@@ -12,7 +12,7 @@
 </head>
 
 <body id="settings">
-    <?php require_once(__DIR__ . "/../components/header.php") ?>
+    <?php require_once("../components/header.php") ?>
     <div class="form-control" class="row-span-7">
 
         <p>Light Mode <input type="checkbox" class="toggle dark:[--tglbg:fuchsia] dark:bg-neutral-200 dark:hover:bg-fuchsia-600 dark:border-neutral-800" style="color: white" id="toggle-dark-mode" checked />
@@ -31,13 +31,13 @@
     <div>
 
 
-        <p>Cambiar contraseña </p>
-        <input type="password" name="new" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-        <p>Nueva contraseña</p>
-        <input type="password" name="nueva_passwd" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-        <p>Repetir la contraseña Nueva</p>
-        <input type="password" name="nueva_contraseña" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-        <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
+<p>Cambiar contraseña </p>
+    <input type="password"  name="new" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <p>Nueva contraseña</p>
+    <input type="password"  name="nueva_passwd" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <p>Repetir la contraseña Nueva</p>
+    <input type="password"  name="nueva_contraseña" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
 
     </div>
 
@@ -48,15 +48,18 @@
 
 
 
-        <input type="text" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-        <p>Nuevo Usuario</p>
-        <input type="text" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-        <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario </button>
+    <input type="text"  name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <p>Nuevo Usuario</p>
+    <input type="text"  name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario </button>
 
 
     </div>
 
-    <p>En caso de que hayas perdido la contraseña contacta con nosotros para que podamos devolvértela</p>
+    <div>
+    <a href="/src/services/logout.php"> Logout</a>
+    </div>
+
     </form>
 </body>
 
