@@ -31,8 +31,7 @@ if ($successful == "true") {
 if ($contrasenya_correcta) {
     header("Location: ../pages/index.php");
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    // header("Location: ../pages/login_fallido.php");
+    header("Location: ../pages/error.php?title=Login Fallido&message=Usuario o contrasenya incorrecta&href=login.php");
 }
 
 exit();

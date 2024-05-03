@@ -19,7 +19,7 @@ if ($successful == "true") {
     if (mysqli_query($conn, $sql)) {
         header("Location: ../pages/login.php");
     } else {
-        echo "Error al insertar datos: " . mysqli_error($conn);
+        header("Location: ../pages/error.php?title=Registro Fallido&message=El registro ha fallado, por favor inténtelo mas tarde&href=register.php");
     }
 
     mysqli_close($conn);
