@@ -117,7 +117,7 @@ function show_pokemons(int $limit, int $offset)
     }
 }
 ?>
-<section class="gap-3 mx-auto my-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-center items-center">
+<section class="gap-3 mx-auto my-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 content-center">
     <?php show_pokemons($limit, $offset) ?>
 </section>
 
