@@ -13,7 +13,7 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
         <div class="card-body">
             <h2 class="card-title">
                 <?= $name ?>
-                <div class="badge badge-secondary"><?= $ability ?></div>
+                <div class="badge bg-white dark:bg-fuchsia-500 text-black dark:text-white "><?= $ability ?></div>
             </h2>
             <div class="stats bg-red-500 dark:bg-fuchsia-500 text-white">
                 <?php foreach ($stats as $stat) { ?>
