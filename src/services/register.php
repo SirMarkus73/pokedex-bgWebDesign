@@ -17,7 +17,7 @@ if ($successful == "true") {
     $sql = "INSERT INTO usuarios (user, password) VALUES ('$username', '$hash_password')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "Funciona";
+        header("Location: ../pages/login.php");
     } else {
         echo "Error al insertar datos: " . mysqli_error($conn);
     }
