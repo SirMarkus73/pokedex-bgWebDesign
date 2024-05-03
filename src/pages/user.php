@@ -13,10 +13,10 @@
 
 <body class="text-black bg-slate-200 dark:bg-neutral-800 dark:text-white">
     <?php require("../components/header.php") ?>
-    <div class="form-control">
+    <div class="form-control" class="row-span-7">
 
-        <input type="checkbox" class="toggle [--tglbg:fuchsia] bg-neutral-800 hover:bg-fuchsia-600 border-neutral-800" checked />
-
+       <p>Dark Mode <input type="checkbox" class="toggle [--tglbg:fuchsia] bg-neutral-800 hover:bg-fuchsia-600 border-neutral-800" checked />
+</p>
     </div>
 
     </form>
