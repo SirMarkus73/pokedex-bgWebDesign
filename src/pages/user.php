@@ -28,39 +28,55 @@
 
     </div>
 
-    <div>
-
-
-<p>Cambiar contraseña </p>
-    <input type="password"  name="new" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
+    <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
+    <button class="btn" onclick="my_modal_1.showModal()">Cambiar contraseña</button>
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Cambiar contraseña</h3>
+    <p class="py-4"><input type="password"  name="new" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
     <p>Nueva contraseña</p>
     <input type="password"  name="nueva_passwd" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
     <p>Repetir la contraseña Nueva</p>
     <input type="password"  name="nueva_contraseña" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
-    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button>
-
+    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña </button></p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
     </div>
+  </div>
+</dialog>
+</section>
+   
 
-    <div>
-
-        <title>Cambiar nombre user</title>
-        <p>Cambiar nombre de usuario</p>
-
-
-
+    
+<section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
+<button class="btn" onclick="my_modal_2.showModal()">Cambiar Nombre</button>
+<dialog id="my_modal_2" class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Cambiar nombre</h3>
+    <p class="py-4">
     <input type="text"  name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
     <p>Nuevo Usuario</p>
     <input type="text"  name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
     <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario </button>
+</p>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+</section>
+    
 
-
-    </div>
+    
 
     <div>
     <a href="/src/services/logout.php"> Logout</a>
     </div>
 
-    </form>
+</form>
 </body>
 
 </html>
