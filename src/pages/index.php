@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php require(__DIR__ . "/../components/header.php") ?>
+    <?php require_once(__DIR__ . "/../components/header.php") ?>
 
     <main class="pt-5">
         <h1 class="text-4xl text-center">PokeFull</h1>
