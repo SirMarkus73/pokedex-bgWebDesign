@@ -15,9 +15,9 @@
 <body id="settings">
 
     <?php
-  require_once(__DIR__ . "/../services/loader.php");
-  require_once("../components/header.php")
-  ?>
+    require_once(__DIR__ . "/../services/loader.php");
+    require_once("../components/header.php")
+    ?>
 
     <?php if (isset($_SESSION["usuario"])) : ?>
 
@@ -31,7 +31,7 @@
     </div>
 
     <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-        <h11>Configuracion de contraseñas:</h11>
+        <h11>Configuración de contraseñas:</h11>
         <button class="btn" onclick="my_modal_1.showModal()">Cambiar contraseña</button>
         <dialog id="my_modal_1" class="modal">
             <div class="modal-box">
@@ -59,7 +59,7 @@
 
 
     <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-        <h11>Configuracion de Usuario:</h11>
+        <h11>Configuración de Usuario:</h11>
         <button class="btn md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max"
             onclick="my_modal_2.showModal()">Cambiar Nombre</button>
         <dialog id="my_modal_2" class="modal">
