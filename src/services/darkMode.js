@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
 
   setMode(mode);
 
-  async function setMode(type) {
+  function setMode(type) {
     /** Funcion que cambia al modo oscuro */
     if (type === "dark") {
       document.body.classList.add("dark");
