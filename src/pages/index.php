@@ -17,7 +17,7 @@
     require(__DIR__ . "/../components/header.php");
     ?>
 
-    <main class="pt-5 flex flex-col m-8 gap-5">
+    <main class="pt-5 flex flex-col gap-5">
         <h1 class="text-2xl text-center py-2"> 🔥 ¡Bienvenido a PokeFull! 🔥 </h1>
         <p>
             ¿Eres un verdadero entrenador Pokémon? Entonces estás en el lugar correcto. En PokeFull, te ofrecemos una experiencia única para que puedas sumergirte en el emocionante mundo de los Pokémon. ¿Qué puedes hacer aquí? ¡Sigue leyendo!
