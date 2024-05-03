@@ -2199,6 +2199,10 @@ html {
   grid-row: span 7 / span 7;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2225,10 +2229,6 @@ html {
 
 .grid {
   display: grid;
-}
-
-.list-item {
-  display: list-item;
 }
 
 .hidden {
@@ -2287,6 +2287,10 @@ html {
   max-width: 20rem;
 }
 
+.list-inside {
+  list-style-position: inside;
+}
+
 .list-disc {
   list-style-type: disc;
 }
@@ -2333,6 +2337,10 @@ html {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .rounded-box {
@@ -2502,11 +2510,6 @@ html {
   line-height: 2.25rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2550,6 +2553,8 @@ html {
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
