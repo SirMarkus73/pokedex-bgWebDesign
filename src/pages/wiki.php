@@ -11,21 +11,11 @@
 </head>
 
 <body>
-    <?php require(__DIR__ . "/../components/header.php") ?>
-    <h1 class="title">Wiki de pokemon</h1>
-    <p class="text"> Bienvenidos a nuestra PokeWiki, donde podras encontrar la informacion de tus pokemones favoritos y saber informacion sobre que es pokemon . Esperamos con ansias que os guste </p>
     <?php
-    // Array con los nombres de algunos Pokémon (solo para ejemplo)
-    $pokemons = array("Pikachu", "Charmander", "Bulbasaur", "Squirtle");
-
-    // Recorrer el array e imprimir enlaces a las páginas de cada Pokémon
-    foreach ($pokemons as $pokemon) {
-        echo "<li><a href='pokemon.php?name=" . urlencode($pokemon) . "'>$pokemon</a></li>";
-    }
+    require_once(__DIR__ . "/../components/header.php");
+    require_once(__DIR__ . "/../components/pokedex/searchbar.php");
+    require_once(__DIR__ . "/../components/pokedex/pokemons_searcher.php");
     ?>
-    </ul>
-
-
 </body>
 
 </html>
