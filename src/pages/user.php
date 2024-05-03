@@ -29,6 +29,7 @@
     </div>
 
     <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
+        <h11>Configuracion de contraseñas:</h11>
     <button class="btn" onclick="my_modal_1.showModal()">Cambiar contraseña</button>
 <dialog id="my_modal_1" class="modal">
   <div class="modal-box">
@@ -52,7 +53,8 @@
 
     
 <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-<button class="btn" onclick="my_modal_2.showModal()">Cambiar Nombre</button>
+<h11>Configuracion de Usuario:</h11>
+<button class="btn md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max" onclick="my_modal_2.showModal()">Cambiar Nombre</button>
 <dialog id="my_modal_2" class="modal">
   <div class="modal-box">
     <h3 class="font-bold text-lg">Cambiar nombre</h3>
