@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="text-black bg-slate-200 dark:bg-neutral-800 dark:text-white">
     <?php require("../components/header.php") ?>
     <div class="form-control" class="row-span-7">
 
-        <p>Dark Mode <input type="checkbox" class="toggle [--tglbg:fuchsia] bg-neutral-800 hover:bg-fuchsia-600 border-neutral-800" id="toggle-dark-mode" checked />
+        <p>Dark Mode <input type="checkbox" class="toggle dark:[--tglbg:fuchsia] dark:bg-neutral-200 dark:hover:bg-fuchsia-600 dark:border-neutral-800" style="color: white" id="toggle-dark-mode" checked />
         </p>
     </div>
 
