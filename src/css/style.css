@@ -2344,8 +2344,8 @@ html {
   grid-row: span 7 / span 7;
 }
 
-.m-8 {
-  margin: 2rem;
+.m-2 {
+  margin: 0.5rem;
 }
 
 .mx-auto {
@@ -2629,6 +2629,10 @@ html {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .py-2 {

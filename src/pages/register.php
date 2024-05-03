@@ -18,7 +18,7 @@
     ?>
 
 
-    <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center my-5 justify-center">
+    <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center p-5 justify-center">
         <section class="max-md:hidden">
             <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
         </section>
