@@ -3,7 +3,6 @@ require_once(__DIR__ . "/methods.php");
 require_once(__DIR__ . "/env.php");
 
 $username = post("username", "");
-$email = post("email", "");
 $password = post("password", "");
 $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -15,7 +14,7 @@ if ($successful == "true") {
         die("Error de conexión: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO usuarios (user, password, creation_date) VALUES ('$username', '$hash_password', '$email')";
+    $sql = "INSERT INTO usuarios (user, password, creation_date) VALUES ('$username', '$hash_password')";
 
     if (mysqli_query($conn, $sql)) {
         echo "Funciona";
