@@ -18,11 +18,19 @@
     require_once (__DIR__ . "/../services/loader.php");
     require_once (__DIR__ . "/../components/header.php")
         ?>
-    <main>
+    <main class="p-6 flex flex-col gap-3">
+
+        <h1 class="text-3xl font-bold text-center">Configuración</h1>
+
         <?php if (isset($_SESSION["usuario"])): ?>
 
-            <section>
-                <article>
+            <section class="border border-red-600 dark:border-fuchsia-700 py-3">
+
+                <h2 class="text-xl font-bold text-center">
+                    Configuración de usuario
+                </h2>
+
+                <article class="p-10">
 
                     <label>Cambiar foto de perfil
                         <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
@@ -30,9 +38,9 @@
 
                 </article>
 
-                <article class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
+                <article class="p-10">
                     <h11>Configuración de contraseñas:</h11>
-                    <button class="btn" onclick="my_modal_1.showModal()">Cambiar contraseña</button>
+                    <button class="btn" onclick="my_modal_1.showModal()">cambiar</button>
                     <dialog id="my_modal_1" class="modal">
                         <div class="modal-box flex flex-col">
                             <h3 class="font-bold text-lg">Cambiar contraseña</h3>
@@ -64,50 +72,49 @@
                     </dialog>
                 </article>
 
-
-
-                <article class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-                    <h11>Configuración de Usuario:</h11>
-                    <button class="btn md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max"
-                        onclick="my_modal_2.showModal()">Cambiar Nombre</button>
+                <article class="p-10">
+                    <h11>Cambiar nombre de usuario</h11>
+                    <button class="btn" onclick="my_modal_2.showModal()">cambiar</button>
                     <dialog id="my_modal_2" class="modal">
-                        <div class="modal-box">
-                            <h3 class="font-bold text-lg">Cambiar nombre</h3>
-                            <p class="py-4">
-                                <input type="text" name="nuevo_nombre"
+                        <div class="modal-box flex flex-col">
+                            <h3 class="font-bold text-lg">Cambiar nombre de usuario</h3>
+
+                            <label>Nuevo usuario:
+                                <input type="password" name="nueva_contraseña"
                                     style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;"
                                     required>
-                            <p>Nuevo Usuario</p>
-                            <input type="text" name="nuevo_nombre"
-                                style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;"
-                                required>
-                            <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar Usuario
+                            </label>
+                            <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña
                             </button>
-                            </p>
+                            </>
+                            <div class="modal-action">
+                                <form method="dialog">
+
+                                    <button class="btn">Close</button>
+                                </form>
+                            </div>
                         </div>
-                        <form method="dialog" class="modal-backdrop">
-                            <button>close</button>
-                        </form>
                     </dialog>
                 </article>
 
-
-
-
-                <article>
-                    <a href="/src/services/logout.php" class="btn"> Logout</a>
+                <article class="w-full text-center">
+                    <a href="/src/services/logout.php" class="btn w-2/3"> Logout</a>
                 </article>
             </section>
         <?php endif; ?>
 
+        <article class="border border-red-600 dark:border-fuchsia-700 py-3">
 
-        <section class="flex flex-row">
-            <p> Light Mode </p>
-            <input type="checkbox"
-                class="toggle dark:[--tglbg:fuchsia] dark:bg-neutral-200 dark:hover:bg-fuchsia-600 dark:border-neutral-800"
-                style="color: white" id="toggle-dark-mode" />
-            <p> Dark Mode</p>
-        </section>
+            <h2 class="text-xl font-bold text-center">Configuración la pagina</h2>
+
+            <section class="flex flex-row p-10">
+                <p> Light Mode </p>
+                <input type="checkbox"
+                    class="toggle dark:[--tglbg:fuchsia] dark:bg-neutral-200 dark:hover:bg-fuchsia-600 dark:border-neutral-800"
+                    style="color: white" id="toggle-dark-mode" />
+                <p> Dark Mode</p>
+            </section>
+        </article>
 
 
 
