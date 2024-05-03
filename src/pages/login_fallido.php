@@ -1,7 +1,7 @@
 <?php require_once("../services/imports.php") ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
