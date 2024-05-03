@@ -2255,3 +2255,7 @@ body:where(.dark, .dark *) {
   --tw-text-opacity: 1;
   color: rgb(168 85 247 / var(--tw-text-opacity));
 }
+
+.dark\:\[--tglbg\:fuchsia\]:where(.dark, .dark *) {
+  --tglbg: fuchsia;
+}
