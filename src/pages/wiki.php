@@ -13,6 +13,7 @@
 
 <body>
     <?php
+    require_once(__DIR__ . "/../services/loader.php");
     require_once(__DIR__ . "/../components/header.php");
     require_once(__DIR__ . "/../components/pokedex/searchbar.php");
     require_once(__DIR__ . "/../components/pokedex/pokemons_searcher.php");

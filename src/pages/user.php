@@ -13,7 +13,11 @@
 </head>
 
 <body id="settings">
-  <?php require_once("../components/header.php") ?>
+
+  <?php
+  require_once(__DIR__ . "/../services/loader.php");
+  require_once("../components/header.php")
+  ?>
   <div class="form-control" class="row-span-7">
 
     <p>Light Mode <input type="checkbox" class="toggle dark:[--tglbg:fuchsia] dark:bg-neutral-200 dark:hover:bg-fuchsia-600 dark:border-neutral-800" style="color: white" id="toggle-dark-mode" checked />

@@ -12,7 +12,10 @@
 </head>
 
 <body>
-    <?php require_once(__DIR__ . "/../components/header.php") ?>
+    <?php
+    require_once(__DIR__ . "/../services/loader.php");
+    require_once(__DIR__ . "/../components/header.php")
+    ?>
 
 
     <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center my-5 justify-center">
