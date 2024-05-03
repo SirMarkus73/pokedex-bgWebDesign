@@ -1,4 +1,10 @@
-const darkModeSelector = document.getElementById("toggle-dark-mode");
+window.addEventListener("load", () => {
+  const darkModeSelector = document.getElementById("toggle-dark-mode");
+
+  if (document.querySelector("body").id == "settings") {
+    darkModeSelector.addEventListener("change", toggleDarkMode);
+  }
+});
 
 // Comprobamos si ya hay un modo guardado
 if (localStorage.getItem("mode") === null) {
@@ -9,8 +15,6 @@ if (localStorage.getItem("mode") === null) {
 let mode = localStorage.getItem("mode");
 
 setMode(mode);
-
-darkModeSelector.addEventListener("change", toggleDarkMode);
 
 function setMode(type) {
   /** Funcion que cambia al modo oscuro */

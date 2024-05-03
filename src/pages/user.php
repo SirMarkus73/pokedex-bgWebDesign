@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="text-black bg-slate-200 dark:bg-neutral-800 dark:text-white">
+<body class="text-black bg-slate-200 dark:bg-neutral-800 dark:text-white" id="settings">
     <?php require("../components/header.php") ?>
     <div class="form-control" class="row-span-7">
 
@@ -23,5 +23,3 @@
 </body>
 
 </html>
-
-<script src="../services/darkMode.js"></script>
