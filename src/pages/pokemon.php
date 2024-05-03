@@ -1,4 +1,4 @@
-<?php require_once("../services/imports.php") ?>
+<?php require_once(__DIR__ . "/../services/imports.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php require("../components/header.php") ?>
+    <?php require_once(__DIR__ . "/../components/header.php") ?>
     <?php
     // Obtener el nombre del Pokémon desde la URL
     $pokemon_name = $_GET['name'];

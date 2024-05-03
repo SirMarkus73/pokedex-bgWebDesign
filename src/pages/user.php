@@ -1,4 +1,4 @@
-<?php require_once("../services/imports.php") ?>
+<?php require_once(__DIR__ . "/../services/imports.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -12,43 +12,27 @@
 </head>
 
 <body id="settings">
-    <?php require("../components/header.php") ?>
+    <?php require_once("../components/header.php") ?>
     <div class="form-control" class="row-span-7">
 
         <p>Light Mode <input type="checkbox" class="toggle dark:[--tglbg:fuchsia] dark:bg-neutral-200 dark:hover:bg-fuchsia-600 dark:border-neutral-800" style="color: white" id="toggle-dark-mode" checked />
-        Dark Mode</p>
+            Dark Mode</p>
 
     </div>
 
     <div>
+
+        <p>Cambiar foto de perfil
+            <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
+        </p>
+
+    </div>
+
+    <div>
+
     
-    <p>Cambiar foto de perfil
-    <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
-    </p> 
 
-    </div>
-
-    <div>
-
-    <p>Cambiar contraseña </p>
-
-    <?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nueva_contrasena = $_POST['nueva_contrasena'];
-    $usuario_id = $_SESSION['usuario_id']; 
-  
-    $sql = "UPDATE user SET 'password' = ? WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", password_hash($nueva_contrasena, PASSWORD_DEFAULT), $usuario_id);
-
-    if ($stmt->execute()) {
-        echo "Contraseña actualizada con éxito.";
-    } else {
-        echo "Error al actualizar la contraseña.";
-    }
-}
-?>
+<p>Cambiar contraseña </p>
     <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
     <p>Nueva contraseña</p>
     <input type="password" id="nueva_contrasena" name="nueva_contrasena" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
@@ -63,23 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title >Cambiar nombre user</title>
     <p>Cambiar nombre de usuario</p>
 
-    <?php
+    
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nuevo_nombre = $_POST['nuevo_nombre'];
-    $usuario_id = $_SESSION['usuario_id']; 
 
-    $sql = "UPDATE usuarios SET nombre = ? WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $nuevo_nombre, $usuario_id);
-
-    if ($stmt->execute()) {
-        echo "Nombre actualizado con éxito.";
-    } else {
-        echo "Error al actualizar el nombre.";
-    }
-}
-?>
 
     <input type="text" id="nuevo_nombre" name="nuevo_nombre" style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;" required>
     <p>Nuevo Usuario</p>
