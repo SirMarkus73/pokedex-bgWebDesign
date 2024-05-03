@@ -2386,6 +2386,10 @@ html {
   grid-row: span 7 / span 7;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2470,6 +2474,10 @@ html {
   max-width: 20rem;
 }
 
+.list-inside {
+  list-style-position: inside;
+}
+
 .list-disc {
   list-style-type: disc;
 }
@@ -2516,6 +2524,10 @@ html {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .rounded-box {
@@ -2742,6 +2754,8 @@ html {
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
