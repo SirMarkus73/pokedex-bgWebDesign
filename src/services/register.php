@@ -15,7 +15,7 @@ if ($successful == "true") {
         die("Error de conexión: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO usuarios (usuario, contraseña, email) VALUES ('$username', '$hash_password', '$email')";
+    $sql = "INSERT INTO usuarios (user, password, creation_date) VALUES ('$username', '$hash_password', '$email')";
 
     if (mysqli_query($conn, $sql)) {
         echo "Funciona";
