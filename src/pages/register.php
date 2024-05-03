@@ -38,7 +38,7 @@
 
             </form>
 
-            <hr class="border-stone-50 border w-1/2 my-5">
+            <hr class="border border-black dark:border-stone-50  w-1/2 my-5">
 
             <a href="login.php">Iniciar Sesión</a>
         </section>
