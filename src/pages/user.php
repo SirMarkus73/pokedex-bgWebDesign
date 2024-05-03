@@ -15,11 +15,18 @@
     <?php require("../components/header.php") ?>
     <div class="form-control" class="row-span-7">
 
+<<<<<<< HEAD
        <p>Dark Mode | Light Mode <input type="checkbox" class="toggle   [--tglbg:fuchsia] bg-neutral-800 hover:bg-fuchsia-600 border-neutral-800" checked />
 </p>
+=======
+        <p>Dark Mode <input type="checkbox" class="toggle [--tglbg:fuchsia] bg-neutral-800 hover:bg-fuchsia-600 border-neutral-800" id="toggle-dark-mode" checked />
+        </p>
+>>>>>>> e2626a7c40f054c879418e15c8b084e0f9fe5654
     </div>
 
     </form>
 </body>
 
 </html>
+
+<script src="../services/darkMode.js"></script>
