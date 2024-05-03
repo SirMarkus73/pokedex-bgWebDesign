@@ -16,6 +16,8 @@ if ($successful == "true") {
 
     $result = mysqli_query($conn, $sql);
 
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+
     /* header("Location: ../pages/login.php"); */
 
     echo "Funciona";
