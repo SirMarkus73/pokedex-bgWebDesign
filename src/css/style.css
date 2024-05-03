@@ -2720,6 +2720,8 @@ html:where(.dark, .dark *) {
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
