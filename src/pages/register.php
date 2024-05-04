@@ -1,4 +1,4 @@
-<?php require_once(__DIR__ . "/../services/imports.php") ?>
+<?php require_once (__DIR__ . "/../services/imports.php") ?>
 
 <html lang="es">
 
@@ -13,9 +13,9 @@
 
 <body>
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php")
-    ?>
+    require_once (__DIR__ . "/../services/loader.php");
+    require_once (__DIR__ . "/../components/header.php")
+        ?>
 
 
     <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center p-5 justify-center">
@@ -28,14 +28,21 @@
                 <legend class="text-2xl">Registrarse</legend>
 
                 <label for="username">Usuario:
-                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required class="dark:bg-neutral-900 input input-bordered" maxlength="20">
+                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required
+                        autocomplete="username" class="dark:bg-neutral-900 input input-bordered" maxlength="20">
                 </label>
 
                 <label for="password">Contraseña:
-                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required class="dark:bg-neutral-900 input input-bordered">
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required
+                        autocomplete="new-password" class="dark:bg-neutral-900 input input-bordered">
                 </label>
 
-                <input type="hidden" name="successful" value="true">
+                <label for="password-repeat">Repetir contraseña:
+                    <input type="password" id="password-repeat" name="password-repeat"
+                        placeholder="Ingresa tu contraseña" required autocomplete="new-password"
+                        class="dark:bg-neutral-900 input input-bordered">
+                </label>
+
                 <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Registrarse</button>
 
             </form>
