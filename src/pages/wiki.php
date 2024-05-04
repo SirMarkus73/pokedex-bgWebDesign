@@ -1,4 +1,4 @@
-<?php require_once(__DIR__ . "/../services/imports.php") ?>
+<?php require_once (__DIR__ . "/../services/imports.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,11 +13,15 @@
 
 <body>
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php");
-    require_once(__DIR__ . "/../components/pokedex/searchbar.php");
-    require_once(__DIR__ . "/../components/pokedex/pokemons_searcher.php");
+    require_once (__DIR__ . "/../services/loader.php");
+    require_once (__DIR__ . "/../components/header.php");
     ?>
+    <main>
+        <?php
+        require_once (__DIR__ . "/../components/pokedex/searchbar.php");
+        require_once (__DIR__ . "/../components/pokedex/pokemons_searcher.php");
+        ?>
+    </main>
 </body>
 
 </html>
