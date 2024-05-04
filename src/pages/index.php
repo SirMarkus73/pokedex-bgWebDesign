@@ -14,7 +14,7 @@
 <body>
     <?php
     require_once (__DIR__ . "/../services/loader.php");
-    require (__DIR__ . "/../components/header.php");
+    require_once (__DIR__ . "/../components/header.php");
     ?>
 
     <main class="p-5 flex flex-col gap-5">
