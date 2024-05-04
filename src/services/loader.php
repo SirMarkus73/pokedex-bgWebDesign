@@ -15,8 +15,6 @@
         loader.classList.add("absolute");
 
         main.hidden = true;
-
-
     })
 
     window.addEventListener("load", () => {
