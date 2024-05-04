@@ -1,5 +1,5 @@
-<?php require_once(__DIR__ . "/../services/imports.php") ?>
-<?php require_once(__DIR__ . "/../services/methods.php") ?>
+<?php require_once (__DIR__ . "/../services/imports.php") ?>
+<?php require_once (__DIR__ . "/../services/methods.php") ?>
 
 <?php
 
@@ -23,13 +23,16 @@ $href = get("href", "index.php");
 
 <body class="text-center">
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php")
-    ?>
-    <h1 class="text-error text-center my-3 text-3xl "><?= $title ?></h1>
-    <p class="text-error text-center my-3 text-lg"><?= $message ?></p>
-    <p class="text-error text-center my-3 text-lg"><a href="<?= $href ?>">Volver a intentarlo</a">
-    </p>
+    require_once (__DIR__ . "/../services/loader.php");
+    require_once (__DIR__ . "/../components/header.php")
+        ?>
+    <main>
+        <h1 class="text-error text-center my-3 text-3xl "><?= $title ?></h1>
+        <p class="text-error text-center my-3 text-lg"><?= $message ?></p>
+        <p class="text-error text-center my-3 text-lg">
+            <a href="<?= $href ?>">Volver a intentarlo</a">
+        </p>
+    </main>
 </body>
 
 </html>
