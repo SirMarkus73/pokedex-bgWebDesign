@@ -2092,16 +2092,6 @@ html {
   animation: modal-pop 0.2s ease-out;
 }
 
-.modal-backdrop {
-  z-index: -1;
-  grid-column-start: 1;
-  grid-row-start: 1;
-  display: grid;
-  align-self: stretch;
-  justify-self: stretch;
-  color: transparent;
-}
-
 .modal-open .modal-box,
 .modal-toggle:checked + .modal .modal-box,
 .modal:target .modal-box,
@@ -2326,10 +2316,6 @@ html {
   z-index: 1;
 }
 
-.row-span-7 {
-  grid-row: span 7 / span 7;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2380,6 +2366,10 @@ html {
   width: 50%;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-24 {
   width: 6rem;
 }
@@ -2408,10 +2398,6 @@ html {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
 }
 
 .max-w-xs {
@@ -2630,18 +2616,14 @@ html {
   padding-bottom: 0.5rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.pt-5 {
-  padding-top: 1.25rem;
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .text-center {
@@ -2670,10 +2652,6 @@ html {
 
 .font-bold {
   font-weight: 700;
-}
-
-.font-black {
-  font-weight: 900;
 }
 
 .text-black {
