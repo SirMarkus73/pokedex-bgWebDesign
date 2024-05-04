@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply text-black dark:text-white bg-slate-200 dark:bg-neutral-800;
-}
+@layer base {
+  html {
+    @apply text-black dark:text-white bg-slate-200 dark:bg-neutral-800;
+  }
 
-body {
-  @apply text-black dark:text-white bg-slate-200 dark:bg-neutral-800;
+  body {
+    @apply text-black dark:text-white bg-slate-200 dark:bg-neutral-800;
+  }
 }

@@ -9,7 +9,7 @@ module.exports = {
 
   daisyui: {
     themes: false,
-    base: true,
+    base: false,
     styled: true,
   },
 };
