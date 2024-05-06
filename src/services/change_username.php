@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . "/methods.php");
 require_once(__DIR__ . "/env.php");
+require_once(__DIR__ . "/../services/protected_page.php");
 session_start();
 
 $username = post("username", " ");
