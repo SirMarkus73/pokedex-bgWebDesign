@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__ . "/../services/protected_page.php");
-session_start();
 
+session_start();
+require_once (__DIR__ . "/../services/protected_page.php");
 session_unset();
 
 session_destroy();
