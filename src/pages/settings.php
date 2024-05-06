@@ -1,4 +1,8 @@
-<?php require_once(__DIR__ . "/../services/imports.php") ?>
+<?php
+require_once(__DIR__ . "/../services/imports.php");
+require_once(__DIR__ . "/../services/protected_page.php");
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
