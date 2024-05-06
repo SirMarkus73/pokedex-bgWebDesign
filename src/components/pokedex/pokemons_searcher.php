@@ -3,7 +3,16 @@
 require_once(__DIR__ . "/../../services/methods.php");
 
 $limit = get("limit", 8);
+
+if ($limit < 1) {
+    $limit = 1;
+}
+
 $offset = get("offset", 0);
+
+if ($offset < 0) {
+    $offset = 0;
+}
 
 function show_pokemon_card($name, $image_url, $ability, $stats, $types)
 { ?>
