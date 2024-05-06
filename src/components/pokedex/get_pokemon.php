@@ -50,4 +50,10 @@ if ($pokemon) :
             </div>
         </div>
     </article>
-<?php endif; ?>
+
+<?php else :
+
+    header("Location: ../pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=../pages/wiki.php");
+
+endif;
+?>
