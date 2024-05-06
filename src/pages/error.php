@@ -18,7 +18,7 @@
     require_once(__DIR__ . "/../components/header.php")
     ?>
 
-    <main>
+    <main class="flex flex-col items-center justify-center h-3/4 gap-5">
         <?php require_once(__DIR__ . "/../components/error/content.php") ?>
     </main>
 </body>
