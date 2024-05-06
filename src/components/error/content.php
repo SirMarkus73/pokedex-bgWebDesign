@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . "/../services/methods.php");
+require_once(__DIR__ . "/../../services/methods.php");
 
 $title = get("title", "ERROR");
 $message = get("message", "ERROR");
