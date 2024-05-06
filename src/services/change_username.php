@@ -6,12 +6,7 @@ session_start();
 $username = post("username", " ");
 $new_username = post("new-username", ""); // Nuevo nombre de usuario
 
-
-echo $username;
-echo $new_username;
-
-
-/* if ($username != $new_username) {
+if ($username != $new_username) {
     $conn = mysqli_connect($_ENV["DB"], $_ENV["USER"], $_ENV["PASSWORD"], $_ENV["DBNAME"]);
     $sql = "SELECT user FROM usuarios WHERE user='$username'";
 
@@ -34,4 +29,4 @@ echo $new_username;
 
 header("Location: ../pages/index.php");
 
-exit(); */
+exit();
