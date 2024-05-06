@@ -1,4 +1,4 @@
-<?php require_once (__DIR__ . "/../services/imports.php") ?>
+<?php require_once(__DIR__ . "/../services/imports.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -14,36 +14,11 @@
 
 <body>
     <?php
-    require_once (__DIR__ . "/../services/loader.php");
-    require_once (__DIR__ . "/../components/header.php")
-        ?>
+    require_once(__DIR__ . "/../services/loader.php");
+    require_once(__DIR__ . "/../components/header.php")
+    ?>
     <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center p-5 justify-center">
-        <section class="max-md:hidden">
-            <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-64 xl:w-96"></a>
-        </section>
-
-        <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-            <form action="../services/login.php" method="post" class="w-max flex flex-col gap-4 form-control">
-                <legend class="text-2xl">Iniciar sesión</legend>
-
-                <label for="username">Usuario:
-                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required
-                        autocomplete="username" class="dark:bg-neutral-900 input input-bordered">
-                </label>
-
-                <label for="password">Contraseña:
-                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required
-                        autocomplete="current-password" class="dark:bg-neutral-900 input input-bordered">
-                </label>
-
-                <input type="hidden" name="successful" value="true">
-                <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Inicio de sesión </button>
-            </form>
-
-            <hr class="border border-black dark:border-stone-50  w-1/2 my-5">
-
-            <a href="register.php">Crear Cuenta</a>
-        </section>
+        <?php include_once(__DIR__ . "/../components/login/content.php") ?>
     </main>
 
 
