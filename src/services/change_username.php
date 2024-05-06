@@ -4,11 +4,9 @@ require_once(__DIR__ . "/env.php");
 session_start();
 
 $username = post("username", " ");
-$newUsername = post("newUsername", ""); // Nuevo nombre de usuario
+$new_username = post("new-username", ""); // Nuevo nombre de usuario
 
-
-
-if ($username != $newUsername) {
+if ($username != $new_username) {
     $conn = mysqli_connect($_ENV["DB"], $_ENV["USER"], $_ENV["PASSWORD"], $_ENV["DBNAME"]);
     $sql = "SELECT user FROM usuarios WHERE user='$username'";
 
@@ -18,17 +16,14 @@ if ($username != $newUsername) {
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
 
-
-
-
         // Si se proporcionó un nuevo nombre de usuario, actualiza el nombre de usuario en la base de datos
-        if (!empty($newUsername)) {
-            $newUsername = mysqli_real_escape_string($conn, $newUsername);
-            $updateSql = "UPDATE usuarios SET user='$newUsername' WHERE user='$username'";
+        if (!empty($new_username)) {
+            $new_username = mysqli_real_escape_string($conn, $new_username);
+            $updateSql = "UPDATE usuarios SET user='$new_username' WHERE user='$username'";
             mysqli_query($conn, $updateSql);
         }
         //Cambia el usuario de la session de la cookie
-        $_SESSION['usuario'] = $newUsername;
+        $_SESSION['usuario'] = $new_username;
     }
 }
 
