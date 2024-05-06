@@ -24,7 +24,7 @@
 
         <?php if (isset($_SESSION["usuario"])): ?>
 
-            <section class="border border-red-600 dark:border-fuchsia-700 py-3">
+            <section class=" md:col-span-2  border border-red-600 dark:border-fuchsia-700 py-3">
 
                 <h2 class="text-xl font-bold text-center">
                     Configuración de usuario
@@ -33,30 +33,27 @@
                 <article class="p-10">
 
                     <label>Cambiar foto de perfil
-                        <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
+                        <input  type="file" class=" bg-red-700 text-neutral-200 dark:bg-neutral-700 file-input file-input-bordered w-full max-w-xs" />
                     </label>
 
                 </article>
 
                 <article class="p-10">
                     <h11>Configuración de contraseñas:</h11>
-                    <button class="btn" onclick="my_modal_1.showModal()">cambiar</button>
+                    <button class="btn bg-red-700 dark:bg-neutral-900" onclick="my_modal_1.showModal()">cambiar</button>
                     <dialog id="my_modal_1" class="modal">
-                        <div class="modal-box flex flex-col">
+                    <div class="modal-box flex flex-col border border-gray-300 p-2 rounded-md mb-4 text-red-700 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-900 gap-5">
                             <h3 class="font-bold text-lg">Cambiar contraseña</h3>
                             <label class="py-4">contraseña actual:
-                                <input type="password" name="new"
-                                    style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;"
+                                <input class="bg-neutral-200 dark:bg-black" type="password" name="new"
                                     required>
                             </label>
                             <label>Nueva contraseña:
-                                <input type="password" name="nueva_passwd"
-                                    style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;"
+                                <input class="bg-neutral-200 dark:bg-black" type="password" name="nueva_passwd"
                                     required>
                             </label>
                             <label>Repetir la contraseña nueva:
-                                <input type="password" name="nueva_contraseña"
-                                    style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;"
+                                <input class="bg-neutral-200 dark:bg-black" type="password" name="nueva_contraseña"
                                     required>
                             </label>
                             <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña
@@ -65,7 +62,7 @@
                             <div class="modal-action">
                                 <form method="dialog">
 
-                                    <button class="btn">Close</button>
+                                    <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Close</button>
                                 </form>
                             </div>
                         </div>
@@ -74,23 +71,20 @@
 
                 <article class="p-10">
                     <h11>Cambiar nombre de usuario</h11>
-                    <button class="btn" onclick="my_modal_2.showModal()">cambiar</button>
+                    <button class="btn bg-red-700 dark:bg-neutral-900" onclick="my_modal_2.showModal()">cambiar</button>
                     <dialog id="my_modal_2" class="modal">
-                        <div class="modal-box flex flex-col">
+                        <div class="modal-box flex flex-col border border-gray-300 p-2 rounded-md mb-4 text-red-700 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-900 gap-5">
                             <h3 class="font-bold text-lg">Cambiar nombre de usuario</h3>
 
-                            <label>Nuevo usuario:
-                                <input type="password" name="nueva_contraseña"
-                                    style="border: 1px solid #ccc; padding: 8px; border-radius: 4px; margin-bottom: 10px;"
+                            <label >Nuevo usuario:
+                                <input class="bg-neutral-200 dark:bg-black" type="password" name="nueva_contraseña"
                                     required>
                             </label>
-                            <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña
-                            </button>
-                            </>
+                            <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar usuario</button></button>
                             <div class="modal-action">
                                 <form method="dialog">
 
-                                    <button class="btn">Close</button>
+                                    <button type="submit" class="btn btn-outline  btn-error dark:btn-secondary">Close</button>
                                 </form>
                             </div>
                         </div>
@@ -98,20 +92,20 @@
                 </article>
 
                 <article class="w-full text-center">
-                    <a href="/src/services/logout.php" class="btn w-2/3"> Logout</a>
+                    <a href="/src/services/logout.php" class=" btn btn-outline  btn-error dark:btn-secondary "> Logout</a>
                 </article>
             </section>
         <?php endif; ?>
 
-        <article class="border border-red-600 dark:border-fuchsia-700 py-3">
+        <article class=" md:col-span-2 border border-red-600 dark:border-fuchsia-700 py-3">
 
             <h2 class="text-xl font-bold text-center">Configuración la pagina</h2>
 
             <section class="flex flex-row p-10">
                 <p> Light Mode </p>
                 <input type="checkbox"
-                    class="toggle dark:[--tglbg:fuchsia] dark:bg-neutral-200 dark:hover:bg-fuchsia-600 dark:border-neutral-800"
-                    style="color: white" id="toggle-dark-mode" />
+                    class="toggle  bg-neutral-200 hover:bg-red-700 border-neutral-200 dark:[--tglbg:fuchsia] dark:bg-neutral-200 dark:hover:bg-fuchsia-600 dark:border-neutral-800"
+                    class="color: white" id="toggle-dark-mode" />
                 <p> Dark Mode</p>
             </section>
         </article>
