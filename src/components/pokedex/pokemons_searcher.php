@@ -28,66 +28,29 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
                 <?php foreach ($types as $type) { ?>
                     <?php
                     $type_name = $type['type']['name'];
-                    $type_color = "bg-red-500";
-                    switch ($type_name) {
-                        case "steel":
-                            $type_color = "bg-neutral-700";
-                            break;
-                        case "fire":
-                            $type_color = "bg-orange-500";
-                            break;
-                        case "water":
-                            $type_color = "bg-blue-500";
-                            break;
-                        case "grass":
-                            $type_color = "bg-green-500";
-                            break;
-                        case "electric":
-                            $type_color = "bg-yellow-500";
-                            break;
-                        case "ice":
-                            $type_color = "bg-cyan-500";
-                            break;
-                        case "fighting":
-                            $type_color = "bg-red-600";
-                            break;
-                        case "fairy":
-                            $type_color = "bg-pink-500";
-                            break;
-                        case "psychic":
-                            $type_color = "bg-pink-600";
-                            break;
-                        case "rock":
-                            $type_color = "bg-yellow-700";
-                            break;
-                        case "ground":
-                            $type_color = "bg-amber-500";
-                            break;
-                        case "bug":
-                            $type_color = "bg-lime-500";
-                            break;
-                        case "ghost":
-                            $type_color = "bg-violet-500";
-                            break;
-                        case "normal":
-                            $type_color = "bg-neutral-500";
-                            break;
-                        case "poison":
-                            $type_color = "bg-fuchsia-500";
-                            break;
-                        case "dragon":
-                            $type_color = "bg-indigo-500";
-                            break;
-                        case "flying":
-                            $type_color = "bg-purple-500";
-                            break;
-                        case "dark":
-                            $type_color = "bg-slate-500";
-                            break;
-                    }
+                    $type_color = "bg-$type_name";
+                    /* Colors 
+                    bg-steel: "#404040",
+                    bg-water: "#3b82f6",
+                    bg-bug: "#84cc16",
+                    bg-dragon: "#6366f1",
+                    bg-electric: "#eab308",
+                    bg-ghost: "#8b5cf6",
+                    bg-fire: "#f97316",
+                    bg-fairy: "#ec4899",
+                    bg-ice: "#06b6d4",
+                    bg-fighting: "#dc2626",
+                    bg-normal: "#737373",
+                    bg-grass: "#22c55e",
+                    bg-psychic: "#db2777",
+                    bg-rock: "#a16207",
+                    bg-dark: "#64748b",
+                    bg-ground: "#f59e0b",
+                    bg-poison: "#d946ef",
+                    bg-flying: "#a855f7", */
                     ?>
 
-                    <div class="badge <?= $type_color ?>"><?= $type_name ?></div>
+                    <div class="badge text-white <?= $type_color ?>"><?= $type_name ?></div>
                 <?php }; ?>
             </div>
         </div>
