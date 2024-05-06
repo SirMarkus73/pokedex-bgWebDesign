@@ -8,7 +8,7 @@
                 <label for="new-username">Nuevo usuario:
                     <input class="bg-neutral-200 dark:bg-black" type="password" name="new-username" required>
                 </label>
-                <input type="hidden" name="username" value="<?= $username ?>">
+                <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
                 <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar usuario</button>
             </form>
             <div class="modal-action">
