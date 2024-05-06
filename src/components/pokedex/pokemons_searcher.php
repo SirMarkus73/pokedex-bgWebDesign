@@ -65,7 +65,7 @@ function show_pokemons(int $limit, int $offset)
     $result = file_get_contents($api_url);
     $response = json_decode($result, true);
 
-    foreach ($response['results'] as $pokemons) {
+    foreach ($response['results'] as $pokemons) :
 
         $pokemon_url = file_get_contents($pokemons['url']);
         $pokemon = json_decode($pokemon_url, true);
@@ -75,9 +75,9 @@ function show_pokemons(int $limit, int $offset)
         $pokemon_ability = $pokemon["abilities"][0]["ability"]["name"];
         $stats = $pokemon["stats"];
         $types = $pokemon["types"];
-
-        show_pokemon_card($pokemon_name, $pokemon_image, $pokemon_ability, $stats, $types);
-    }
+?>
+        <a href="pokemon.php?name=<?= $pokemon_name ?>"><?php show_pokemon_card($pokemon_name, $pokemon_image, $pokemon_ability, $stats, $types); ?></a>
+<?php endforeach;
 }
 ?>
 <section class="gap-2 mx-auto my-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center">

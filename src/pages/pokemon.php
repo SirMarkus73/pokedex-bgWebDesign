@@ -1,4 +1,4 @@
-<?php require_once (__DIR__ . "/../services/imports.php") ?>
+<?php require_once(__DIR__ . "/../services/imports.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -15,42 +15,14 @@
 
 <body>
     <?php
-    require_once (__DIR__ . "/../services/loader.php");
-    require_once (__DIR__ . "/../components/header.php");
+    require_once(__DIR__ . "/../services/loader.php");
+    require_once(__DIR__ . "/../components/header.php");
     ?>
-    <main>
+    <main class="flex flex-col justify-center items-center h-3/4">
+
         <?php
-        // Obtener el nombre del Pokémon desde la URL
-        $pokemon_name = $_GET['name'];
-
-        // Simular una base de datos de información de Pokémon (solo para ejemplo)
-        $pokemon_info = array(
-            "Pikachu" => array(
-                "Tipo" => "Eléctrico",
-                "Descripción" => "Pikachu es un Pokémon de tipo eléctrico muy conocido por su aparición en la serie animada de Pokémon."
-            ),
-            "Charmander" => array(
-                "Tipo" => "Fuego",
-                "Descripción" => "Charmander es un Pokémon de tipo fuego. Evoluciona a Charmeleon y luego a Charizard."
-            ),
-            "Bulbasaur" => array(
-                "Tipo" => "Planta",
-                "Descripción" => "Bulbasaur es un Pokémon de tipo planta. Es uno de los tres Pokémon iniciales en Pokémon Rojo y Azul."
-            ),
-            "Squirtle" => array(
-                "Tipo" => "Agua",
-                "Descripción" => "Squirtle es un Pokémon de tipo agua. Es uno de los tres Pokémon iniciales en Pokémon Rojo y Azul."
-            )
-        );
-
-        // Verificar si el Pokémon existe en la base de datos simulada
-        if (array_key_exists($pokemon_name, $pokemon_info)) {
-            echo "<h1>$pokemon_name</h1>";
-            echo "<p><strong>Tipo:</strong> " . $pokemon_info[$pokemon_name]['Tipo'] . "</p>";
-            echo "<p><strong>Descripción:</strong> " . $pokemon_info[$pokemon_name]['Descripción'] . "</p>";
-        } else {
-            echo "<h1>Pokémon no encontrado</h1>";
-        }
+        require_once(__DIR__ . "/../components/pokedex/searchbar.php");
+        require_once(__DIR__ . "/../components/pokedex/get_pokemon.php");
         ?>
     </main>
 </body>
