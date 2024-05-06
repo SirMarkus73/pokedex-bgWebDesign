@@ -74,9 +74,9 @@ require_once(__DIR__ . "/../services/protected_page.php");
                 <dialog id="my_modal_2" class="modal">
                     <div class="modal-box flex flex-col border border-gray-300 p-2 rounded-md mb-4 text-red-700 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-900 gap-5">
                         <h3 class="font-bold text-lg">Cambiar nombre de usuario</h3>
-
-                        <label>Nuevo usuario:
-                            <input class="bg-neutral-200 dark:bg-black" type="password" name="nueva_contraseña" required>
+                        <form action="../services/change_username.php" method="post"></form>
+                        <label for="newUsername">Nuevo usuario:
+                            <input class="bg-neutral-200 dark:bg-black" type="password" name="newUsername" required>
                         </label>
                         <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar usuario</button></button>
                         <div class="modal-action">
