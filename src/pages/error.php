@@ -12,7 +12,7 @@
 
 </head>
 
-<body class="text-center">
+<body>
     <?php
     require_once(__DIR__ . "/../services/loader.php");
     require_once(__DIR__ . "/../components/header.php")
