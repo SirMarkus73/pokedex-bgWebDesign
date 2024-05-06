@@ -20,29 +20,25 @@ window.addEventListener("load", () => {
     }
   }
 
-  if (document.querySelector("body").id == "settings") {
-    const darkModeSelector = document.getElementById("toggle-dark-mode");
-    darkModeSelector.addEventListener("change", toggleDarkMode);
+  const darkModeSelector = document.getElementById("toggle-dark-mode");
+  darkModeSelector.addEventListener("change", toggleDarkMode);
 
-    function toggleDarkMode() {
-      /** Funcion que activa/desactiva el modo oscuro */
-      if (mode === "dark") {
-        darkModeSelector.checked = false;
-        setMode("light");
-      } else {
-        darkModeSelector.checked = true;
-        setMode("dark");
-      }
-    }
-
-    if (mode == "dark") {
-      darkModeSelector.checked = true;
-    } else {
+  function toggleDarkMode() {
+    /** Funcion que activa/desactiva el modo oscuro */
+    if (mode === "dark") {
       darkModeSelector.checked = false;
+      setMode("light");
+    } else {
+      darkModeSelector.checked = true;
+      setMode("dark");
     }
-
-    setMode(mode);
-  } else {
-    setMode(mode);
   }
+
+  if (mode == "dark") {
+    darkModeSelector.checked = true;
+  } else {
+    darkModeSelector.checked = false;
+  }
+
+  setMode(mode);
 });
