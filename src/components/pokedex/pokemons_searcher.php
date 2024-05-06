@@ -3,7 +3,23 @@
 require_once(__DIR__ . "/../../services/methods.php");
 
 $limit = get("limit", 8);
+
+$max_limit = 20;
+
+if ($limit > $max_limit) {
+    $limit = $max_limit;
+}
+
+
+if ($limit < 1) {
+    $limit = 1;
+}
+
 $offset = get("offset", 0);
+
+if ($offset < 0) {
+    $offset = 0;
+}
 
 function show_pokemon_card($name, $image_url, $ability, $stats, $types)
 { ?>
@@ -87,7 +103,7 @@ function show_pokemons(int $limit, int $offset)
 <section class="flex justify-center mx-auto">
     <form method="get">
         <button name="offset" value="<?= $offset - $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Anterior</button>
-        <input type="number" name="limit" id="limit" max="20" min="1" value="<?= $limit ?>" id="limit" class="input input-bordered text-black">
+        <input type="number" name="limit" id="limit" max="<?= $max_limit ?>" min="1" value="<?= $limit ?>" id="limit" class="input input-bordered text-black">
         <button name="offset" value="<?= $offset + $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Siguiente</button>
         <button type="submit" class="hidden" id="submit"></button>
     </form>
