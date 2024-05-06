@@ -21,8 +21,8 @@
     <main class="flex flex-col justify-center items-center h-3/4">
 
         <?php
-        require_once(__DIR__ . "/../components/pokedex/searchbar.php");
-        require_once(__DIR__ . "/../components/pokedex/get_pokemon.php");
+        require_once(__DIR__ . "/../components/pokemon/searchbar.php");
+        require_once(__DIR__ . "/../components/pokemon/get_pokemon.php");
         ?>
     </main>
 </body>

@@ -18,8 +18,8 @@
     ?>
     <main>
         <?php
-        require_once(__DIR__ . "/../components/pokedex/searchbar.php");
-        require_once(__DIR__ . "/../components/pokedex/pokemons_searcher.php");
+        require_once(__DIR__ . "/../components/pokemon/searchbar.php");
+        require_once(__DIR__ . "/../components/pokemon/pokemons_searcher.php");
         ?>
     </main>
 </body>
