@@ -1,27 +1,30 @@
 <?php
 
-$api_url = "https://api.pokemontcg.io/v2/cards";
+require_once(__DIR__ . "/../../services/methods.php");
+// URL de la API
+$url = 'https://api.pokemontcg.io/v2/cards';
 
-$response = file_get_contents($api_url);
+// Parámetros de búsqueda (puedes ajustar estos valores según tus necesidades)
+$parametros = [
+    'name' => 'Pikachu', // Nombre de la carta
+    'set' => 'base1', // Set de la carta
+];
 
-$results = json_decode($response, true);
+// Realiza la solicitud GET a la API
+$response = file_get_contents($url . '?' . http_build_query($parametros));
 
-$cardName = $results["results"];
+// Decodifica la respuesta JSON
+$data = json_decode($response, true);
 
-?>
-
-<datalist id="cards">
-    <?php foreach ($cardName as $cardName) : ?>
-        <option value="<?= $cardName['name'] ?>"></option>
-    <?php endforeach ?>
-</datalist>
-
-
-<section class="flex justify-center w-max mx-auto p-4">
-    <form action="pokemon.php" method="get" class="m-0">
-        <label for="name"> Buscar Carta:
-            <input type="text" name="name" id="name" list="cards" autocomplete="cards" class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
-        </label>
-        <button type="submit" class="btn btn-ghost btn-outline btn-error dark:btn-secondary">Buscar</button>
-    </form>
-</section>
+// Verifica si se obtuvieron resultados
+if (isset($data['data']) && !empty($data['data'])) {
+    foreach ($data['data'] as $carta) {
+        echo 'Nombre: ' . $carta['name'] . '<br>';
+        echo 'Set: ' . $carta['set']['name'] . '<br>';
+        echo 'Tipo: ' . $carta['types'][0] . '<br>';
+        echo 'Rareza: ' . $carta['rarity'] . '<br>';
+        echo '<hr>';
+    }
+} else {
+    echo 'No se encontraron cartas Pokémon con los parámetros especificados.';
+}
