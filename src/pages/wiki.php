@@ -13,8 +13,8 @@
 
 <body>
     <?php
-    render_component("loader");
-    render_component("header");
+    render_component("global/loader");
+    render_component("global/header");
     ?>
     <main>
         <?php

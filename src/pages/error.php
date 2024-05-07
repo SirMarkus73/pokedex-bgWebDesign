@@ -14,8 +14,8 @@
 
 <body>
     <?php
-    render_component("loader");
-    render_component("header");
+    render_component("global/loader");
+    render_component("global/header");
     ?>
 
     <main class="flex flex-col items-center justify-center h-3/4 gap-5">

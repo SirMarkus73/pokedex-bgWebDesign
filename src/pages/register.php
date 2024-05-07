@@ -13,8 +13,8 @@
 
 <body>
     <?php
-    render_component("loader");
-    render_component("header")
+    render_component("global/loader");
+    render_component("global/header")
     ?>
 
     <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center p-5 justify-center">
