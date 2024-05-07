@@ -8,7 +8,7 @@
             <h3 class="font-bold text-lg">Cambiar contraseña</h3>
 
 
-            <form action="<?= SRC_ROUTE ?>/services/change_password.php" method="post" class="flex flex-col gap-3">
+            <form action="<?= SRC_ROUTE ?>/services/user/settings/change_password.php" method="post" class="flex flex-col gap-3">
 
                 <label>
                     contraseña actual:
