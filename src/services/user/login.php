@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__ . "/../src_route.php");
-require_once(__DIR__ . "/methods.php");
-require_once(__DIR__ . "/env.php");
+require_once(__DIR__ . "/../../src_route.php");
+require_once(__DIR__ . "/../methods.php");
+require_once(__DIR__ . "/../env.php");
 session_start();
 
 $username = post("username", "");

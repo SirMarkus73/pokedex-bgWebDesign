@@ -5,7 +5,7 @@
 </section>
 <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10">
 
-    <form action="<?= SRC_ROUTE ?>/services/register.php" method="post" class="w-max flex flex-col gap-4">
+    <form action="<?= SRC_ROUTE ?>/services/user/register.php" method="post" class="w-max flex flex-col gap-4">
         <legend class="text-2xl">Registrarse</legend>
 
         <label for="username">Usuario:

@@ -6,7 +6,7 @@
 </section>
 
 <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10 w-max h-max">
-    <form action="<?= SRC_ROUTE ?>/services/login.php" method="post" class="w-max flex flex-col gap-4 form-control">
+    <form action="<?= SRC_ROUTE ?>/services/user/login.php" method="post" class="w-max flex flex-col gap-4 form-control">
         <legend class="text-2xl">Iniciar sesión</legend>
 
         <label for="username">Usuario:
