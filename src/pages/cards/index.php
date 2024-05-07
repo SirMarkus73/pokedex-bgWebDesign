@@ -1,4 +1,4 @@
-<?php require_once(__DIR__ . "/../services/imports.php") ?>
+<?php require_once (__DIR__ . "/../../services/imports.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -14,8 +14,9 @@
     ?>
     <main>
         <?php
-        render_component("card_collection/card.php");
-        render_component("card_collection/card_searcher.php");
+        render_component("card_collection/searchbar");
+        render_component("card_collection/card");
+        render_component("card_collection/card_searcher");
         ?>
     </main>
 </body>
