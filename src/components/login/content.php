@@ -17,7 +17,6 @@
             <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required autocomplete="current-password" class="dark:bg-neutral-900 input input-bordered">
         </label>
 
-        <input type="hidden" name="successful" value="true">
         <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Inicio de sesión </button>
     </form>
 
