@@ -14,12 +14,12 @@
 
 <body>
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php")
+    render_component("global/loader");
+    render_component("global/header");
     ?>
 
     <main class="flex flex-col items-center justify-center h-3/4 gap-5">
-        <?php require_once(__DIR__ . "/../components/error/content.php") ?>
+        <?php render_component("error/content") ?>
     </main>
 </body>
 

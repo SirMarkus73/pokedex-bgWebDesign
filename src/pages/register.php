@@ -13,12 +13,12 @@
 
 <body>
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php")
+    render_component("global/loader");
+    render_component("global/header")
     ?>
 
     <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center p-5 justify-center">
-        <?php include_once(__DIR__ . "/../components/register/content.php") ?>
+        <?php render_component("register/content") ?>
 
     </main>
 

@@ -13,13 +13,13 @@
 
 <body>
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php");
+    render_component("global/loader");
+    render_component("global/header");
     ?>
     <main>
         <?php
-        require_once(__DIR__ . "/../components/pokemon/searchbar.php");
-        require_once(__DIR__ . "/../components/pokemon/pokemons_searcher.php");
+        render_component("pokemon/searchbar");
+        render_component("pokemon/pokemons_searcher");
         ?>
     </main>
 </body>

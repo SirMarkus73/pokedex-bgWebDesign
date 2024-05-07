@@ -19,19 +19,22 @@ require_once(__DIR__ . "/../services/protected_page.php");
 <body id="settings">
 
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php")
+    render_component("global/loader");
+    render_component("global/header")
     ?>
     <main class="p-6 flex flex-col gap-3">
 
         <h1 class="text-3xl font-bold text-center">Configuración</h1>
-        <section class="border border-red-600 dark:border-fuchsia-700 py-3">
+        <section class="border border-red-600 dark:border-fuchsia-700 py-5 flex flex-col gap-10 justify-center text-center ">
             <?php
-            include_once(__DIR__ . "/../components/settings/change_image.php");
-            include_once(__DIR__ . "/../components/settings/change_password.php");
-            include_once(__DIR__ . "/../components/settings/change_username.php");
-            include_once(__DIR__ . "/../components/settings/logout.php")
+            render_component("settings/change_image");
+            render_component("settings/change_password");
+            render_component("settings/change_username");
             ?>
+        </section>
+
+        <section>
+            <?php render_component("settings/logout") ?>
         </section>
     </main>
 </body>

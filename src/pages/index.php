@@ -1,4 +1,5 @@
 <?php require_once(__DIR__ . "/../services/imports.php") ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,12 +14,14 @@
 
 <body>
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php");
+    render_component("global/loader");
+    render_component("global/header");
     ?>
 
     <main class="p-5 flex flex-col gap-5">
-        <?php require_once(__DIR__ . "/../components/index/content.php") ?>
+
+        <?php render_component("index/content") ?>
+
     </main>
 
 </body>
