@@ -1,3 +1,5 @@
+<?php require_once(__DIR__ . "/../../src_route.php"); ?>
+
 <article>
 
     <button class="btn bg-red-700 dark:bg-neutral-900 text-white hover:text-black hover:bg-white w-2/6" onclick="my_modal_1.showModal()">Cambiar contraseña</button>
@@ -6,7 +8,7 @@
             <h3 class="font-bold text-lg">Cambiar contraseña</h3>
 
 
-            <form action="../services/change_password.php" method="post" class="flex flex-col gap-3">
+            <form action="<?= SRC_ROUTE ?>/services/change_password.php" method="post" class="flex flex-col gap-3">
 
                 <label>
                     contraseña actual:
@@ -25,7 +27,8 @@
 
                 <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
 
-                <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar contraseña
+                <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">
+                    Cambiar contraseña
                 </button>
             </form>
 
