@@ -1,8 +1,9 @@
 <?php
 session_start();
-require_once (__DIR__ . "/methods.php");
-require_once (__DIR__ . "/env.php");
-require_once (__DIR__ . "/../services/protected_page.php");
+require_once(__DIR__ . "/methods.php");
+require_once(__DIR__ . "/env.php");
+require_once(__DIR__ . "/../services/protected_page.php");
+require_once(__DIR__ . "/../src_route.php");
 
 
 $username = post("username", " ");
@@ -29,6 +30,6 @@ if ($username != $new_username) {
     }
 }
 
-header("Location: ../pages/index.php");
+header("Location: " . SRC_ROUTE . "/pages/index.php");
 
 exit();

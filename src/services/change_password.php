@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once (__DIR__ . "/methods.php");
-require_once (__DIR__ . "/env.php");
-require_once (__DIR__ . "/../services/protected_page.php");
-
+require_once(__DIR__ . "/methods.php");
+require_once(__DIR__ . "/env.php");
+require_once(__DIR__ . "/protected_page.php");
+require_once(__DIR__ . "/../src_route.php");
 
 $input_password = post("password", " ");
 
@@ -26,9 +26,8 @@ $row = mysqli_fetch_assoc($result);
 
 
 if (password_verify($input_password, $row['password'])) {
-    echo "las contraseñas coinciden";
+
     if (!password_verify($row["password"], $new_hash_password)) {
-        echo "las contraseñas coinciden no";
 
         if (!empty($new_password)) {
             $new_password = mysqli_real_escape_string($conn, $new_password);
@@ -39,6 +38,6 @@ if (password_verify($input_password, $row['password'])) {
     }
 }
 
-/* header("Location: ../pages/index.php");
+header("Location: " . SRC_ROUTE . "/pages/index.php");
 
-exit(); */
+exit();
