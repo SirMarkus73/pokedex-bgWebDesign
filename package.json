@@ -6,11 +6,12 @@
   "scripts": {
     "init": "pnpm install && composer install",
     "css": "npx tailwindcss -i ./src/css/tailwind-base.css -o ./src/css/style.css --watch",
-    "php-server": "php -S localhost:4321 -t ./src",
     "compile-css": "npx tailwindcss -i ./src/css/tailwind-base.css -o ./src/css/style.css",
+    "php-server": "php -S localhost:4321 -t ./src",
     "docker": "cd ./docker && docker-compose up -d",
-    "dev": "conc \"pnpm run docker\" \"pnpm run css\"",
-    "stop_dev": "cd ./docker && docker-compose down"
+    "stop_docker": "cd ./docker && docker-compose down",
+    "dev-php": "conc \"pnpm run php-server\" \"pnpm run css\"",
+    "dev-docker": "conc \"pnpm run docker\" \"pnpm run css\""
   },
   "keywords": [],
   "author": "",
