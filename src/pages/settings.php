@@ -25,13 +25,16 @@ require_once(__DIR__ . "/../services/protected_page.php");
     <main class="p-6 flex flex-col gap-3">
 
         <h1 class="text-3xl font-bold text-center">Configuración</h1>
-        <section class="border border-red-600 dark:border-fuchsia-700 py-3">
+        <section class="border border-red-600 dark:border-fuchsia-700 py-5 flex flex-col gap-10 justify-center text-center ">
             <?php
             include_once(__DIR__ . "/../components/settings/change_image.php");
             include_once(__DIR__ . "/../components/settings/change_password.php");
             include_once(__DIR__ . "/../components/settings/change_username.php");
-            include_once(__DIR__ . "/../components/settings/logout.php")
             ?>
+        </section>
+
+        <section>
+            <?php include_once(__DIR__ . "/../components/settings/logout.php") ?>
         </section>
     </main>
 </body>
