@@ -1,20 +1,22 @@
 <?php
-require_once(__DIR__ . "/../../services/imports.php");
-require_once(__DIR__ . "/../../services/protected_page.php");
+require_once __DIR__ . "/../../services/imports.php";
+require_once __DIR__ . "/../../services/protected_page.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - Configuración"]) ?>
+    <?php render_component("global/head", [
+        "title" => "Pokefull - Configuración",
+    ]); ?>
 </head>
 
 <body id="settings">
 
     <?php
     render_component("global/loader");
-    render_component("global/header")
+    render_component("global/header");
     ?>
     <main class="p-6 flex flex-col gap-3">
 
@@ -28,7 +30,7 @@ require_once(__DIR__ . "/../../services/protected_page.php");
         </section>
 
         <section>
-            <?php render_component("settings/logout") ?>
+            <?php render_component("settings/logout"); ?>
         </section>
     </main>
 </body>

@@ -1,4 +1,4 @@
-<?php require_once(__DIR__ . "/../../src_route.php"); ?>
+<?php require_once __DIR__ . "/../../src_route.php"; ?>
 
 <article>
 
@@ -25,7 +25,9 @@
                     <input class="bg-neutral-200 dark:bg-black" type="password" name="password_repeat" required>
                 </label>
 
-                <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
+                <input type="hidden" name="username" value="<?= $_SESSION[
+                    "usuario"
+                ] ?>">
 
                 <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">
                     Cambiar contraseña

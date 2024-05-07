@@ -7,13 +7,12 @@ $response = file_get_contents($api_url);
 $results = json_decode($response, true);
 
 $cards = $results["data"];
-
 ?>
 
 <datalist id="cards">
     <?php foreach ($cards as $card): ?>
-        <option value="<?= $card['name'] ?>"></option>
-    <?php endforeach ?>
+        <option value="<?= $card["name"] ?>"></option>
+    <?php endforeach; ?>
 </datalist>
 
 

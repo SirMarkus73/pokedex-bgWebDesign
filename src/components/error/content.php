@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . "/../../services/methods.php");
+require_once __DIR__ . "/../../services/methods.php";
 
 $message = get("message", "ERROR");
 $href = get("href", "index.php");

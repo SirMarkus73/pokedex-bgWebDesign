@@ -1,5 +1,5 @@
 <?php
-require_once (__DIR__ . "/../../services/methods.php");
+require_once __DIR__ . "/../../services/methods.php";
 
 $name = strtolower(get("name", ""));
 $api_url = "https://pokeapi.co/api/v2/pokemon/$name";
@@ -9,8 +9,9 @@ $result = file_get_contents($api_url);
 $pokemon = json_decode($result, true);
 
 if ($pokemon):
-    $pokemon_name = $pokemon['name'];
-    $image_url = $pokemon['sprites']['front_default'];
+
+    $pokemon_name = $pokemon["name"];
+    $image_url = $pokemon["sprites"]["front_default"];
     $abilities = $pokemon["abilities"];
     $stats = $pokemon["stats"];
     $types = $pokemon["types"];
@@ -23,20 +24,20 @@ if ($pokemon):
             <div>
                 <?php foreach ($abilities as $ability) { ?>
                     <div class="badge bg-white dark:bg-fuchsia-500 text-black dark:text-white ">
-                        <?= $ability['ability']['name'] ?>
+                        <?= $ability["ability"]["name"] ?>
                     </div>
-                <?php }
-                ; ?>
+                <?php } ?>
             </div>
 
             <div class="stats bg-red-500 dark:bg-fuchsia-500 text-white">
                 <?php foreach ($stats as $stat) { ?>
                     <div class="stat h-fit  bg-red-500 dark:bg-fuchsia-500 text-white">
-                        <div class="stat-title"><?= $stat['stat']['name'] ?></div>
-                        <div class="stat-value"><?= $stat['base_stat'] ?></div>
+                        <div class="stat-title"><?= $stat["stat"][
+                            "name"
+                        ] ?></div>
+                        <div class="stat-value"><?= $stat["base_stat"] ?></div>
                     </div>
-                <?php }
-                ; ?>
+                <?php } ?>
 
             </div>
 
@@ -45,27 +46,25 @@ if ($pokemon):
             <div class="card-actions justify-end text-black">
                 <?php foreach ($types as $type) { ?>
                     <?php
-                    $type_name = $type['type']['name'];
+                    $type_name = $type["type"]["name"];
                     $type_color = "bg-$type_name";
                     ?>
 
                     <div class="badge text-white <?= $type_color ?>"><?= $type_name ?></div>
-                <?php }
-                ; ?>
+                <?php } ?>
             </div>
         </div>
     </article>
 
-<?php else:
-
-    header("Location: ../pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=../pages/wiki.php");
-
-    ?>
+<?php
+else:
+    header(
+        "Location: ../pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=../pages/wiki.php"
+    ); ?>
 
     <script>
         window.location.href = '../pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=../pages/wiki.php';
     </script>
 
-    <?php
-    exit();
+    <?php exit();
 endif;

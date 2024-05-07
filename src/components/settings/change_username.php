@@ -1,4 +1,4 @@
-<?php require_once(__DIR__ . "/../../src_route.php"); ?>
+<?php require_once __DIR__ . "/../../src_route.php"; ?>
 
 <article>
 
@@ -12,7 +12,9 @@
                     Nuevo usuario:
                     <input class="bg-neutral-200 dark:bg-black" type="text" name="new-username" required>
                 </label>
-                <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
+                <input type="hidden" name="username" value="<?= $_SESSION[
+                    "usuario"
+                ] ?>">
                 <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar usuario</button>
             </form>
 

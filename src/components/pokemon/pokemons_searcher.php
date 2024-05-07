@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../../services/methods.php");
+require_once __DIR__ . "/../../services/methods.php";
 
 $limit = get("limit", 8);
 
@@ -9,7 +9,6 @@ $max_limit = 20;
 if ($limit > $max_limit) {
     $limit = $max_limit;
 }
-
 
 if ($limit < 1) {
     $limit = 1;
@@ -22,7 +21,8 @@ if ($offset < 0) {
 }
 
 function show_pokemon_card($name, $image_url, $ability, $stats, $types)
-{ ?>
+{
+    ?>
 
     <article class="card w-96 shadow-xl bg-red-600 dark:bg-fuchsia-600 text-white">
         <figure><img src="<?= $image_url ?>" alt="pokemon <?= $name ?>" /></figure>
@@ -34,17 +34,20 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
             <div class="stats bg-red-500 dark:bg-fuchsia-500 text-white">
                 <?php foreach ($stats as $stat) { ?>
                     <div class="stat h-fit  bg-red-500 dark:bg-fuchsia-500 text-white">
-                        <div class="stat-title"><?= $stat['stat']['name'] ?></div>
-                        <div class="stat-value"><?= $stat['base_stat'] ?></div>
+                        <div class="stat-title"><?= $stat["stat"][
+                            "name"
+                        ] ?></div>
+                        <div class="stat-value"><?= $stat["base_stat"] ?></div>
                     </div>
-                <?php }; ?>
+                <?php } ?>
 
             </div>
             <div class="card-actions justify-end text-black">
                 <?php foreach ($types as $type) { ?>
                     <?php
-                    $type_name = $type['type']['name'];
+                    $type_name = $type["type"]["name"];
                     $type_color = "bg-$type_name";
+
                     /* Colors 
                     bg-steel: "#404040",
                     bg-water: "#3b82f6",
@@ -67,44 +70,52 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
                     ?>
 
                     <div class="badge text-white <?= $type_color ?>"><?= $type_name ?></div>
-                <?php }; ?>
+                <?php } ?>
             </div>
         </div>
     </article>
-<?php }; ?>
-
 <?php
+}
+?>
 
-function show_pokemons(int $limit, int $offset)
+<?php function show_pokemons(int $limit, int $offset)
 {
     $api_url = "https://pokeapi.co/api/v2/pokemon?limit=$limit&offset=$offset";
     $result = file_get_contents($api_url);
     $response = json_decode($result, true);
 
-    foreach ($response['results'] as $pokemons) :
+    foreach ($response["results"] as $pokemons):
 
-        $pokemon_url = file_get_contents($pokemons['url']);
+        $pokemon_url = file_get_contents($pokemons["url"]);
         $pokemon = json_decode($pokemon_url, true);
 
-        $pokemon_name = $pokemon['name'];
-        $pokemon_image = $pokemon['sprites']['front_default'];
+        $pokemon_name = $pokemon["name"];
+        $pokemon_image = $pokemon["sprites"]["front_default"];
         $pokemon_ability = $pokemon["abilities"][0]["ability"]["name"];
         $stats = $pokemon["stats"];
         $types = $pokemon["types"];
-?>
-        <a href="pokemon.php?name=<?= $pokemon_name ?>"><?php show_pokemon_card($pokemon_name, $pokemon_image, $pokemon_ability, $stats, $types); ?></a>
-<?php endforeach;
-}
-?>
+        ?>
+        <a href="pokemon.php?name=<?= $pokemon_name ?>"><?php show_pokemon_card(
+    $pokemon_name,
+    $pokemon_image,
+    $pokemon_ability,
+    $stats,
+    $types
+); ?></a>
+<?php
+    endforeach;
+} ?>
 <section class="gap-2 mx-auto my-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center">
-    <?php show_pokemons($limit, $offset) ?>
+    <?php show_pokemons($limit, $offset); ?>
 </section>
 
 <section class="flex justify-center mx-auto">
     <form method="get">
-        <button name="offset" value="<?= $offset - $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Anterior</button>
+        <button name="offset" value="<?= $offset -
+            $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Anterior</button>
         <input type="number" name="limit" id="limit" max="<?= $max_limit ?>" min="1" value="<?= $limit ?>" id="limit" class="input input-bordered text-black">
-        <button name="offset" value="<?= $offset + $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Siguiente</button>
+        <button name="offset" value="<?= $offset +
+            $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Siguiente</button>
         <button type="submit" class="hidden" id="submit"></button>
     </form>
 </section>

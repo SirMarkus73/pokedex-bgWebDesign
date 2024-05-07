@@ -1,6 +1,6 @@
 <?php
-require_once(__DIR__ . "/../services/imports.php");
-require_once(__DIR__ . "/../services/methods.php");
+require_once __DIR__ . "/../services/imports.php";
+require_once __DIR__ . "/../services/methods.php";
 
 $title = get("title", "ERROR");
 ?>
@@ -9,7 +9,7 @@ $title = get("title", "ERROR");
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - $title"]) ?>
+    <?php render_component("global/head", ["title" => "Pokefull - $title"]); ?>
 
 </head>
 
@@ -20,7 +20,7 @@ $title = get("title", "ERROR");
     ?>
 
     <main class="flex flex-col items-center justify-center h-3/4 gap-5">
-        <?php render_component("error/content") ?>
+        <?php render_component("error/content"); ?>
     </main>
 </body>
 

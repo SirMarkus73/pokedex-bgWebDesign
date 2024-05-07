@@ -1,8 +1,7 @@
 <?php
 
-require_once(__DIR__ . "/../../services/components_renderer.php");
-require_once(__DIR__ . "/../../src_route.php");
-
+require_once __DIR__ . "/../../services/components_renderer.php";
+require_once __DIR__ . "/../../src_route.php";
 ?>
 
 <header class="flex items-center p-4 flex-col md:flex-row md:justify-between bg-red-600 text-white dark:bg-purple-950">
@@ -13,7 +12,7 @@ require_once(__DIR__ . "/../../src_route.php");
             <p class="text-red-500 dark:text-purple-500">|</p>
             <a href="<?= SRC_ROUTE ?>/pages/wiki/index.php" id="wiki">Wiki</a>
             <p class="text-red-500 dark:text-purple-500">|</p>
-            <?php render_component("global/get_login") ?>
+            <?php render_component("global/get_login"); ?>
         </div>
     </nav>
 

@@ -1,16 +1,20 @@
 <?php
 session_start();
-require_once(__DIR__ . "/../../methods.php");
-require_once(__DIR__ . "/../../env.php");
-require_once(__DIR__ . "/../../protected_page.php");
-require_once(__DIR__ . "/../../../src_route.php");
-
+require_once __DIR__ . "/../../methods.php";
+require_once __DIR__ . "/../../env.php";
+require_once __DIR__ . "/../../protected_page.php";
+require_once __DIR__ . "/../../../src_route.php";
 
 $username = post("username", " ");
 $new_username = post("new-username", ""); // Nuevo nombre de usuario
 
 if ($username != $new_username) {
-    $conn = mysqli_connect($_ENV["DB"], $_ENV["USER"], $_ENV["PASSWORD"], $_ENV["DBNAME"]);
+    $conn = mysqli_connect(
+        $_ENV["DB"],
+        $_ENV["USER"],
+        $_ENV["PASSWORD"],
+        $_ENV["DBNAME"]
+    );
     $sql = "SELECT user FROM usuarios WHERE user='$username'";
 
     // Resultados de la consulta
@@ -26,7 +30,7 @@ if ($username != $new_username) {
             mysqli_query($conn, $updateSql);
         }
         //Cambia el usuario de la session de la cookie
-        $_SESSION['usuario'] = $new_username;
+        $_SESSION["usuario"] = $new_username;
     }
 }
 

@@ -1,10 +1,10 @@
-<?php require_once(__DIR__ . "/../services/imports.php") ?>
+<?php require_once __DIR__ . "/../services/imports.php"; ?>
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - Inicio"]) ?>
+    <?php render_component("global/head", ["title" => "Pokefull - Inicio"]); ?>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 
     <main class="p-5 flex flex-col gap-5">
 
-        <?php render_component("index/content") ?>
+        <?php render_component("index/content"); ?>
 
     </main>
 

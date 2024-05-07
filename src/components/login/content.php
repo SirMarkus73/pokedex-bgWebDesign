@@ -1,4 +1,4 @@
-<?php require_once(__DIR__ . "/../../src_route.php"); ?>
+<?php require_once __DIR__ . "/../../src_route.php"; ?>
 
 
 <section class="max-md:hidden">

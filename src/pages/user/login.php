@@ -1,10 +1,12 @@
-<?php require_once(__DIR__ . "/../../services/imports.php") ?>
+<?php require_once __DIR__ . "/../../services/imports.php"; ?>
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - Iniciar sesión"]) ?>
+    <?php render_component("global/head", [
+        "title" => "Pokefull - Iniciar sesión",
+    ]); ?>
 </head>
 
 <body>
@@ -13,7 +15,7 @@
     render_component("global/header");
     ?>
     <main class="grid grid-cols-1 place-items-center md:grid-cols-3 content-center p-5 justify-center">
-        <?php render_component("login/content") ?>
+        <?php render_component("login/content"); ?>
     </main>
 
 

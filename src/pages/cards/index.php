@@ -1,10 +1,10 @@
-<?php require_once (__DIR__ . "/../../services/imports.php") ?>
+<?php require_once __DIR__ . "/../../services/imports.php"; ?>
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - Cartas"]) ?>
+    <?php render_component("global/head", ["title" => "Pokefull - Cartas"]); ?>
 </head>
 
 <body>

@@ -1,4 +1,4 @@
-<?php require_once(__DIR__ . "/../../src_route.php"); ?>
+<?php require_once __DIR__ . "/../../src_route.php"; ?>
 
 <section class="max-md:hidden">
     <img src="<?= SRC_ROUTE ?>/assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>

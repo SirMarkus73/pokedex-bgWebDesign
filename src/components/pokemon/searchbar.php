@@ -11,8 +11,8 @@ $pokemons = $results["results"];
 
 <datalist id="pokemons">
     <?php foreach ($pokemons as $pokemon): ?>
-        <option value="<?= $pokemon['name'] ?>"></option>
-    <?php endforeach ?>
+        <option value="<?= $pokemon["name"] ?>"></option>
+    <?php endforeach; ?>
 </datalist>
 
 
