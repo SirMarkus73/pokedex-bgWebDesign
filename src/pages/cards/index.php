@@ -9,13 +9,13 @@
 
 <body>
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php");
+    render_component("global/loader");
+    render_component("global/header");
     ?>
     <main>
         <?php
-        require_once(__DIR__ . "/../components/card_collection/card.php");
-        require_once(__DIR__ . "/../components/card_collection/card_searcher.php");
+        render_component("card_collection/card.php");
+        render_component("card_collection/card_searcher.php");
         ?>
     </main>
 </body>
