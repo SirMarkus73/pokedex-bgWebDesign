@@ -1,6 +1,6 @@
 <article class="p-10">
-    <h11>Cambiar nombre de usuario</h11>
-    <button class="btn bg-red-700 dark:bg-neutral-900" onclick="my_modal_2.showModal()">cambiar</button>
+
+    <button class="btn bg-red-700 dark:bg-neutral-900" onclick="my_modal_2.showModal()">Cambiar nombre de usuario</button>
     <dialog id="my_modal_2" class="modal">
         <div class="modal-box flex flex-col border border-gray-300 p-2 rounded-md mb-4 text-red-700 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-900 gap-5">
             <h3 class="font-bold text-lg">Cambiar nombre de usuario</h3>
