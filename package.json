@@ -21,7 +21,6 @@
     "concurrently": "^8.2.2",
     "daisyui": "^4.10.3",
     "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.4.3"
   }
 }
