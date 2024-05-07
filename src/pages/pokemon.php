@@ -16,13 +16,13 @@
 <body>
     <?php
     require_once(__DIR__ . "/../services/loader.php");
-    require_once(__DIR__ . "/../components/header.php");
+    render_component("header");
     ?>
     <main class="flex flex-col justify-center items-center h-3/4">
 
         <?php
-        require_once(__DIR__ . "/../components/pokemon/searchbar.php");
-        require_once(__DIR__ . "/../components/pokemon/get_pokemon.php");
+        render_component("pokemon/searchbar");
+        render_component("pokemon/get_pokemon");
         ?>
     </main>
 </body>
