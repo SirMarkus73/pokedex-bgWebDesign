@@ -13,7 +13,7 @@
 
 <body>
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
+    render_component("loader");
     render_component("header");
     ?>
     <main>

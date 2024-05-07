@@ -15,7 +15,7 @@
 
 <body>
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
+    render_component("loader");
     render_component("header");
     ?>
     <main class="flex flex-col justify-center items-center h-3/4">

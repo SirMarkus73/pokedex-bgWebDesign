@@ -19,7 +19,7 @@ require_once(__DIR__ . "/../services/protected_page.php");
 <body id="settings">
 
     <?php
-    require_once(__DIR__ . "/../services/loader.php");
+    render_component("loader");
     render_component("header")
     ?>
     <main class="p-6 flex flex-col gap-3">
