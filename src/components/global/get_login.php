@@ -1,4 +1,8 @@
-<?php require_once(__DIR__ . "/../../services/components_renderer.php") ?>
+<?php
+require_once(__DIR__ . "/../../services/components_renderer.php");
+require_once(__DIR__ . "/../../src_route.php");
+?>
+
 
 <?php if (isset($_SESSION["usuario"])) : ?>
 
@@ -6,8 +10,8 @@
         <button tabindex="0"><?= $_SESSION["usuario"] ?></button>
 
         <ul class="p-2 shadow menu dropdown-content   rounded-box w-fit z-[1] bg-red-800 dark:bg-purple-800" tabindex="0">
-            <li><a href="../pages/settings.php" id="setting">Settings</a></li>
-            <li><a href="../services/logout.php" id="logout">Logout</a></li>
+            <li><a href="<?= SRC_ROUTE ?>/pages/settings.php" id="setting">Settings</a></li>
+            <li><a href="<?= SRC_ROUTE ?>/services/logout.php" id="logout">Logout</a></li>
             <?php render_component("global/dark_mode_selector") ?>
         </ul>
     </div>
@@ -18,8 +22,8 @@
         <button tabindex="0">User</button>
 
         <ul class="p-2 shadow menu dropdown-content rounded-box w-fit z-[1] bg-red-800 dark:bg-purple-800" tabindex="0">
-            <li><a href="../pages/login.php" id="login">Login</a></li>
-            <li><a href="../pages/register.php" id="signup">Signup</a></li>
+            <li><a href="<?= SRC_ROUTE ?>/pages/login.php" id="login">Login</a></li>
+            <li><a href="<?= SRC_ROUTE ?>/pages/register.php" id="signup">Signup</a></li>
             <?php render_component("global/dark_mode_selector") ?>
         </ul>
     </div>
