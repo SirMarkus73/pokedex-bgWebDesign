@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . "/../src_route.php");
 require_once(__DIR__ . "/methods.php");
 require_once(__DIR__ . "/env.php");
 session_start();
@@ -29,9 +30,9 @@ if ($successful == "true") {
 }
 
 if ($contrasenya_correcta) {
-    header("Location: ../pages/index.php");
+    header("Location: " . SRC_ROUTE . "/pages/index.php");
 } else {
-    header("Location: ../pages/error.php?title=Login Fallido&message=Usuario o contrasenya incorrecta&href=login.php");
+    header("Location: " . SRC_ROUTE . "/pages/error.php?title=Login Fallido&message=Usuario o contrasenya incorrecta&href=login.php");
 }
 
 exit();

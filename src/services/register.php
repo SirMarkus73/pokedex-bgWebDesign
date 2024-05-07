@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . "/../src_route.php");
 require_once(__DIR__ . "/methods.php");
 require_once(__DIR__ . "/env.php");
 
@@ -12,7 +13,7 @@ $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
 
 if ($password != $repeated_password) {
-    header("Location: ../pages/error.php?title=Registro Fallido&message=La contraseña y la confirmación no coincide, inténtelo de nuevo&href=register.php");
+    header("Location: " . SRC_ROUTE . " /pages/error.php?title=Registro Fallido&message=La contraseña y la confirmación no coincide, inténtelo de nuevo&href=register.php");
     exit();
 }
 
@@ -25,10 +26,10 @@ $sql = "INSERT INTO usuarios (user, password) VALUES ('$username', '$hash_passwo
 
 if (mysqli_query($conn, $sql)) {
     mysqli_close($conn);
-    header("Location: ../pages/login.php");
+    header("Location: " . SRC_ROUTE . " /pages/user/login.php");
     exit();
 } else {
     mysqli_close($conn);
-    header("Location: ../pages/error.php?title=Registro Fallido&message=El registro ha fallado, por favor inténtelo mas tarde&href=register.php");
+    header("Location: " . SRC_ROUTE . "/pages/error.php?title=Registro Fallido&message=El registro ha fallado, por favor inténtelo mas tarde&href=register.php");
     exit();
 }

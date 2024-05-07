@@ -1,9 +1,11 @@
+<?php require_once(__DIR__ . "/../../src_route.php"); ?>
+
 <section class="max-md:hidden">
-    <img src="../assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
+    <img src="<?= SRC_ROUTE ?>/assets/img/logo.webp" alt="Logo de PokeFull" class="w-96"></a>
 </section>
 <section class="md:col-span-2 border border-red-600 dark:border-fuchsia-700 p-10">
 
-    <form action="../services/register.php" method="post" class="w-max flex flex-col gap-4">
+    <form action="<?= SRC_ROUTE ?>/services/register.php" method="post" class="w-max flex flex-col gap-4">
         <legend class="text-2xl">Registrarse</legend>
 
         <label for="username">Usuario:
@@ -24,5 +26,5 @@
 
     <hr class="border border-black dark:border-stone-50  w-1/2 my-5">
 
-    <a href="login.php">Iniciar Sesión</a>
+    <a href="<?= SRC_ROUTE ?>/pages/user/login.php">Iniciar Sesión</a>
 </section>
