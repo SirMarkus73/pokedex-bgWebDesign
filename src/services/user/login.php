@@ -1,8 +1,8 @@
 <?php
+session_start();
 require_once __DIR__ . "/../../src_route.php";
 require_once __DIR__ . "/../methods.php";
 require_once __DIR__ . "/../env.php";
-session_start();
 
 $username = post("username", "");
 $password = post("password", "");
@@ -24,6 +24,7 @@ if (mysqli_num_rows($result) == 1) {
 
     if (password_verify($password, $row["password"])) {
         $_SESSION["usuario"] = $username;
+        $_SESSION["image"] = SRC_ROUTE . "/assets/img/unown.png";
         $valid_passwd = true;
     }
 }
