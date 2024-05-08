@@ -25,12 +25,14 @@ if (isset($cardName) && isset($cardNumber)):
 
     $data = json_decode($response, true);
 
-    // Extrae los datos relevantes
-    $img = $data["data"][0]["images"]["large"];
+    if (isset($data)) {
+        // Extrae los datos relevantes
+        $img = $data["data"][0]["images"]["large"];
+    }
 endif;
 ?>
 
-<?php if (isset($cardName) && isset($cardNumber)): ?>
+<?php if (isset($data)): ?>
 
 <img class="w-1/4 flex justify-center mx-auto"  src="<?= $img ?>" alt="a ">
 
