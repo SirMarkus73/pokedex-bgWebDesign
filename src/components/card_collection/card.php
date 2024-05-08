@@ -25,13 +25,14 @@ if (isset($cardName) && isset($cardNumber)):
     if (!empty($data["data"])) {
         // Extrae los datos relevantes
         $img = $data["data"][0]["images"]["large"];
+        $name = $data["data"][0]["name"];
     }
 endif;
 ?>
 
 <?php if (!empty($data["data"])): ?>
 <a href="<?= $img ?>" target="_blank">
-    <img class="w-1/4 flex justify-center mx-auto"  src="<?= $img ?>" alt="a ">
+    <img class="w-1/4 flex justify-center mx-auto"  src="<?= $img ?>" alt="Pokemon <?= $name ?> ">
 </a>
 
 <?php endif; ?>
