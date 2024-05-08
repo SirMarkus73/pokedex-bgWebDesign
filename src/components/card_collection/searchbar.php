@@ -22,6 +22,16 @@ $cards = $results["data"];
             <input type="text" name="name" id="name" list="cards" autocomplete="cards"
                 class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
         </label>
+        
+        <label for="hp"> Buscar por Vida:
+                <input type="number" name="hp" id="hp" list="cards" 
+                class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
+        </label>
+
+        <label for="number"> Buscar por Número:
+                <input type="number" name="number" id="number" list="cards" 
+                class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
+        </label>
         <button type="submit" class="btn btn-ghost btn-outline btn-error dark:btn-secondary">Buscar</button>
     </form>
 </section>
