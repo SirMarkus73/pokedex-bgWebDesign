@@ -3,12 +3,12 @@
 require __DIR__ . "/../../services/methods.php";
 
 // Obtén el ID de la carta desde la URL
-$cardName = str_replace("*", " ", get("name", null));
+$cardName = str_replace(" ", "*", get("name", null));
 $cardNumber = get("number", null);
 $cardHP = get("hp", null);
 
 if (isset($cardHP)) {
-    $hpParam = "%20hp:320";
+    $hpParam = "%20hp:$cardHP";
 } else {
     $hpParam = "";
 }
@@ -30,7 +30,8 @@ endif;
 ?>
 
 <?php if (isset($data)): ?>
-
-<img class="w-1/4 flex justify-center mx-auto"  src="<?= $img ?>" alt="a ">
+<a href="<?= $img ?>" target="_blank">
+    <img class="w-1/4 flex justify-center mx-auto"  src="<?= $img ?>" alt="a ">
+</a>
 
 <?php endif; ?>
