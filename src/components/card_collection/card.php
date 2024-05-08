@@ -3,23 +3,29 @@
 require __DIR__ . "/../../services/methods.php";
 
 // Obtén el ID de la carta desde la URL
-$cardName = get("name", " ");
-$cardHp = get("hp", " ");
-$cardNumber = get("number", " ");
+$cardName = get("name", null);
+$cardHp = get("hp", null);
+$cardNumber = get("number", null);
 
-// Realiza una solicitud a la API de Pokémon
-$apiUrl = str_replace(
-    " ",
-    "&",
-    "https://api.pokemontcg.io/v2/cards?q=name:$cardName%20hp:$cardHp%20number:$cardNumber"
-);
+if (isset($cardName)):
+    // Realiza una solicitud a la API de Pokémon
+    $apiUrl = str_replace(
+        " ",
+        "*",
+        "https://api.pokemontcg.io/v2/cards?q=name:$cardName%20hp:$cardHp%20number:$cardNumber&select=name,hp,number,images"
+    );
 
-$response = file_get_contents($apiUrl);
+    $response = file_get_contents($apiUrl);
 
-$data = json_decode($response, true);
+    $data = json_decode($response, true);
 
-// Extrae los datos relevantes
-$img = $data["data"][0]["images"]["large"];
+    // Extrae los datos relevantes
+    $img = $data["data"][0]["images"]["large"];
+endif;
 ?>
 
+<?php if (isset($cardName)): ?>
+
 <img class="w-1/4 flex justify-center mx-auto"  src="<?= $img ?>" alt="a ">
+
+<?php endif; ?>
