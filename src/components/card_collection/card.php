@@ -5,9 +5,9 @@ require __DIR__ . "/../../services/methods.php";
 // Obtén el ID de la carta desde la URL
 $cardName = str_replace(" ", "*", get("name", null));
 $cardNumber = get("number", null);
-$cardHP = get("hp", null);
+$cardHP = get("hp", "");
 
-if (isset($cardHP)) {
+if ($cardHP != "") {
     $hpParam = "%20hp:$cardHP";
 } else {
     $hpParam = "";
@@ -17,7 +17,7 @@ if (isset($cardName) && isset($cardNumber)):
     // Realiza una solicitud a la API de Pokémon
 
     $api_url = "https://api.pokemontcg.io/v2/cards?q=name:*$cardName*%20number:$cardNumber$hpParam&pageSize=1&select=images,name";
-
+    echo $api_url;
     $response = file_get_contents($api_url);
 
     $data = json_decode($response, true);
