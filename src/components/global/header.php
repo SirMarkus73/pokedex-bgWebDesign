@@ -12,6 +12,8 @@ require_once __DIR__ . "/../../src_route.php";
             <p class="text-red-500 dark:text-purple-500">|</p>
             <a href="<?= SRC_ROUTE ?>/pages/wiki/index.php" id="wiki">Wiki</a>
             <p class="text-red-500 dark:text-purple-500">|</p>
+            <a href="<?= SRC_ROUTE ?>/pages/cards/index.php" id="cards">Cards</a>
+            <p class="text-red-500 dark:text-purple-500">|</p>
             <?php render_component("global/get_login"); ?>
         </div>
     </nav>
