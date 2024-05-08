@@ -20,6 +20,10 @@ PHPMyAdmin: [http://localhost:8000](http://localhost:8000)
 
 Web: [http://localhost:80](http://localhost:80)
 
+## Autoformatter usado
+
+Para este proyecto estamos usando [Prettier](https://prettier.io/) con el plugin de PHP
+
 ## Cosas útiles por ver
 
 - [Subir imágenes a una base de datos con php](https://programacion.net/articulo/almacenar_y_recuperar_una_imagen_de_una_base_de_datos_mysql_mediante_php_1861)
