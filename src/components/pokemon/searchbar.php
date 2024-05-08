@@ -17,7 +17,7 @@ $pokemons = $results["results"];
 
 
 <section class="flex justify-center w-max mx-auto p-4">
-    <form action="pokemon.php" method="get" class="m-0">
+    <form action="<?= $action ?>" method="get" class="m-0">
         <label for="name"> Buscar pokemon:
             <input type="text" name="name" id="name" list="pokemons" autocomplete="pokemons"
                 class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">

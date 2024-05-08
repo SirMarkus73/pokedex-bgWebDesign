@@ -1,10 +1,10 @@
-<?php require_once(__DIR__ . "/../../services/imports.php") ?>
+<?php require_once __DIR__ . "/../../services/imports.php"; ?>
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - Wiki"]) ?>
+    <?php render_component("global/head", ["title" => "Pokefull - Wiki"]); ?>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     ?>
     <main>
         <?php
-        render_component("pokemon/searchbar");
+        render_component("pokemon/searchbar", ["action" => "pokemon.php"]);
         render_component("pokemon/pokemons_searcher");
         ?>
     </main>
