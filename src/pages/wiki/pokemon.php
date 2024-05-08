@@ -21,10 +21,14 @@ $pokemon_name = strtolower(get("name", ""));
     ?>
     <main class="flex flex-col justify-center items-center h-3/4">
 
-        <?php
-        render_component("pokemon/searchbar", ["action" => "pokemon.php"]);
-        render_component("pokemon/get_pokemon");
-        ?>
+        <form action="pokemon.php" method="get" class="m-0">
+        <?php render_component("pokemon/searchbar", [
+            "action" => "pokemon.php",
+            "label" => "Buscar pokemon",
+        ]); ?> 
+        </form>
+
+        <?php render_component("pokemon/get_pokemon"); ?>
     </main>
 </body>
 

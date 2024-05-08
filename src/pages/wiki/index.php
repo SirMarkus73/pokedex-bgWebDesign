@@ -13,10 +13,21 @@
     render_component("global/header");
     ?>
     <main>
-        <?php
-        render_component("pokemon/searchbar", ["action" => "pokemon.php"]);
-        render_component("pokemon/pokemons_searcher");
-        ?>
+        <form action="pokemon.php" method="get" class="m-0">
+
+            <input type="hidden" name="username" value="<?= $_SESSION[
+                "usuario"
+            ] ?>">
+            
+            <?php render_component("pokemon/searchbar", [
+                "action" => "pokemon.php",
+                "label" => "Buscar pokemon",
+            ]); ?> 
+    
+        </form>
+        
+        <?php render_component("pokemon/pokemons_searcher"); ?>
+
     </main>
 </body>
 
