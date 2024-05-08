@@ -19,17 +19,18 @@ $cards = $results["data"];
 <section class="flex justify-center w-max mx-auto p-4">
     <form method="get" class="m-0">
         <label for="name"> Buscar Carta:
-            <input type="text" name="name" id="name" list="cardList" autocomplete="on"
+            <input type="text" name="name" id="name" list="cardList" autocomplete="on" required
                 class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
         </label>
         
-        <label for="hp"> Buscar por Vida:
-                <input type="number" name="hp" id="hp" autocomplete="off"
+    
+        <label for="number"> Buscar por Número:
+                <input type="number" name="number" id="number" autocomplete="off" required
                 class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
         </label>
 
-        <label for="number"> Buscar por Número:
-                <input type="number" name="number" id="number" autocomplete="off"
+        <label for="hp"> Buscar por Vida:
+                <input type="number" name="hp" id="hp" autocomplete="off"
                 class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
         </label>
         <button type="submit" class="btn btn-ghost btn-outline btn-error dark:btn-secondary">Buscar</button>
