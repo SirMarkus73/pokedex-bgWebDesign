@@ -7,7 +7,7 @@ $cardName = get("name", null);
 $cardHp = get("hp", null);
 $cardNumber = get("number", null);
 
-if (isset($cardName)):
+if (isset($cardName) && isset($cardHp) && isset($cardNumber)):
     // Realiza una solicitud a la API de Pokémon
     $apiUrl = str_replace(
         " ",
@@ -24,7 +24,7 @@ if (isset($cardName)):
 endif;
 ?>
 
-<?php if (isset($cardName)): ?>
+<?php if (isset($cardName) && isset($cardHp) && isset($cardNumber)): ?>
 
 <img class="w-1/4 flex justify-center mx-auto"  src="<?= $img ?>" alt="a ">
 
