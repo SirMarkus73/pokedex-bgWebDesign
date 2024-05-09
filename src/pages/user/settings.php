@@ -26,6 +26,7 @@ require_once __DIR__ . "/../../services/protected_page.php";
             render_component("settings/change_image");
             render_component("settings/change_password");
             render_component("settings/change_username");
+            render_component("settings/delete_user");
             ?>
         </section>
 
