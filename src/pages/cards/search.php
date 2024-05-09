@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../../services/imports.php";
-
+require_once __DIR__ . "/../../services/methods.php";
 
 $response = file_get_contents(__DIR__ . "/../../assets/json/cards.json");
 $data = json_decode($response, true);
@@ -21,7 +21,8 @@ $data = json_decode($response, true);
     ?>
     <main>
         <?php render_component("card_collection/card_searcher", ["cards" => $data["data"]]); ?>
-        <?php render_component("card_collection/all_cards", [
+        <?php render_component("card_collection/card", [
+            "id" => get("id", null),
             "cards" => $data["data"],
         ]); ?>
     </main>
