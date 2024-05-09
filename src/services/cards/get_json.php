@@ -6,7 +6,7 @@ $page = get("page", 1);
 
 $local_json_route = __DIR__ . "/../../assets/json/cards.json";
 
-$API_URL = "https://api.pokemontcg.io/v2/cards?page=$page&pageSize=250&select=name";
+$API_URL = "https://api.pokemontcg.io/v2/cards?page=$page&pageSize=250&select=name,number,hp,images";
 $cards = file_get_contents($API_URL);
 $cards_decoded = json_decode($cards, true);
 
@@ -16,7 +16,21 @@ if (!empty($cards_decoded["data"])) {
     $content = [];
 
     foreach ($cards as $card) {
-        array_push($content, $card["name"]);
+        if (isset($card["hp"])) {
+            array_push($content, [
+                "name" => $card["name"],
+                "number" => $card["number"],
+                "hp" => $card["hp"],
+                "img" => $card["images"]["large"],
+            ]);
+        } else {
+            array_push($content, [
+                "name" => $card["name"],
+                "number" => $card["number"],
+                "hp" => null,
+                "img" => $card["images"]["large"],
+            ]);
+        }
     }
 
     $local_json = file_get_contents($local_json_route);
