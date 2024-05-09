@@ -1,29 +1,31 @@
 <?php
 
-require_once __DIR__ . "/../../services/methods.php";
+$json_route = __DIR__ . "/../../assets/json/cards.json";
 
-$offset = get("offset", 10);
+$response = file_get_contents($json_route);
 
-if ($offset < 10) {
-    $offset = 10;
-}
+$cards = json_decode($response, true);
 ?>
 
+<datalist id="cardList">
+    <?php foreach ($cards["data"] as $card): ?>
+        <option value="<?= $card["id"] ?>">
+            Nombre: <?= $card["name"] ?>,
+            Numero: <?= $card["number"] ?>
+        </option>
+    <?php endforeach; ?>
+</datalist>
 
-<?php function show_pokemons(int $limit, int $offset)
-{
-    $api_url = "https://pokeapi.co/api/v2/cards?limit=$limit&offset=$offset";
-    $result = file_get_contents($api_url);
-    $response = json_decode($result, true);
 
-    foreach ($response["results"] as $cards):
+<section class="border border-red-500 dark:border-fuchsia-500 m-5 mb-0">
+    <legend class="text-center text-2xl py-5">Buscar Carta</legend>
+    <form method="get" class="flex justify-center w-max mx-auto py-2 gap-4 text-center m-0">
 
-        $cards_url = file_get_contents($cards["url"]);
-        $cards = json_decode($cards_url, true);
-        $img = $cards["images"]["large"];
-        ?>
-        <a href="cards.php?name=<?= $cards ?>">
-</a>
-<?php
-    endforeach;
-} ?>
+        <label for="name"> ID:
+            <input type="text" name="id" id="id" list="cardList" autocomplete="on" required
+                class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
+        </label>
+        
+        <button type="submit" class="btn btn-ghost btn-outline btn-error dark:btn-secondary">Buscar</button>
+    </form>
+</section>
