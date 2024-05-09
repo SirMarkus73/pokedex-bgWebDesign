@@ -17,8 +17,8 @@ foreach ($cards["data"] as $card) {
 
 <?php if (isset($card_selected)) : ?>
 
-    <section class=" m-5 mb-0 w-full mx-auto" target="_blank">
-        <a href="<?= $card_selected["img"] ?>">
+    <section class=" m-5 mb-0 w-full mx-auto">
+        <a href="<?= $card_selected["img"] ?>" target="_blank">
             <img src="<?= $card_selected["img"] ?>" alt="Pokemon <?= $card_selected["name"] ?>" class="w-1/3 mx-auto border-4 border-red-500 dark:border-fuchsia-500 rounded-3xl">
         </a>
     </section>
