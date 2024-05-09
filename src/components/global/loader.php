@@ -7,7 +7,6 @@
 </div>
 
 <script>
-
     window.addEventListener("beforeunload", () => {
         const loader = document.getElementById("loader");
         const main = document.querySelector("main")
@@ -22,5 +21,4 @@
         loader.classList.add("hidden");
         loader.classList.remove("absolute");
     })
-
 </script>

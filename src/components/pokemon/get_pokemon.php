@@ -8,14 +8,14 @@ $result = file_get_contents($api_url);
 
 $pokemon = json_decode($result, true);
 
-if ($pokemon):
+if ($pokemon) :
 
     $pokemon_name = $pokemon["name"];
     $image_url = $pokemon["sprites"]["front_default"];
     $abilities = $pokemon["abilities"];
     $stats = $pokemon["stats"];
     $types = $pokemon["types"];
-    ?>
+?>
     <article class="card w-3/4 shadow-xl bg-red-600 dark:bg-fuchsia-600 text-white">
         <figure><img src="<?= $image_url ?>" alt="pokemon <?= $name ?>" class="w-2/5 md:w-2/6 lg:w-2/12" /></figure>
         <div class="card-body">
@@ -32,9 +32,7 @@ if ($pokemon):
             <div class="stats bg-red-500 dark:bg-fuchsia-500 text-white">
                 <?php foreach ($stats as $stat) { ?>
                     <div class="stat h-fit  bg-red-500 dark:bg-fuchsia-500 text-white">
-                        <div class="stat-title"><?= $stat["stat"][
-                            "name"
-                        ] ?></div>
+                        <div class="stat-title"><?= $stat["stat"]["name"] ?></div>
                         <div class="stat-value"><?= $stat["base_stat"] ?></div>
                     </div>
                 <?php } ?>
@@ -57,7 +55,7 @@ if ($pokemon):
     </article>
 
 <?php
-else:
+else :
     header(
         "Location: ../pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=../pages/wiki.php"
     ); ?>
@@ -66,5 +64,5 @@ else:
         window.location.href = '../pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=../pages/wiki.php';
     </script>
 
-    <?php exit();
+<?php exit();
 endif;

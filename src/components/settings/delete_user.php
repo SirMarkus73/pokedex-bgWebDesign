@@ -12,9 +12,7 @@
                     Confirma tu usuario:
                     <input class="bg-neutral-200 dark:bg-black" type="text" name="current-username" required>
                 </label>
-                <input type="hidden" name="username" value="<?= $_SESSION[
-                    "usuario"
-                ] ?>">
+                <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
                 <button type="submit" class="btn btn-outline btn-error w-1/3 text-center mx-auto">Eliminar</button>
             </form>
 

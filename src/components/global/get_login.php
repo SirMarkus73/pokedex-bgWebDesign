@@ -4,10 +4,10 @@ require_once __DIR__ . "/../../src_route.php";
 ?>
 
 
-<?php if (isset($_SESSION["usuario"])): ?>
+<?php if (isset($_SESSION["usuario"])) : ?>
 
     <div class="dropdown dropdown-hover dropdown-bottom dropdown-end">
-        <button tabindex="0"> 
+        <button tabindex="0">
             <img src="<?= $_SESSION["image"] ?>" alt="usuario" class="w-20">
         </button>
 
@@ -20,7 +20,7 @@ require_once __DIR__ . "/../../src_route.php";
         </ul>
     </div>
 
-<?php else: ?>
+<?php else : ?>
 
     <div class="dropdown dropdown-hover dropdown-bottom dropdown-end">
         <button tabindex="0">User</button>

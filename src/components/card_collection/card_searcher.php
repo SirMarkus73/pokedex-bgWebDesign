@@ -8,7 +8,7 @@ $cards = json_decode($response, true);
 ?>
 
 <datalist id="cardList">
-    <?php foreach ($cards["data"] as $card): ?>
+    <?php foreach ($cards["data"] as $card) : ?>
         <option value="<?= $card["id"] ?>">
             Nombre: <?= $card["name"] ?>,
             Numero: <?= $card["number"] ?>
@@ -22,10 +22,9 @@ $cards = json_decode($response, true);
     <form method="get" class="flex justify-center w-max mx-auto py-2 gap-4 text-center m-0">
 
         <label for="name"> ID:
-            <input type="text" name="id" id="id" list="cardList" autocomplete="on" required
-                class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
+            <input type="text" name="id" id="id" list="cardList" autocomplete="on" required class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100">
         </label>
-        
+
         <button type="submit" class="btn btn-ghost btn-outline btn-error dark:btn-secondary">Buscar</button>
     </form>
 </section>

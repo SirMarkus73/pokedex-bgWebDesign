@@ -22,7 +22,7 @@ if ($offset < 0) {
 
 function show_pokemon_card($name, $image_url, $ability, $stats, $types)
 {
-    ?>
+?>
 
     <article class="card w-96 shadow-xl bg-red-600 dark:bg-fuchsia-600 text-white">
         <figure><img src="<?= $image_url ?>" alt="pokemon <?= $name ?>" /></figure>
@@ -34,9 +34,7 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
             <div class="stats bg-red-500 dark:bg-fuchsia-500 text-white">
                 <?php foreach ($stats as $stat) { ?>
                     <div class="stat h-fit  bg-red-500 dark:bg-fuchsia-500 text-white">
-                        <div class="stat-title"><?= $stat["stat"][
-                            "name"
-                        ] ?></div>
+                        <div class="stat-title"><?= $stat["stat"]["name"] ?></div>
                         <div class="stat-value"><?= $stat["base_stat"] ?></div>
                     </div>
                 <?php } ?>
@@ -84,7 +82,7 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
     $result = file_get_contents($api_url);
     $response = json_decode($result, true);
 
-    foreach ($response["results"] as $pokemons):
+    foreach ($response["results"] as $pokemons) :
 
         $pokemon_url = file_get_contents($pokemons["url"]);
         $pokemon = json_decode($pokemon_url, true);
@@ -94,14 +92,14 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
         $pokemon_ability = $pokemon["abilities"][0]["ability"]["name"];
         $stats = $pokemon["stats"];
         $types = $pokemon["types"];
-        ?>
+?>
         <a href="pokemon.php?name=<?= $pokemon_name ?>"><?php show_pokemon_card(
-    $pokemon_name,
-    $pokemon_image,
-    $pokemon_ability,
-    $stats,
-    $types
-); ?></a>
+                                                            $pokemon_name,
+                                                            $pokemon_image,
+                                                            $pokemon_ability,
+                                                            $stats,
+                                                            $types
+                                                        ); ?></a>
 <?php
     endforeach;
 } ?>
@@ -112,10 +110,10 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
 <section class="flex justify-center mx-auto">
     <form method="get">
         <button name="offset" value="<?= $offset -
-            $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Anterior</button>
+                                            $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Anterior</button>
         <input type="number" name="limit" id="limit" max="<?= $max_limit ?>" min="1" value="<?= $limit ?>" id="limit" class="input input-bordered text-black">
         <button name="offset" value="<?= $offset +
-            $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Siguiente</button>
+                                            $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Siguiente</button>
         <button type="submit" class="hidden" id="submit"></button>
     </form>
 </section>
