@@ -11,3 +11,23 @@
     @apply text-black dark:text-white bg-slate-200 dark:bg-neutral-800;
   }
 }
+
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
