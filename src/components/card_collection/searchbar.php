@@ -1,17 +1,15 @@
 <?php
 
-$api_url = "https://api.pokemontcg.io/v2/cards?q=id:g1*&select=name";
+$json_route = __DIR__ . "/../../assets/json/cards.json";
 
-$response = file_get_contents($api_url);
+$response = file_get_contents($json_route);
 
-$results = json_decode($response, true);
-
-$cards = $results["data"];
+$cards = json_decode($response, true);
 ?>
 
 <datalist id="cardList">
-    <?php foreach ($cards as $card): ?>
-        <option value="<?= $card["name"] ?>"></option>
+    <?php foreach ($cards["data"] as $card): ?>
+        <option value="<?= $card ?>"></option>
     <?php endforeach; ?>
 </datalist>
 
