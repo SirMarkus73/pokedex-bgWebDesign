@@ -10,7 +10,7 @@
             <form action="<?= SRC_ROUTE ?>/services/user/settings/delete_user.php" method="post" class="flex flex-col gap-5 justify-center">
                 <label>
                     Confirma tu usuario:
-                    <input class="bg-neutral-200 dark:bg-black" type="text" name="current-username" required>
+                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100" type="text" name="current-username" required>
                 </label>
                 <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
                 <button type="submit" class="btn btn-outline btn-error w-1/3 text-center mx-auto">Eliminar</button>

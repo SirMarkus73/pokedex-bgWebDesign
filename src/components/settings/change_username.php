@@ -10,11 +10,9 @@
             <form action="<?= SRC_ROUTE ?>/services/user/settings/change_username.php" method="post">
                 <label>
                     Nuevo usuario:
-                    <input class="bg-neutral-200 dark:bg-black" type="text" name="new-username" required>
+                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100" type="text" name="new-username" required>
                 </label>
-                <input type="hidden" name="username" value="<?= $_SESSION[
-                    "usuario"
-                ] ?>">
+                <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
                 <button type="submit" class="btn btn-outline btn-error dark:btn-secondary">Cambiar usuario</button>
             </form>
 

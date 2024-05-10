@@ -12,17 +12,17 @@
 
                 <label>
                     contraseña actual:
-                    <input class="bg-neutral-200 dark:bg-black" type="password" name="password" required>
+                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100" type="password" name="password" required>
                 </label>
 
                 <label>
                     Nueva contraseña:
-                    <input class="bg-neutral-200 dark:bg-black" type="password" name="new_password" required>
+                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100" type="password" name="new_password" required>
                 </label>
 
                 <label>
                     Repetir la contraseña nueva:
-                    <input class="bg-neutral-200 dark:bg-black" type="password" name="password_repeat" required>
+                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100" type="password" name="password_repeat" required>
                 </label>
 
                 <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
