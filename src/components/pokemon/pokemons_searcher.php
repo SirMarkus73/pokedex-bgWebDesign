@@ -93,13 +93,15 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
         $stats = $pokemon["stats"];
         $types = $pokemon["types"];
 ?>
-        <a href="pokemon.php?name=<?= $pokemon_name ?>"><?php show_pokemon_card(
-                                                            $pokemon_name,
-                                                            $pokemon_image,
-                                                            $pokemon_ability,
-                                                            $stats,
-                                                            $types
-                                                        ); ?></a>
+        <a href="pokemon.php?name=<?= $pokemon_name ?>">
+            <?php show_pokemon_card(
+                $pokemon_name,
+                $pokemon_image,
+                $pokemon_ability,
+                $stats,
+                $types
+            ); ?>
+        </a>
 <?php
     endforeach;
 } ?>
