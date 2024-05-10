@@ -4,6 +4,7 @@ include_once __DIR__ . "/../methods.php";
 
 $page = get("page", 1);
 
+
 function get_pages(int $step, int $max)
 {
 
@@ -23,6 +24,8 @@ while (true) {
     $API_URL = "https://api.pokemontcg.io/v2/cards?page=$page&pageSize=250&select=name,number,hp,images,id";
     $cards = file_get_contents($API_URL);
     $cards_decoded = json_decode($cards, true);
+
+    $max_pages = $cards_decoded["totalCount"] / 250 + 1;
 
     if (!empty($cards_decoded["data"])) {
         $cards = $cards_decoded["data"];
@@ -64,13 +67,13 @@ while (true) {
         $encoded = json_encode($full_content);
 
         if ($decoded_local_json["page"] < $page) {
-            if (in_array($page, get_pages(3, $cards_decoded["totalCount"] / 250 + 1))) {
-                file_put_contents($local_json_route, $encoded, JSON_PRETTY_PRINT);
+            if (in_array($page, get_pages(3, $max_pages))) {
+                file_put_contents($local_json_route, $encoded);
                 $page += 1;
                 header("Location: ./get_json.php?page=$page");
                 exit();
             } else {
-                file_put_contents($local_json_route, $encoded, JSON_PRETTY_PRINT);
+                file_put_contents($local_json_route, $encoded);
                 $page += 1;
             }
         } else {
