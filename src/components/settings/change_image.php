@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . "/../../src_route.php"; ?>
+<?php
+require_once __DIR__ . "/../../src_route.php";
+require_once __DIR__ . "/../../services/pokemons/get_pokemons.php"
+?>
 
 <article>
 
@@ -10,6 +13,7 @@
                 <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
                 <?php render_component("pokemon/searchbar", [
                     "label" => "Seleccionar avatar",
+                    "pokemons" => $pokemons,
                 ]); ?>
             </form>
             <div class="modal-action">
