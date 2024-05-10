@@ -34,8 +34,8 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
             <div class="stats bg-red-500 dark:bg-fuchsia-500 text-white">
                 <?php foreach ($stats as $stat) { ?>
                     <div class="stat h-fit  bg-red-500 dark:bg-fuchsia-500 text-white">
-                        <div class="stat-title"><?= $stat["stat"]["name"] ?></div>
-                        <div class="stat-value"><?= $stat["base_stat"] ?></div>
+                        <div class="stat-title"><?= $stat["name"] ?></div>
+                        <div class="stat-value"><?= $stat["base"] ?></div>
                     </div>
                 <?php } ?>
 
@@ -43,7 +43,7 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
             <div class="card-actions justify-end text-black">
                 <?php foreach ($types as $type) { ?>
                     <?php
-                    $type_name = $type["type"]["name"];
+                    $type_name = $type;
                     $type_color = "bg-$type_name";
 
                     /* Colors 
@@ -89,7 +89,7 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
 
         $pokemon_name = $pokemon["name"];
         $pokemon_image = $pokemon["image"];
-        $pokemon_ability = $pokemon["abilities"][0]["ability"]["name"];
+        $pokemon_ability = $pokemon["abilities"][0];
         $stats = $pokemon["stats"];
         $types = $pokemon["types"];
 ?>

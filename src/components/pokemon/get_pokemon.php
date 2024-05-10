@@ -30,7 +30,7 @@ if (isset($pokemon)) :
             <div>
                 <?php foreach ($abilities as $ability) { ?>
                     <div class="badge bg-white dark:bg-fuchsia-500 text-black dark:text-white ">
-                        <?= $ability["ability"]["name"] ?>
+                        <?= $ability ?>
                     </div>
                 <?php } ?>
             </div>
@@ -38,8 +38,8 @@ if (isset($pokemon)) :
             <div class="stats bg-red-500 dark:bg-fuchsia-500 text-white">
                 <?php foreach ($stats as $stat) { ?>
                     <div class="stat h-fit  bg-red-500 dark:bg-fuchsia-500 text-white">
-                        <div class="stat-title"><?= $stat["stat"]["name"] ?></div>
-                        <div class="stat-value"><?= $stat["base_stat"] ?></div>
+                        <div class="stat-title"><?= $stat["name"] ?></div>
+                        <div class="stat-value"><?= $stat["base"] ?></div>
                     </div>
                 <?php } ?>
 
@@ -50,11 +50,10 @@ if (isset($pokemon)) :
             <div class="card-actions justify-end text-black">
                 <?php foreach ($types as $type) { ?>
                     <?php
-                    $type_name = $type["type"]["name"];
-                    $type_color = "bg-$type_name";
+                    $type_color = "bg-$type";
                     ?>
 
-                    <div class="badge text-white <?= $type_color ?>"><?= $type_name ?></div>
+                    <div class="badge text-white <?= $type_color ?>"><?= $type ?></div>
                 <?php } ?>
             </div>
         </div>

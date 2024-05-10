@@ -1,14 +1,3 @@
-<?php
-
-$api_url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
-
-$response = file_get_contents($api_url);
-
-$results = json_decode($response, true);
-
-$pokemons = $results["results"];
-?>
-
 <datalist id="pokemons">
     <?php foreach ($pokemons as $pokemon) : ?>
         <option value="<?= $pokemon["name"] ?>"></option>
