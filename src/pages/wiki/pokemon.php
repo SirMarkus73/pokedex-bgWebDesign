@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../../services/imports.php";
 require_once __DIR__ . "/../../services/methods.php";
+require_once __DIR__ . "/../../services/pokemons/get_pokemons.php";
 
 $pokemon_name = strtolower(get("name", ""));
 ?>
@@ -22,13 +23,14 @@ $pokemon_name = strtolower(get("name", ""));
     <main class="flex flex-col justify-center items-center h-3/4">
 
         <form action="pokemon.php" method="get" class="m-0">
-        <?php render_component("pokemon/searchbar", [
-            "action" => "pokemon.php",
-            "label" => "Buscar pokemon",
-        ]); ?> 
+            <?php render_component("pokemon/searchbar", [
+                "action" => "pokemon.php",
+                "label" => "Buscar pokemon",
+                "pokemons" => $pokemons,
+            ]); ?>
         </form>
 
-        <?php render_component("pokemon/get_pokemon"); ?>
+        <?php render_component("pokemon/get_pokemon", ["pokemons" => $pokemons]); ?>
     </main>
 </body>
 

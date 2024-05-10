@@ -2,16 +2,22 @@
 require_once __DIR__ . "/../../services/methods.php";
 
 $name = strtolower(get("name", ""));
-$api_url = "https://pokeapi.co/api/v2/pokemon/$name";
 
-$result = file_get_contents($api_url);
+foreach ($pokemons as $i) {
+    if ($i["name"] == $name) {
+        $pokemon = $i;
+        break;
+    } else {
+        $pokemon = null;
+    }
+}
 
-$pokemon = json_decode($result, true);
 
-if ($pokemon) :
+
+if (isset($pokemon)) :
 
     $pokemon_name = $pokemon["name"];
-    $image_url = $pokemon["sprites"]["front_default"];
+    $image_url = $pokemon["image"];
     $abilities = $pokemon["abilities"];
     $stats = $pokemon["stats"];
     $types = $pokemon["types"];

@@ -76,19 +76,19 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
 }
 ?>
 
-<?php function show_pokemons(int $limit, int $offset)
+<?php function show_pokemons(int $limit, int $offset, array $pokemons)
 {
-    $api_url = "https://pokeapi.co/api/v2/pokemon?limit=$limit&offset=$offset";
-    $result = file_get_contents($api_url);
-    $response = json_decode($result, true);
+    $pokemons = array_slice(
+        $pokemons,
+        $offset,
+        $limit
 
-    foreach ($response["results"] as $pokemons) :
+    );
 
-        $pokemon_url = file_get_contents($pokemons["url"]);
-        $pokemon = json_decode($pokemon_url, true);
+    foreach ($pokemons as $pokemon) :
 
         $pokemon_name = $pokemon["name"];
-        $pokemon_image = $pokemon["sprites"]["front_default"];
+        $pokemon_image = $pokemon["image"];
         $pokemon_ability = $pokemon["abilities"][0]["ability"]["name"];
         $stats = $pokemon["stats"];
         $types = $pokemon["types"];
@@ -104,7 +104,7 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
     endforeach;
 } ?>
 <section class="gap-2 mx-auto my-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center">
-    <?php show_pokemons($limit, $offset); ?>
+    <?php show_pokemons($limit, $offset, $pokemons); ?>
 </section>
 
 <section class="flex justify-center mx-auto">
