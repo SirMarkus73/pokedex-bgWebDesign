@@ -2,26 +2,41 @@
 include_once __DIR__ . "/../../src_route.php";
 include_once __DIR__ . "/../methods.php";
 
-$page = get("page", 1);
 
 $local_json_route = __DIR__ . "/../../assets/json/pokemons.json";
 
-$API_URL = "https://pokeapi.co/api/v2/pokemon/$page";
-$response = file_get_contents($API_URL);
-$pokemon = json_decode($response, true);
+$page = get("page", 1);
 
-$pokemon_id = $pokemon["id"];
-$pokemon_name = $pokemon["forms"][0]["name"];
-$pokemon_abilities = $pokemon["abilities"];
-$pokemon_stats = $pokemon["stats"];
-$pokemon_image = $pokemon["sprites"]["front_default"];
-$pokemon_image_shiny = $pokemon["sprites"]["front_shiny"];
-$pokemon_types = $pokemon["types"];
+function get_pages(int $step, int $max)
+{
+
+    $pages = [];
+
+    for ($i = 1; $i <= $max; $i += $step) {
+        array_push($pages, $i);
+    }
+
+    return $pages;
+}
+
+while (true) {
+
+    $API_URL = "https://pokeapi.co/api/v2/pokemon/$page";
+    $response = file_get_contents($API_URL);
+    $pokemon = json_decode($response, true);
+
+    $pokemon_id = $pokemon["id"];
+    $pokemon_name = $pokemon["name"];
+    $pokemon_abilities = $pokemon["abilities"];
+    $pokemon_stats = $pokemon["stats"];
+    $pokemon_image = $pokemon["sprites"]["front_default"];
+    $pokemon_image_shiny = $pokemon["sprites"]["front_shiny"];
+    $pokemon_types = $pokemon["types"];
 
 
-if (isset($pokemon)) {
+    if (isset($pokemon)) {
 
-    while (true) {
+
         $content = [];
 
         array_push($content, [
@@ -50,7 +65,7 @@ if (isset($pokemon)) {
         $encoded = json_encode($full_content);
 
         if ($decoded_local_json["page"] < $page) {
-            if ($page == 100 || $page == 200 || $page == 300 || $page == 400 || $page == 500 || $page == 600 || $page == 700 || $page == 800 || $page == 900 || $page == 1000 || $page == 1100 || $page == 1200) {
+            if (in_array($page, get_pages(80, 9999))) {
                 file_put_contents($local_json_route, $encoded, JSON_PRETTY_PRINT);
                 $page += 1;
                 header("Location: ./get_json.php?page=$page");
@@ -61,9 +76,7 @@ if (isset($pokemon)) {
         } else {
             die("Esta pagina ya se ha consultado");
         }
+    } else {
+        die("Has llegado al final de la pagina");
     }
-} else {
-    die("Has llegado al final de la pagina");
 }
-
-exit();
