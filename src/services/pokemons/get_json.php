@@ -71,6 +71,7 @@ while (true) {
                 header("Location: ./get_json.php?page=$page");
                 exit();
             } else {
+                file_put_contents($local_json_route, $encoded, JSON_PRETTY_PRINT);
                 $page += 1;
             }
         } else {
