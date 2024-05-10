@@ -22,8 +22,8 @@
  -->
 
 <article class="card <?= $width ?> min-w-64 shadow-xl bg-red-600 dark:bg-fuchsia-600 text-white">
-    <figure><img src="<?= $image ?>" alt="pokemon <?= $name ?>" class="<?= $height ?>" /></figure>
-    <div class="card-body">
+    <figure class="p-3"><img src="<?= $image ?>" alt="pokemon <?= $name ?>" class="<?= $height ?>" /></figure>
+    <div class="card-body px-5 pb-5 pt-0">
         <div class="flex flex-row gap-3 items-center">
             <h2 class="card-title"> <?= $name ?> </h2>
 
