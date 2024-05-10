@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . "/../../services/methods.php";
+require_once __DIR__ . "/../../services/components_renderer.php";
 
 $limit = get("limit", 8);
 
@@ -20,63 +21,8 @@ if ($offset < 0) {
     $offset = 0;
 }
 
-function show_pokemon_card($name, $image_url, $ability, $stats, $types)
-{
-?>
 
-    <article class="card w-96 shadow-xl bg-red-600 dark:bg-fuchsia-600 text-white">
-        <figure><img src="<?= $image_url ?>" alt="pokemon <?= $name ?>" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                <?= $name ?>
-                <div class="badge bg-white dark:bg-fuchsia-500 text-black dark:text-white "><?= $ability ?></div>
-            </h2>
-            <div class="stats bg-red-500 dark:bg-fuchsia-500 text-white">
-                <?php foreach ($stats as $stat) { ?>
-                    <div class="stat h-fit  bg-red-500 dark:bg-fuchsia-500 text-white">
-                        <div class="stat-title"><?= $stat["name"] ?></div>
-                        <div class="stat-value"><?= $stat["base"] ?></div>
-                    </div>
-                <?php } ?>
-
-            </div>
-            <div class="card-actions justify-end text-black">
-                <?php foreach ($types as $type) { ?>
-                    <?php
-                    $type_name = $type;
-                    $type_color = "bg-$type_name";
-
-                    /* Colors 
-                    bg-steel: "#404040",
-                    bg-water: "#3b82f6",
-                    bg-bug: "#84cc16",
-                    bg-dragon: "#6366f1",
-                    bg-electric: "#eab308",
-                    bg-ghost: "#8b5cf6",
-                    bg-fire: "#f97316",
-                    bg-fairy: "#ec4899",
-                    bg-ice: "#06b6d4",
-                    bg-fighting: "#dc2626",
-                    bg-normal: "#737373",
-                    bg-grass: "#22c55e",
-                    bg-psychic: "#db2777",
-                    bg-rock: "#a16207",
-                    bg-dark: "#64748b",
-                    bg-ground: "#f59e0b",
-                    bg-poison: "#d946ef",
-                    bg-flying: "#a855f7", */
-                    ?>
-
-                    <div class="badge text-white <?= $type_color ?>"><?= $type_name ?></div>
-                <?php } ?>
-            </div>
-        </div>
-    </article>
-<?php
-}
-?>
-
-<?php function show_pokemons(int $limit, int $offset, array $pokemons)
+function show_pokemons(int $limit, int $offset, array $pokemons)
 {
     $pokemons = array_slice(
         $pokemons,
@@ -93,19 +39,29 @@ function show_pokemon_card($name, $image_url, $ability, $stats, $types)
         $stats = $pokemon["stats"];
         $types = $pokemon["types"];
 ?>
-        <a href="pokemon.php?name=<?= $pokemon_name ?>">
-            <?php show_pokemon_card(
-                $pokemon_name,
-                $pokemon_image,
-                $pokemon_ability,
-                $stats,
-                $types
-            ); ?>
+
+        <a href="pokemon.php?name=<?= $pokemon_name ?>" class="flex justify-center">
+
+            <?php
+            render_component(
+                "pokemon/card",
+                [
+                    "name" => $pokemon_name,
+                    "image" => $pokemon_image,
+                    "abilities" => $pokemon_ability,
+                    "stats" => $stats,
+                    "types" => $types,
+                    "width" => "w-[20dvw]",
+                    "height" => "h-[10dvh]",
+                ]
+            )
+            ?>
         </a>
 <?php
     endforeach;
 } ?>
-<section class="gap-2 mx-auto my-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center">
+
+<section class="gap-10 mx-auto my-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center w-max">
     <?php show_pokemons($limit, $offset, $pokemons); ?>
 </section>
 
