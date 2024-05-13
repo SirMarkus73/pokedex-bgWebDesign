@@ -15,7 +15,7 @@ foreach ($cards as $card) {
     <section class=" mb-0 m-10 w-max mx-auto flex flex-col justify-center p-3 gap-3">
         <a href="<?= $card_selected["img"] ?>" target="_blank">
             <img src="<?= $card_selected["img"] ?>" alt="Pokemon <?= $card_selected["name"] ?>"
-                 class="w-1/3 mx-auto border-4 border-red-500 dark:border-fuchsia-500 rounded-3xl">
+                 class="w-[20dvw] mx-auto border-4 border-red-500 dark:border-fuchsia-500 rounded-3xl">
         </a>
         <?php if (isset($_SESSION["usuario"])) : ?>
             <form action="<?= SRC_ROUTE ?>/services/cards/insertar_cards.php" method="get">

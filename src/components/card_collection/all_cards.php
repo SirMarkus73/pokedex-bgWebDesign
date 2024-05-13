@@ -34,14 +34,12 @@ $cards = array_slice(
 );
 
 ?>
-
-<?php
-foreach ($cards as $card) :
-    render_component("card_collection/card", ["id" => $card["id"], "cards" => $cards]);
-endforeach;
-?>
-
-?>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <?php
+    foreach ($cards as $card) :
+        render_component("card_collection/card", ["id" => $card["id"], "cards" => $cards]);
+    endforeach; ?>
+</section>
 
 <section class="flex justify-center mx-auto ">
     <form method="get">
