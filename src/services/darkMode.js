@@ -34,11 +34,7 @@ window.addEventListener("load", () => {
         }
     }
 
-    if (mode == "dark") {
-        darkModeSelector.checked = true;
-    } else {
-        darkModeSelector.checked = false;
-    }
+    darkModeSelector.checked = mode === "dark";
 
     setMode(mode);
 });
