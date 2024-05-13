@@ -1,4 +1,7 @@
 <?php
+/* @var $cards array */
+/* @var $id string */
+
 foreach ($cards as $card) {
     if ($card["id"] == $id) {
         $card_selected = $card;
