@@ -26,7 +26,7 @@ if (!$result) {
 if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
     $cards = explode(" ", $row["cards"]);
-    array_push($cards, $card_id);
+    $cards[] = $card_id;
     $cards = join(" ", $cards);
     $sql = "UPDATE user_cards SET cards = '$cards' WHERE username = '$username'";
     $result = mysqli_query($conn, $sql);

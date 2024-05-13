@@ -1,5 +1,7 @@
 <?php
 
+/* @var $pokemons array */
+
 require_once __DIR__ . "/../../services/methods.php";
 require_once __DIR__ . "/../../services/components_renderer.php";
 
@@ -13,7 +15,7 @@ if (isset($get_type) && $get_type != "") {
         foreach ($pokemon["types"] as $type) {
             if ($type == $get_type) {
 
-                array_push($filtered_pokemons, $pokemon);
+                $filtered_pokemons[] = $pokemon;
             }
         }
     }
@@ -38,7 +40,7 @@ if ($offset < 0) {
 }
 
 
-function show_pokemons(int $limit, int $offset, array $pokemons)
+function show_pokemons(int $limit, int $offset, array $pokemons): void
 {
     $pokemons = array_slice(
         $pokemons,
@@ -88,13 +90,15 @@ function show_pokemons(int $limit, int $offset, array $pokemons)
             <button name="offset" value="<?= $offset -
             $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Anterior
             </button>
-            <input type="number" name="limit" id="limit" max="<?= $max_limit ?>" min="1" value="<?= $limit ?>"
-                   id="limit" class="input input-bordered text-black">
+            <label>
+                <input type="number" name="limit" max="<?= $max_limit ?>" min="1" value="<?= $limit ?>"
+                       class="input input-bordered text-black">
+            </label>
             <button name="offset" value="<?= $offset +
             $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Siguiente
             </button>
 
-            <input type="hidden" name="type" value="<?= $get_type ? $get_type : null ?>">
+            <input type="hidden" name="type" value="<?= $get_type ?: null ?>">
             <button type="submit" class="hidden" id="submit"></button>
         </div>
         <div class="grid grid-cols-6 w-2/3 justify-center mx-auto gap-3 mb-5 m-0">

@@ -1,4 +1,7 @@
 <?php
+
+/* @var $title string */
+
 require_once __DIR__ . "/../../services/methods.php";
 
 $message = get("message", "ERROR");
@@ -14,15 +17,14 @@ $href = get("href", "index.php");
 <random class="text-error"></random>
 
 <script>
-    var sleep = function (ms) {
+    const sleep = function (ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     };
 
     async function randomChars(element) {
 
         while (true) {
-            const random = Math.random().toString(36).substring(2, 30);
-            element.innerHTML = random;
+            element.innerHTML = Math.random().toString(36).substring(2, 30);
             await sleep(50);
         }
     }

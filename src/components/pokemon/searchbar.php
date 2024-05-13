@@ -1,3 +1,8 @@
+<?php
+/* @var $pokemons array */
+/* @var $label string */
+?>
+
 <datalist id="pokemons">
     <?php foreach ($pokemons as $pokemon) : ?>
         <option value="<?= $pokemon["name"] ?>"></option>
