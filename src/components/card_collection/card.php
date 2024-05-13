@@ -15,7 +15,7 @@ foreach ($cards as $card) {
         </a>
 
         <form action="<?= SRC_ROUTE ?>/services/cards/insertar_cards.php" method="get">
-            <button class="btn btn-outline btn-ghost dark:btn-secondary btn-error">Añadir a mi colección</button>
+            <button class="mx-auto flex flex-col justify-center p-2 gap-2 w-2/3 btn btn-outline btn-ghost dark:btn-secondary btn-error">Añadir a mi colección</button>
             <input type="hidden" name="id" value="<?= $card_selected["id"] ?>">
             <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
         </form>
