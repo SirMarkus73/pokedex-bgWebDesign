@@ -12,13 +12,13 @@ $max_pages = json_decode($max_pages, true);
 $max_pages = $max_pages["count"] + 1;
 
 
-function get_pages(int $step, int $max)
+function get_pages(int $step, int $max): array
 {
 
     $pages = [];
 
     for ($i = 1; $i <= $max; $i += $step) {
-        array_push($pages, $i);
+        $pages[] = $i;
     }
 
     return $pages;
@@ -37,19 +37,19 @@ while (true) {
 
     $pokemon_abilities = [];
     foreach ($pokemon["abilities"] as $ability) {
-        array_push($pokemon_abilities, $ability["ability"]["name"]);
+        $pokemon_abilities[] = $ability["ability"]["name"];
     }
 
 
     $pokemon_stats = [];
     foreach ($pokemon["stats"] as $stat) {
-        array_push($pokemon_stats, ["name" => $stat["stat"]["name"], "base" => $stat["base_stat"]]);
+        $pokemon_stats[] = ["name" => $stat["stat"]["name"], "base" => $stat["base_stat"]];
     }
 
 
     $pokemon_types = [];
     foreach ($pokemon["types"] as $type) {
-        array_push($pokemon_types, $type["type"]["name"]);
+        $pokemon_types[] = $type["type"]["name"];
     }
 
 
@@ -58,7 +58,7 @@ while (true) {
 
         $content = [];
 
-        array_push($content, [
+        $content[] = [
             "id" => $pokemon_id,
             "name" => $pokemon_name,
             "abilities" => $pokemon_abilities,
@@ -66,7 +66,7 @@ while (true) {
             "image" => $pokemon_image,
             "image_shiny" => $pokemon_image_shiny,
             "types" => $pokemon_types,
-        ]);
+        ];
 
 
         $local_json = file_get_contents($local_json_route);
@@ -89,13 +89,12 @@ while (true) {
         $encoded = json_encode($full_content);
 
         if ($decoded_local_json["page"]["number"] < $page) {
+            file_put_contents($local_json_route, $encoded);
             if (in_array($page, get_pages(100, $max_pages))) { // El primer parámetro lo puedes ajustar dependiendo del rendimiento de tu ordenador
-                file_put_contents($local_json_route, $encoded);
                 $page += 1;
                 header("Location: ./get_json.php?page=$page");
                 exit();
             } else {
-                file_put_contents($local_json_route, $encoded);
                 $page += 1;
             }
         } else {
