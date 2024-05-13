@@ -67,11 +67,11 @@ if (isset($pokemon)) :
 <?php
 else :
     header(
-        "Location:" . SRC_ROUTE . "/pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=../pages/wiki.php"
+        "Location:" . SRC_ROUTE . "/pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=" . SRC_ROUTE . "/pages/wiki/"
     ); ?>
 
     <script>
-        window.location.href = '../pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=../pages/wiki.php';
+        window.location.href = '../pages/error.php?title=Pokemon no encontrado&message=El pokemon solicitado no existe&href=<?= SRC_ROUTE ?>/pages/wiki/';
     </script>
 
 <?php exit();
