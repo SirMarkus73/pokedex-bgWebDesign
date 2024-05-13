@@ -25,7 +25,7 @@ if (!$result) {
 
 if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
-    $cards = str_split($row["cards"]);
+    $cards = explode(" ", $row["cards"]);
     array_push($cards, $card_id);
     $cards = join(" ", $cards);
     $sql = "UPDATE user_cards SET cards = '$cards' WHERE username = '$username'";
@@ -34,10 +34,8 @@ if (mysqli_num_rows($result) == 1) {
     $sql = "INSERT INTO user_cards (username) VALUES ('$username')";
     $result = mysqli_query($conn, $sql);
 
-    header("Location: ./insertar_cards.php");
+    header("Location: ./insertar_cards.php?id=$card_id&username=$username");
 }
 
 
 mysqli_close($conn);
-
-?>
