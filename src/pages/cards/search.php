@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . "/../../services/imports.php";
 require_once __DIR__ . "/../../services/methods.php";
-require_once __DIR__ . "/../../services/protected_page.php";
 
 $response = file_get_contents(__DIR__ . "/../../assets/json/cards.json");
 $data = json_decode($response, true);

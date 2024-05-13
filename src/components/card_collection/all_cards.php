@@ -33,11 +33,13 @@ $cards = array_slice(
 
 );
 
+?>
 
+<?php
 foreach ($cards as $card) :
     render_component("card_collection/card", ["id" => $card["id"], "cards" => $cards]);
 endforeach;
-
+?>
 
 ?>
 
