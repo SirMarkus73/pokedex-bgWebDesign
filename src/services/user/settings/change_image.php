@@ -23,11 +23,11 @@ if (isset($username)) {
 
 header(
     "Location: " .
-        SRC_ROUTE .
-        "/pages/error.php?title=Cambio de imagen fallido&message=El cambio de imagen a fallado, 
+    SRC_ROUTE .
+    "/pages/error.php?title=Cambio de imagen fallido&message=El cambio de imagen a fallado, 
                 cierre sesión y vuelva a abrirla, después inténtelo de nuevo &href=" .
-        SRC_ROUTE .
-        "/pages/user/settings.php"
+    SRC_ROUTE .
+    "/pages/user/settings.php"
 );
 
 exit();

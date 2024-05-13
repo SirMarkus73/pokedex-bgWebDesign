@@ -14,16 +14,16 @@ $data = json_decode($response, true);
 </head>
 
 <body>
-    <?php
-    render_component("global/loader");
-    render_component("global/header");
-    ?>
-    <main>
-        <?php render_component("card_collection/card_searcher", ["cards" => $data["data"]]); ?>
-        <?php render_component("card_collection/all_cards", [
-            "cards" => $data["data"],
-        ]); ?>
-    </main>
+<?php
+render_component("global/loader");
+render_component("global/header");
+?>
+<main>
+    <?php render_component("card_collection/card_searcher", ["cards" => $data["data"]]); ?>
+    <?php render_component("card_collection/all_cards", [
+        "cards" => $data["data"],
+    ]); ?>
+</main>
 </body>
 
 </html>

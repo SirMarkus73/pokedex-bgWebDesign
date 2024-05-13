@@ -14,14 +14,14 @@ $title = get("title", "ERROR");
 </head>
 
 <body>
-    <?php
-    render_component("global/loader");
-    render_component("global/header");
-    ?>
+<?php
+render_component("global/loader");
+render_component("global/header");
+?>
 
-    <main class="flex flex-col items-center justify-center h-3/4 gap-5">
-        <?php render_component("error/content"); ?>
-    </main>
+<main class="flex flex-col items-center justify-center h-3/4 gap-5">
+    <?php render_component("error/content"); ?>
+</main>
 </body>
 
 </html>

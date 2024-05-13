@@ -8,16 +8,16 @@
 </head>
 
 <body>
-    <?php
-    render_component("global/loader");
-    render_component("global/header");
-    ?>
+<?php
+render_component("global/loader");
+render_component("global/header");
+?>
 
-    <main class="p-5 flex flex-col gap-5">
+<main class="p-5 flex flex-col gap-5">
 
-        <?php render_component("index/content"); ?>
+    <?php render_component("index/content"); ?>
 
-    </main>
+</main>
 
 </body>
 

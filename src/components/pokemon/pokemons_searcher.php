@@ -54,7 +54,7 @@ function show_pokemons(int $limit, int $offset, array $pokemons)
         $pokemon_ability = $pokemon["abilities"][0];
         $stats = $pokemon["stats"];
         $types = $pokemon["types"];
-?>
+        ?>
 
         <a href="pokemon.php?name=<?= $pokemon_name ?>" class="flex justify-center">
 
@@ -73,11 +73,12 @@ function show_pokemons(int $limit, int $offset, array $pokemons)
             )
             ?>
         </a>
-<?php
+    <?php
     endforeach;
 } ?>
 
-<section class="gap-10 mx-auto my-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center w-max">
+<section
+        class="gap-10 mx-auto my-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center w-max">
     <?php show_pokemons($limit, $offset, $pokemons); ?>
 </section>
 
@@ -85,12 +86,15 @@ function show_pokemons(int $limit, int $offset, array $pokemons)
     <form method="get" class="flex justify-center mx-auto flex-col gap-3">
         <div class="flex flex-row justify-center">
             <button name="offset" value="<?= $offset -
-                                                $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Anterior</button>
-            <input type="number" name="limit" id="limit" max="<?= $max_limit ?>" min="1" value="<?= $limit ?>" id="limit" class="input input-bordered text-black">
+            $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Anterior
+            </button>
+            <input type="number" name="limit" id="limit" max="<?= $max_limit ?>" min="1" value="<?= $limit ?>"
+                   id="limit" class="input input-bordered text-black">
             <button name="offset" value="<?= $offset +
-                                                $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Siguiente</button>
+            $limit ?>" class="btn btn-outline dark:bg-purple-600 bg-red-600">Siguiente
+            </button>
 
-            <input type="hidden" name="type" value="<?= $get_type ? $get_type : null  ?>">
+            <input type="hidden" name="type" value="<?= $get_type ? $get_type : null ?>">
             <button type="submit" class="hidden" id="submit"></button>
         </div>
         <div class="grid grid-cols-6 w-2/3 justify-center mx-auto gap-3 mb-5 m-0">
