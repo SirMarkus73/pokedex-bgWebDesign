@@ -23,7 +23,10 @@
     })
 
     window.addEventListener("load", () => {
+        const body = document.querySelector("body");
         const loader = document.getElementById("loader");
+        const main = document.querySelector("main");
+
         loader.classList.add("hidden");
         loader.classList.remove("absolute");
 
