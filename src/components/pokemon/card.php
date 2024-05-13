@@ -1,5 +1,14 @@
-<!-- 
-/* Type colors: 
+<?php
+
+/* @var $width int */
+/* @var $name string */
+/* @var $image string */
+/* @var $height int */
+/* @var $abilities array */
+/* @var $stats array */
+/* @var $types array */
+
+/* Type colors:
     bg-steel: "#404040",
     bg-water: "#3b82f6",
     bg-bug: "#84cc16",
@@ -18,8 +27,8 @@
     bg-ground: "#f59e0b",
     bg-poison: "#d946ef",
     bg-flying: "#a855f7", */
+?>
 
- -->
 
 <article class="card <?= $width ?> min-w-64 shadow-xl bg-red-600 dark:bg-fuchsia-600 text-white m-0">
     <figure class="p-3"><img src="<?= $image ?>" alt="pokemon <?= $name ?>" class="<?= $height ?>"/></figure>

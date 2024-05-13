@@ -3,7 +3,7 @@
     ¿Eres un verdadero entrenador Pokémon? Entonces estás en el lugar correcto. En PokeFull, te ofrecemos una
     experiencia única para que puedas sumergirte en el emocionante mundo de los Pokémon. ¿Qué puedes hacer aquí?
     ¡Sigue leyendo!
-
+</p>
 <ul class="list-disc list-inside">
     <li class="py-2">📚 Explora la Wiki Pokémon: ¿Necesitas información sobre tu Pokémon favorito? Nuestra Wiki
         está repleta de detalles sobre habilidades, evoluciones, curiosidades y más. ¡Conviértete en un experto
@@ -21,4 +21,3 @@
         lo que tenemos para ofrecerte! 🌟
     </li>
 </ul>
-</p>

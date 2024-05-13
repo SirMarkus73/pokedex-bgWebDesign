@@ -5,13 +5,13 @@ include_once __DIR__ . "/../methods.php";
 $page = get("page", 1);
 
 
-function get_pages(int $step, int $max)
+function get_pages(int $step, int $max): array
 {
 
     $pages = [];
 
     for ($i = 1; $i <= $max; $i += $step) {
-        array_push($pages, $i);
+        $pages[] = $i;
     }
 
     return $pages;
@@ -34,21 +34,21 @@ while (true) {
 
         foreach ($cards as $card) {
             if (isset($card["hp"])) {
-                array_push($content, [
+                $content[] = [
                     "id" => $card["id"],
                     "name" => $card["name"],
                     "number" => $card["number"],
                     "hp" => $card["hp"],
                     "img" => $card["images"]["large"],
-                ]);
+                ];
             } else {
-                array_push($content, [
+                $content[] = [
                     "id" => $card["id"],
                     "name" => $card["name"],
                     "number" => $card["number"],
                     "hp" => null,
                     "img" => $card["images"]["large"],
-                ]);
+                ];
             }
         }
 
@@ -67,13 +67,12 @@ while (true) {
         $encoded = json_encode($full_content);
 
         if ($decoded_local_json["page"] < $page) {
+            file_put_contents($local_json_route, $encoded);
             if (in_array($page, get_pages(3, $max_pages))) {
-                file_put_contents($local_json_route, $encoded);
                 $page += 1;
                 header("Location: ./get_json.php?page=$page");
                 exit();
             } else {
-                file_put_contents($local_json_route, $encoded);
                 $page += 1;
             }
         } else {

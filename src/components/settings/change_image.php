@@ -1,4 +1,5 @@
 <?php
+/* @var $pokemons array */
 require_once __DIR__ . "/../../src_route.php";
 require_once __DIR__ . "/../../services/pokemons/get_pokemons.php"
 ?>
