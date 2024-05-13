@@ -32,7 +32,6 @@ $sql = "INSERT INTO usuarios (user, password) VALUES ('$username', '$hash_passwo
 if (mysqli_query($conn, $sql)) {
     mysqli_close($conn);
     header("Location: " . SRC_ROUTE . "/pages/user/login.php");
-    exit();
 } else {
     mysqli_close($conn);
     header(
@@ -42,5 +41,5 @@ if (mysqli_query($conn, $sql)) {
         SRC_ROUTE .
         "/pages/user/register.php"
     );
-    exit();
 }
+exit();
