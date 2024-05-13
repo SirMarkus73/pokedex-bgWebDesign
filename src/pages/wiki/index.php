@@ -18,8 +18,6 @@ require_once __DIR__ . "/../../services/pokemons/get_pokemons.php"
     <main>
         <form action="pokemon.php" method="get" class="m-0">
 
-            <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
-
             <?php render_component("pokemon/searchbar", [
                 "action" => "pokemon.php",
                 "label" => "Buscar pokemon",
