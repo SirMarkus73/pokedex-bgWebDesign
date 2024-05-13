@@ -11,15 +11,12 @@
     @apply text-black dark:text-white bg-slate-200 dark:bg-neutral-800;
   }
 
-  * {
+  body {
     box-sizing: border-box;
-    line-height: 0;
     scroll-padding-top: 0;
     scroll-padding-bottom: 0;
     scroll-margin-top: 0;
     scroll-margin-bottom: 0;
-    padding: 0;
-    margin: 0;
   }
 
   body {
