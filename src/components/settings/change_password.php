@@ -2,27 +2,33 @@
 
 <article>
 
-    <button class="btn bg-red-700 dark:bg-neutral-900 text-white hover:text-black hover:bg-white w-2/6" onclick="my_modal_2.showModal()">Cambiar contraseña</button>
+    <button class="btn bg-red-700 dark:bg-neutral-900 text-white hover:text-black hover:bg-white w-2/6"
+            onclick="my_modal_2.showModal()">Cambiar contraseña
+    </button>
     <dialog id="my_modal_2" class="modal">
         <div class="modal-box flex flex-col border border-gray-300 p-2 rounded-md mb-4 text-red-700 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-900 gap-5">
             <h3 class="font-bold text-lg">Cambiar contraseña</h3>
 
 
-            <form action="<?= SRC_ROUTE ?>/services/user/settings/change_password.php" method="post" class="flex flex-col gap-3">
+            <form action="<?= SRC_ROUTE ?>/services/user/settings/change_password.php" method="post"
+                  class="flex flex-col gap-3">
 
                 <label>
                     contraseña actual:
-                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100" type="password" name="password" required>
+                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100"
+                           type="password" name="password" required>
                 </label>
 
                 <label>
                     Nueva contraseña:
-                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100" type="password" name="new_password" required>
+                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100"
+                           type="password" name="new_password" required>
                 </label>
 
                 <label>
                     Repetir la contraseña nueva:
-                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100" type="password" name="password_repeat" required>
+                    <input class="input input-bordered text-black bg-neutral-200 dark:bg-black dark:text-neutral-100"
+                           type="password" name="password_repeat" required>
                 </label>
 
                 <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">

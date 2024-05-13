@@ -5,7 +5,9 @@ require_once __DIR__ . "/../../services/pokemons/get_pokemons.php"
 
 <article>
 
-    <button class="btn bg-red-700 dark:bg-neutral-900 text-white hover:text-black hover:bg-white w-2/6" onclick="my_modal_1.showModal()">Cambiar Imagen</button>
+    <button class="btn bg-red-700 dark:bg-neutral-900 text-white hover:text-black hover:bg-white w-2/6"
+            onclick="my_modal_1.showModal()">Cambiar Imagen
+    </button>
     <dialog id="my_modal_1" class="modal">
         <div class="modal-box flex flex-col border border-gray-300 p-2 rounded-md mb-4 text-red-700 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-900 gap-5">
             <h3 class="font-bold text-lg">Cambiar imagen de perfil</h3>

@@ -34,10 +34,10 @@ if ($valid_passwd) {
 } else {
     header(
         "Location: " .
-            SRC_ROUTE .
-            "/pages/error.php?title=Login Fallido&message=Usuario o contraseña incorrecta&href=" .
-            SRC_ROUTE .
-            "/pages/user/login.php"
+        SRC_ROUTE .
+        "/pages/error.php?title=Login Fallido&message=Usuario o contraseña incorrecta&href=" .
+        SRC_ROUTE .
+        "/pages/user/login.php"
     );
 }
 
