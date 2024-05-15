@@ -17,7 +17,9 @@ render_component("global/loader");
 render_component("global/header");
 ?>
 <main>
-    <?php render_component("card_collection/show_collection"); ?>
+    <section class="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        <?php render_component("card_collection/show_collection"); ?>
+    </section>
 </main>
 </body>
 
