@@ -22,6 +22,6 @@ require_once __DIR__ . "/../../src_route.php";
 
 <?php else : ?>
 
-    <p>Cards</p>
+    <a href="<?= SRC_ROUTE ?>/pages/cards/index.php">Cards</a>
 
 <?php endif;
