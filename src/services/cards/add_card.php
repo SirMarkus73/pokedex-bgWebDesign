@@ -34,8 +34,9 @@ if (mysqli_num_rows($result) == 1) {
     $sql = "INSERT INTO user_cards (username) VALUES ('$username')";
     $result = mysqli_query($conn, $sql);
 
-    header("Location: ./insertar_cards.php?id=$card_id&username=$username");
+    header("Location: ./add_card.php?id=$card_id&username=$username");
+    exit();
 }
 
-
 mysqli_close($conn);
+header("Location: " . SRC_ROUTE . "/pages/cards/collection.php");
