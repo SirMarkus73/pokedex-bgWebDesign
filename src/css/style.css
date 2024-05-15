@@ -2811,10 +2811,6 @@ p {
   gap: 1.25rem;
 }
 
-.gap-1 {
-  gap: 0.25rem;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
@@ -3011,10 +3007,6 @@ p {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
 }
 
 .px-5 {
