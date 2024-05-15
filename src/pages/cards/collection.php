@@ -1,4 +1,24 @@
-<?php ?>
+<?php
+require_once __DIR__ . "/../../services/imports.php";
 
-<h1>Aquí se mostrara tu colección próximamente</h1>
-<a href="../index.php">Ir al inicio</a>
+?>
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <?php render_component("global/head", ["title" => "Pokefull - Colección"]); ?>
+</head>
+
+<body>
+<?php
+render_component("global/loader");
+render_component("global/header");
+?>
+<main>
+    <?php render_component("card_collection/show_collection"); ?>
+</main>
+</body>
+
+</html>
