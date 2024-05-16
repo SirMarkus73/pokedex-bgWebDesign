@@ -1,6 +1,6 @@
 <?php
 /* @var $cards array */
-require_once __DIR__ . "/../../src_route.php";
+require_once __DIR__ . "/../../services/src_route.php";
 ?>
 
 <datalist id="cardList">
@@ -16,7 +16,7 @@ require_once __DIR__ . "/../../src_route.php";
 <section class="border border-red-500 dark:border-fuchsia-500 m-5 mb-0">
     <fieldset>
         <legend class="text-center text-2xl py-5">Buscar Carta</legend>
-        <form action="<?= SRC_ROUTE ?>/pages/cards/search.php" method="get"
+        <form action="<?= SRC_ROUTE . "/pages/cards/search.php" ?>" method="get"
               class="flex justify-center w-max mx-auto py-2 gap-4 text-center m-0">
 
             <label for="name"> ID:
