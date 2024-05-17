@@ -15,7 +15,7 @@ function get_user_cards()
             $_ENV["DBNAME"],
         );
 
-        $sql = "SELECT username, cards FROM user_cards WHERE username='$username'";
+        $sql = "SELECT user, cards FROM user_cards WHERE user='$username'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) == 1) {

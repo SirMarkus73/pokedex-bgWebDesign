@@ -15,7 +15,8 @@ $conn = mysqli_connect(
     $_ENV["PASSWORD"],
     $_ENV["DBNAME"],
 );
-$sql = "SELECT username, cards FROM user_cards WHERE username='$username'";
+
+$sql = "SELECT user, cards FROM user_cards WHERE user='$username'";
 
 $result = mysqli_query($conn, $sql);
 
@@ -28,10 +29,10 @@ if (mysqli_num_rows($result) == 1) {
     $cards = explode(" ", $row["cards"]);
     $cards[] = $card_id;
     $cards = join(" ", $cards);
-    $sql = "UPDATE user_cards SET cards = '$cards' WHERE username = '$username'";
+    $sql = "UPDATE user_cards SET cards = '$cards' WHERE user = '$username'";
     $result = mysqli_query($conn, $sql);
 } else {
-    $sql = "INSERT INTO user_cards (username) VALUES ('$username')";
+    $sql = "INSERT INTO user_cards (user) VALUES ('$username')";
     $result = mysqli_query($conn, $sql);
 
     header("Location: ./add_card.php?id=$card_id&username=$username");
