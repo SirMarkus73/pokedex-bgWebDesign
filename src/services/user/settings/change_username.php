@@ -27,7 +27,7 @@ function modify_user_from(string $table, string $username, string $new_username 
         // Si se proporcionó un nuevo nombre de usuario, actualiza el nombre de usuario en la base de datos
         if (!empty($new_username)) {
             $new_username = mysqli_real_escape_string($conn, $new_username);
-            $updateSql = "UPDATE usuarios SET user='$new_username' WHERE user='$username'";
+            $updateSql = "UPDATE $table SET user='$new_username' WHERE user='$username'";
             mysqli_query($conn, $updateSql);
 
             return true;
@@ -39,17 +39,18 @@ function modify_user_from(string $table, string $username, string $new_username 
 }
 
 if ($username != $new_username) {
+
     $is_user_modified = modify_user_from("usuarios", $username, $new_username);
     $is_user_modified_from_cards = modify_user_from("user_cards", $username, $new_username);
 
     if ($is_user_modified && $is_user_modified_from_cards) {
-        $_SESSION["username"] = $new_username;
+        $_SESSION["usuario"] = $new_username;
         header("Location: " . SRC_ROUTE . "/pages/index.php");
         exit();
     }
 }
 
-header(
-    "Location:" . SRC_ROUTE . "/pages/error.php?title=No se ha podido modificar el usuario&message=No se ha podido cambiar el nombre de usuario, por favor inténtelo mas tarde&href=user/settings.php"
-);
+// header(
+//     "Location:" . SRC_ROUTE . "/pages/error.php?title=No se ha podido modificar el usuario&message=No se ha podido cambiar el nombre de usuario, por favor inténtelo mas tarde&href=user/settings.php"
+// );
 exit();
