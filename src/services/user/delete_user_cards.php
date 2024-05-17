@@ -3,7 +3,7 @@ require_once __DIR__ . "/../methods.php";
 require_once __DIR__ . "/../src_route.php";
 require_once __DIR__ . "/../env.php";
 require_once __DIR__ . "/../sql/methods.php";
-require_once __DIR__ . "/../cookies/methods.php";
+
 
 $password = get("password", null);
 $admin_password = $_ENV["ADMIN_PASSWORD"];
@@ -13,7 +13,7 @@ if ($password === $admin_password) {
     $truncated = truncate_table_from("user_cards");
 
     if ($truncated) {
-        kill_cookies();
+        require_once __DIR__ . "/../cookies/kill_cookies.php";
         die("200");
     }
 

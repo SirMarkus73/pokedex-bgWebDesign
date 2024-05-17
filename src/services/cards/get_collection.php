@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once __DIR__ . "/../cookies/start_session.php";
 require_once __DIR__ . "/../env.php";
 
 function get_user_cards(): array
