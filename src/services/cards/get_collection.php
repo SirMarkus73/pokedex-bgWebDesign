@@ -2,7 +2,7 @@
 session_start();
 require_once __DIR__ . "/../env.php";
 
-function get_user_cards()
+function get_user_cards(): array
 {
     $username = $_SESSION["usuario"];
     $cards = null;
