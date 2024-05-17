@@ -13,27 +13,36 @@ $repeated_password = post("password_repeat", " ");
 $new_hash_password = password_hash($new_password, PASSWORD_DEFAULT);
 $username = post("username", " ");
 
-if ($new_password != $repeated_password) {
+if ($new_password != $repeated_password ||
+    empty($new_password)) {
     header(
         "Location:" . SRC_ROUTE . "/pages/error.php?title=Registro Fallido&message=La contraseña y la confirmación no coincide, inténtelo de nuevo&href=register.php"
     );
     exit();
 }
 
-$conn = connect_to_db();
-$sql = "SELECT user, password FROM usuarios WHERE user='$username';";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
+$db_conn = connect_to_db();
 
-if (password_verify($input_password, $row["password"])) {
-    if (!password_verify($row["password"], $new_hash_password)) {
-        if (!empty($new_password)) {
-            $new_password = mysqli_real_escape_string($conn, $new_password);
-            $updateSql = "UPDATE usuarios SET password='$new_hash_password' WHERE user='$username';";
+[$_, $user_data] = select_data_from_where(
+    "usuarios",
+    "user='$username'",
+    ["user", "password"],
+    $db_conn
+);
 
-            mysqli_query($conn, $updateSql);
-        }
-    }
+$password_from_db = $user_data["password"];
+
+
+if (password_verify($input_password, $password_from_db) &&
+    !password_verify($password_from_db, $new_hash_password)) {
+
+    update_data_from_where(
+        "usuarios",
+        "user='$username'",
+        "password",
+        $new_hash_password,
+        $db_conn
+    );
 }
 
 header("Location: " . SRC_ROUTE . "/pages/index.php");
