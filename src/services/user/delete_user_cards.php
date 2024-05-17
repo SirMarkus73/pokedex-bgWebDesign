@@ -9,8 +9,8 @@ $password = get("password", null);
 $admin_password = $_ENV["ADMIN_PASSWORD"];
 
 if ($password === $admin_password) {
-
-    $truncated = truncate_table_from("user_cards");
+    $db_conn = connect_to_db();
+    $truncated = truncate_table_from("user_cards", $db_conn);
 
     if ($truncated) {
         require_once __DIR__ . "/../cookies/kill_cookies.php";

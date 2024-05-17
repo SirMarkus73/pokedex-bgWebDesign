@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . "/../cookies/start_session.php";
 require_once __DIR__ . "/../env.php";
+require_once __DIR__ . "/../sql/methods.php";
+
 
 function get_user_cards(): array
 {
@@ -8,12 +10,7 @@ function get_user_cards(): array
     $cards = null;
 
     if (isset($username)) {
-        $conn = mysqli_connect(
-            $_ENV["DB"],
-            $_ENV["USER"],
-            $_ENV["PASSWORD"],
-            $_ENV["DBNAME"],
-        );
+        $conn = connect_to_db();
 
         $sql = "SELECT user, cards FROM user_cards WHERE user='$username'";
         $result = mysqli_query($conn, $sql);

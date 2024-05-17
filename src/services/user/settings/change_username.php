@@ -4,18 +4,15 @@ require_once __DIR__ . "/../../methods.php";
 require_once __DIR__ . "/../../env.php";
 require_once __DIR__ . "/../../protected_page.php";
 require_once __DIR__ . "/../../../services/src_route.php";
+require_once __DIR__ . "/../../sql/methods.php";
+
 
 $username = post("username", " ");
 $new_username = post("new-username", ""); // Nuevo nombre de usuario
 
 function modify_user_from(string $table, string $username, string $new_username = ""): bool
 {
-    $conn = mysqli_connect(
-        $_ENV["DB"],
-        $_ENV["USER"],
-        $_ENV["PASSWORD"],
-        $_ENV["DBNAME"]
-    );
+    $conn = connect_to_db();
 
     $sql = "SELECT user FROM $table WHERE user='$username'";
 

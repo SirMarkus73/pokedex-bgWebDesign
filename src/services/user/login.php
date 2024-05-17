@@ -3,17 +3,14 @@ require_once __DIR__ . "/../../services/cookies/start_session.php";
 require_once __DIR__ . "/../../services/src_route.php";
 require_once __DIR__ . "/../methods.php";
 require_once __DIR__ . "/../env.php";
+require_once __DIR__ . "/../sql/methods.php";
 
 $username = post("username", "");
 $password = post("password", "");
 
 $valid_passwd = false;
-$conn = mysqli_connect(
-    $_ENV["DB"],
-    $_ENV["USER"],
-    $_ENV["PASSWORD"],
-    $_ENV["DBNAME"]
-);
+$conn = connect_to_db();
+
 $sql = "SELECT password FROM usuarios WHERE user='$username'";
 
 // Resultados de la consulta

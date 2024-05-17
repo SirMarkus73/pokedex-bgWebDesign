@@ -3,18 +3,15 @@ require_once __DIR__ . "/../cookies/start_session.php";
 require_once __DIR__ . "/../../services/src_route.php";
 require_once __DIR__ . "/../methods.php";
 require_once __DIR__ . "/../env.php";
+require_once __DIR__ . "/../../sql/methods.php";
+
 
 $username = get("username", null);
 $card_id = get("id", null);
 var_dump($card_id, $username);
 
 $valid_passwd = false;
-$conn = mysqli_connect(
-    $_ENV["DB"],
-    $_ENV["USER"],
-    $_ENV["PASSWORD"],
-    $_ENV["DBNAME"],
-);
+$conn = connect_to_db();
 
 $sql = "SELECT user, cards FROM user_cards WHERE user='$username'";
 

@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../../services/src_route.php";
 require_once __DIR__ . "/../methods.php";
 require_once __DIR__ . "/../env.php";
+require_once __DIR__ . "/../sql/methods.php";
 
 $username = post("username", "");
 $password = post("password", "");
@@ -17,23 +18,15 @@ if ($password != $repeated_password) {
     exit();
 }
 
-$conn = mysqli_connect(
-    $_ENV["DB"],
-    $_ENV["USER"],
-    $_ENV["PASSWORD"],
-    $_ENV["DBNAME"]
-);
-if (!$conn) {
-    die("Error de conexión: " . mysqli_connect_error());
-}
+$db_conn = connect_to_db();
 
 $sql = "INSERT INTO usuarios (user, password) VALUES ('$username', '$hash_password')";
 
-if (mysqli_query($conn, $sql)) {
-    mysqli_close($conn);
+if (mysqli_query($db_conn, $sql)) {
+    mysqli_close($db_conn);
     header("Location: " . SRC_ROUTE . "/pages/user/login.php");
 } else {
-    mysqli_close($conn);
+    mysqli_close($db_conn);
     header(
         "Location: " .
         SRC_ROUTE .

@@ -4,6 +4,7 @@ require_once __DIR__ . "/../../methods.php";
 require_once __DIR__ . "/../../env.php";
 require_once __DIR__ . "/../../protected_page.php";
 require_once __DIR__ . "/../../../services/src_route.php";
+require_once __DIR__ . "/../../sql/methods.php";
 
 $input_password = post("password", " ");
 
@@ -19,12 +20,7 @@ if ($new_password != $repeated_password) {
     exit();
 }
 
-$conn = mysqli_connect(
-    $_ENV["DB"],
-    $_ENV["USER"],
-    $_ENV["PASSWORD"],
-    $_ENV["DBNAME"]
-);
+$conn = connect_to_db();
 $sql = "SELECT user, password FROM usuarios WHERE user='$username';";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
