@@ -7,22 +7,22 @@ require_once __DIR__ . "/../sql/methods.php";
 function get_user_cards(): array
 {
     $username = $_SESSION["usuario"];
-    $cards = null;
 
     if (isset($username)) {
         $conn = connect_to_db();
+        [$cards_query, $user_cards] = select_data_from_where(
+            "user_cards",
+            "user='$username'",
+            ["cards"],
+            $conn
+        );
 
-        $sql = "SELECT user, cards FROM user_cards WHERE user='$username'";
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) == 1) {
-            $row = mysqli_fetch_assoc($result);
-            $user_cards = explode(" ", $row["cards"]);
-            $cards = $user_cards;
+        if (mysqli_num_rows($cards_query) == 1) {
+            return explode(" ", $user_cards["cards"]);
         }
     }
 
-    return $cards;
+    return [];
 
 }
 

@@ -11,15 +11,18 @@ $password = post("password", "");
 $valid_passwd = false;
 $conn = connect_to_db();
 
-$sql = "SELECT password FROM usuarios WHERE user='$username'";
 
-// Resultados de la consulta
-$result = mysqli_query($conn, $sql);
+[$password_query, $user_password] = select_data_from_where(
+    "usuarios",
+    "user='$username'",
+    ["password"],
+    $conn
+);
 
-if (mysqli_num_rows($result) == 1) {
-    $row = mysqli_fetch_assoc($result);
+if (mysqli_num_rows($password_query) == 1) {
 
-    if (password_verify($password, $row["password"])) {
+
+    if (password_verify($password, $user_password["password"])) {
         $_SESSION["usuario"] = $username;
         $_SESSION["image"] = SRC_ROUTE . "/assets/img/unown.png";
         $valid_passwd = true;

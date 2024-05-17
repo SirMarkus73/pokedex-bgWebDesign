@@ -25,3 +25,19 @@ function insert_data_to(string $table, array $columns, array $data, mysqli $conn
     $sql = "INSERT INTO $table ($columns_string) VALUES ('$data_string')";
     return mysqli_query($connection, $sql);
 }
+
+function select_data_from_where(string $table, string $validation, array $columns, mysqli $connection): array
+{
+    $columns_string = implode(", ", $columns);
+
+    $sql = "SELECT $columns_string FROM $table  WHERE $validation";
+    $query = mysqli_query($connection, $sql);
+
+    return [$query, mysqli_fetch_assoc($query)];
+}
+
+function update_data_from_where(string $table, string $validation, string $column, string $data, mysqli $connection): bool
+{
+    $sql = "UPDATE $table SET $column = '$data' WHERE $validation";
+    return mysqli_query($connection, $sql);
+}

@@ -13,21 +13,23 @@ var_dump($card_id, $username);
 $valid_passwd = false;
 $conn = connect_to_db();
 
-$sql = "SELECT user, cards FROM user_cards WHERE user='$username'";
+[$cards_query, $user_data] = select_data_from_where("user_cards", "user='$username'", ["user", "cards"], $conn);
 
-$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($cards_query) == 1) {
 
-if (!$result) {
-    die("Error executing query: " . mysqli_error($conn));
-}
-
-if (mysqli_num_rows($result) == 1) {
-    $row = mysqli_fetch_assoc($result);
-    $cards = explode(" ", $row["cards"]);
+    $cards = explode(" ", $user_data["cards"]);
     $cards[] = $card_id;
-    $cards = join(" ", $cards);
-    $sql = "UPDATE user_cards SET cards = '$cards' WHERE user = '$username'";
-    $result = mysqli_query($conn, $sql);
+    $new_cards = join(" ", $cards);
+
+    update_data_from_where(
+        "user_cards",
+        "user='$username'",
+        "cards",
+        $new_cards,
+        $conn
+    );
+
+
 } else {
 
     insert_data_to("user_cards", ["user"], [$username], $conn);
