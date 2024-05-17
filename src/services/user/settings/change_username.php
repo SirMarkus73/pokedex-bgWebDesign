@@ -50,7 +50,7 @@ if ($username != $new_username) {
     }
 }
 
-// header(
-//     "Location:" . SRC_ROUTE . "/pages/error.php?title=No se ha podido modificar el usuario&message=No se ha podido cambiar el nombre de usuario, por favor inténtelo mas tarde&href=user/settings.php"
-// );
+header(
+    "Location:" . SRC_ROUTE . "/pages/error.php?title=No se ha podido modificar el usuario&message=No se ha podido cambiar el nombre de usuario, por favor inténtelo mas tarde&href=user/settings.php"
+);
 exit();
