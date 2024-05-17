@@ -16,3 +16,12 @@ function truncate_table_from(string $table, mysqli $connection): bool
     $sql = "TRUNCATE table $table";
     return mysqli_query($connection, $sql);
 }
+
+function insert_data_to(string $table, array $columns, array $data, mysqli $connection): bool
+{
+    $columns_string = implode(", ", array_keys($columns));
+    $data_string = implode("', '", $data);
+
+    $sql = "INSERT INTO $table ($columns_string) VALUES ('$data_string')";
+    return mysqli_query($connection, $sql);
+}

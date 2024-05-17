@@ -20,13 +20,18 @@ if ($password != $repeated_password) {
 
 $db_conn = connect_to_db();
 
-$sql = "INSERT INTO usuarios (user, password) VALUES ('$username', '$hash_password')";
+$data_insert = insert_data_to(
+    "usuarios",
+    ["user", "password"],
+    [$username, $hash_password],
+    $db_conn
+);
 
-if (mysqli_query($db_conn, $sql)) {
-    mysqli_close($db_conn);
+mysqli_close($db_conn);
+
+if ($data_insert) {
     header("Location: " . SRC_ROUTE . "/pages/user/login.php");
 } else {
-    mysqli_close($db_conn);
     header(
         "Location: " .
         SRC_ROUTE .
