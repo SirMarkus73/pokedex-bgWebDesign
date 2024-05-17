@@ -4,7 +4,7 @@
 /* @var $name string */
 /* @var $image string */
 /* @var $height int */
-/* @var $abilities array */
+/* @var $abilities */
 /* @var $stats array */
 /* @var $types array */
 
@@ -43,7 +43,7 @@
                             <?= $ability ?>
                         </div>
                     <?php endforeach;
-                } else {
+                } else if (gettype($abilities) == "string") {
                     ?>
                     <div class="badge bg-white dark:bg-fuchsia-500 text-black dark:text-white ">
                         <?= $abilities ?>

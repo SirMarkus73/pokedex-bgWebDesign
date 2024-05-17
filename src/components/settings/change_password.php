@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . "/../../src_route.php"; ?>
+<?php require_once __DIR__ . "/../../services/src_route.php"; ?>
 
 <article>
 
@@ -10,7 +10,7 @@
             <h3 class="font-bold text-lg">Cambiar contraseña</h3>
 
 
-            <form action="<?= SRC_ROUTE ?>/services/user/settings/change_password.php" method="post"
+            <form action="<?= SRC_ROUTE . "/services/user/settings/change_password.php" ?>" method="post"
                   class="flex flex-col gap-3">
 
                 <label>

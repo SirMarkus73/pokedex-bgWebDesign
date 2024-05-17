@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . "/../../src_route.php";
+include_once __DIR__ . "/../../services/src_route.php";
 include_once __DIR__ . "/../methods.php";
 
 $page = get("page", 1);

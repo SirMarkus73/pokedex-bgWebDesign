@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . "/../../methods.php";
 require_once __DIR__ . "/../../env.php";
 require_once __DIR__ . "/../../protected_page.php";
-require_once __DIR__ . "/../../../src_route.php";
+require_once __DIR__ . "/../../../services/src_route.php";
 
 $input_password = post("password", " ");
 
@@ -14,7 +14,7 @@ $username = post("username", " ");
 
 if ($new_password != $repeated_password) {
     header(
-        "Location: ../pages/error.php?title=Registro Fallido&message=La contraseña y la confirmación no coincide, inténtelo de nuevo&href=register.php"
+        "Location:" . SRC_ROUTE . "/pages/error.php?title=Registro Fallido&message=La contraseña y la confirmación no coincide, inténtelo de nuevo&href=register.php"
     );
     exit();
 }

@@ -58,7 +58,7 @@ function show_pokemons(int $limit, int $offset, array $pokemons): void
         $types = $pokemon["types"];
         ?>
 
-        <a href="pokemon.php?name=<?= $pokemon_name ?>" class="flex justify-center">
+        <a href="<?= SRC_ROUTE . "/pages/wiki/pokemon.php?name=" . $pokemon_name ?>" class="flex justify-center">
 
             <?php
             render_component(
@@ -103,75 +103,75 @@ function show_pokemons(int $limit, int $offset, array $pokemons): void
         </div>
         <div class="grid grid-cols-6 w-2/3 justify-center mx-auto gap-3 mb-5 m-0">
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="bug">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/bug.png" alt="bug type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/bug.png" ?>" alt="bug type">
                 Bug
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="dark">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/dark.png" alt="dark type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/dark.png" ?>" alt="dark type">
                 Dark
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="dragon">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/dragon.png" alt="dragon type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/dragon.png" ?>" alt="dragon type">
                 Dragon
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="electric">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/electric.png" alt="electric type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/electric.png" ?>" alt="electric type">
                 Electric
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="fairy">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/fairy.png" alt="fairy type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/fairy.png" ?>" alt="fairy type">
                 Fairy
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="fighting">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/fighting.png" alt="fighting type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/fighting.png" ?>" alt="fighting type">
                 Fighting
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="fire">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/fire.png" alt="fire type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/fire.png" ?>" alt="fire type">
                 Fire
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="flying">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/flying.png" alt="flying type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/flying.png" ?>" alt="flying type">
                 Flying
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="ghost">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/ghost.png" alt="ghost type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/ghost.png" ?>" alt="ghost type">
                 Ghost
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="grass">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/grass.png" alt="grass type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/grass.png" ?>" alt="grass type">
                 Grass
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="ground">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/ground.png" alt="ground type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/ground.png" ?>" alt="ground type">
                 Ground
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="ice">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/ice.png" alt="ice type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/ice.png" ?>" alt="ice type">
                 Ice
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="normal">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/normal.png" alt="normal type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/normal.png" ?>" alt="normal type">
                 Normal
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="poison">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/poison.png" alt="poison type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/poison.png" ?>" alt="poison type">
                 Poison
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="psychic">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/psychic.png" alt="psychic type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/psychic.png" ?>" alt="psychic type">
                 Psychic
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="rock">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/rock.png" alt="rock type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/rock.png" ?>" alt="rock type">
                 Rock
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="steel">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/steel.png" alt="steel type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/steel.png" ?>" alt="steel type">
                 Steel
             </button>
             <button class="btn btn-outline dark:bg-purple-600 bg-red-600" name="type" value="water">
-                <img src="<?= SRC_ROUTE ?>/assets/img/types/water.png" alt="water type">
+                <img src="<?= SRC_ROUTE . "/assets/img/types/water.png" ?>" alt="water type">
                 Water
             </button>
         </div>

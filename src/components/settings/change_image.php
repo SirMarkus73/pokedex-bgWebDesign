@@ -1,6 +1,6 @@
 <?php
 /* @var $pokemons array */
-require_once __DIR__ . "/../../src_route.php";
+require_once __DIR__ . "/../../services/src_route.php";
 require_once __DIR__ . "/../../services/pokemons/get_pokemons.php"
 ?>
 
@@ -12,7 +12,7 @@ require_once __DIR__ . "/../../services/pokemons/get_pokemons.php"
     <dialog id="my_modal_1" class="modal">
         <div class="modal-box flex flex-col border border-gray-300 p-2 rounded-md mb-4 text-red-700 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-900 gap-5">
             <h3 class="font-bold text-lg">Cambiar imagen de perfil</h3>
-            <form action="<?= SRC_ROUTE ?>/services/user/settings/change_image.php" method="post">
+            <form action="<?= SRC_ROUTE . "/services/user/settings/change_image.php" ?>" method="post">
                 <input type="hidden" name="username" value="<?= $_SESSION["usuario"] ?>">
                 <?php render_component("pokemon/searchbar", [
                     "label" => "Seleccionar avatar",
