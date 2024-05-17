@@ -10,35 +10,27 @@ require_once __DIR__ . "/../../sql/methods.php";
 $username = post("username", " ");
 $new_username = post("new-username", ""); // Nuevo nombre de usuario
 
-function modify_user_from(string $table, string $username, string $new_username = ""): bool
-{
-    $conn = connect_to_db();
-
-    $sql = "SELECT user FROM $table WHERE user='$username'";
-
-    // Resultados de la consulta
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) == 1) {
-
-        // Si se proporcionó un nuevo nombre de usuario, actualiza el nombre de usuario en la base de datos
-        if (!empty($new_username)) {
-            $new_username = mysqli_real_escape_string($conn, $new_username);
-            $updateSql = "UPDATE $table SET user='$new_username' WHERE user='$username'";
-            mysqli_query($conn, $updateSql);
-
-            return true;
-        }
-
-    }
-
-    return false;
-}
-
 if ($username != $new_username) {
 
-    $is_user_modified = modify_user_from("usuarios", $username, $new_username);
-    $is_user_modified_from_cards = modify_user_from("user_cards", $username, $new_username);
+    $db_conn = connect_to_db();
+
+    $is_user_modified = update_data_from_where(
+        "usuarios",
+        "user = '$username'",
+        "user",
+        $new_username,
+        $db_conn
+    );
+
+    $is_user_modified_from_cards = update_data_from_where(
+        "user_cards",
+        "user = '$username'",
+        "user",
+        $new_username,
+        $db_conn
+    );
+
+    mysqli_close($db_conn);
 
     if ($is_user_modified && $is_user_modified_from_cards) {
         $_SESSION["usuario"] = $new_username;

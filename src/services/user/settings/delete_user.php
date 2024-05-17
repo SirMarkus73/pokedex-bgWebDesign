@@ -12,10 +12,11 @@ $current_username = post("current-username", ""); // Nombre de usuario dado por 
 
 if ($username == $current_username) {
     $conn = connect_to_db();
-    $sql = "DELETE FROM usuarios WHERE user = '$username';";
-
-    // Resultados de la consulta
-    $result = mysqli_query($conn, $sql);
+    delete_from_where(
+        "usuarios",
+        "user = '$username'",
+        $conn
+    );
 }
 
 header("Location: " . SRC_ROUTE . "/services/user/logout.php");
