@@ -28,6 +28,7 @@ render_component("global/header");
         render_component("settings/change_password");
         render_component("settings/change_username");
         render_component("settings/delete_user");
+        render_component("settings/user_from");
         ?>
     </section>
 
