@@ -4,7 +4,8 @@
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - Inicio"]); ?>
+    <title>Pokefull - Inicio</title>
+    <?php render_component("global/head"); ?>
 </head>
 
 <body>

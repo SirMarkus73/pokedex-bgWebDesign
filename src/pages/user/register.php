@@ -3,9 +3,8 @@
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", [
-        "title" => "Pokefull - Registro",
-    ]); ?>
+    <title>Pokefull - Registro</title>
+    <?php render_component("global/head"); ?>
 </head>
 
 <body>

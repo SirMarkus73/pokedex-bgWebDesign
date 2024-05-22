@@ -7,7 +7,8 @@ require_once __DIR__ . "/../../services/imports.php";
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - Colección"]); ?>
+    <title>Pokefull - Colección</title>
+    <?php render_component("global/head"); ?>
 </head>
 
 <body>

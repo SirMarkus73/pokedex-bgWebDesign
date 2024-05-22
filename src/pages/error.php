@@ -9,7 +9,8 @@ $title = get("title", "ERROR");
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - $title"]); ?>
+    <title>Pokefull - <?= $title ?> </title>
+    <?php render_component("global/head"); ?>
 
 </head>
 

@@ -30,9 +30,8 @@ if (isset($pokemon)) :
     <html lang="es">
 
     <head>
-        <?php render_component("global/head", [
-            "title" => "Pokefull - Pokemon $pokemon_name",
-        ]); ?>
+        <title>Pokefull - Pokemon <?= $pokemon_name ?></title>
+        <?php render_component("global/head") ?>
     </head>
 
     <body>

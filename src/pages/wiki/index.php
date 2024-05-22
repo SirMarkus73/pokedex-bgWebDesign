@@ -9,7 +9,8 @@ require_once __DIR__ . "/../../services/pokemons/get_pokemons.php"
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - Wiki"]); ?>
+    <title>Pokefull - Wiki</title>
+    <?php render_component("global/head"); ?>
 </head>
 
 <body>

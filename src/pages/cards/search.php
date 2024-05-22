@@ -11,7 +11,8 @@ $data = json_decode($response, true);
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", ["title" => "Pokefull - Cartas"]); ?>
+    <title>Pokefull - Cartas</title>
+    <?php render_component("global/head"); ?>
 </head>
 
 <body>

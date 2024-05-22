@@ -7,9 +7,8 @@ require_once __DIR__ . "/../../services/protected_page.php";
 <html lang="es">
 
 <head>
-    <?php render_component("global/head", [
-        "title" => "Pokefull - Configuración",
-    ]); ?>
+    <title>Pokefull - Configuración</title>
+    <?php render_component("global/head"); ?>
 </head>
 
 <body id="settings">
