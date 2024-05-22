@@ -2,10 +2,10 @@
 
 <article>
 
-    <button class="btn bg-red-700 text-white hover:text-black hover:bg-red-800 w-2/6" onclick="my_modal_4.showModal()">
+    <button class="btn bg-red-700 text-white hover:text-black hover:bg-red-800 w-2/6" onclick="deleteUser.showModal()">
         Eliminar Usuario
     </button>
-    <dialog id="my_modal_4" class="modal">
+    <dialog id="deleteUser" class="modal">
         <div class="modal-box flex flex-col border border-gray-300 p-2 rounded-md mb-4 text-red-700 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-900 gap-5">
             <h3 class="font-bold text-lg">Eliminar usuario</h3>
 
