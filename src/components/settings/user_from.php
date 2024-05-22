@@ -13,7 +13,7 @@ $db_conn = connect_to_db();
 
 <p>Usuario dede: <?= $user_from["creation_date"] ?>
     <br/>
-    <span class="text-gray-500 font-light">*la zona horaria puede variar dependiendo donde este ubicado</span>
+    <span class="text-gray-500 font-light">*la zona horaria puede variar dependiendo donde esté ubicado</span>
 </p>
 
 
